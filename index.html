@@ -137,6 +137,9 @@
   .quiz-progress-track > i { display: block; height: 100%; background: var(--accent); transition: width .35s ease; }
   .quiz-counter { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
   .source-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 14%, var(--surface)); border-radius: 999px; padding: 4px 10px; margin-bottom: 12px; }
+  .source-tag.clickable { cursor: pointer; transition: background .15s ease; }
+  .source-tag.clickable:hover { background: color-mix(in srgb, var(--accent-2) 26%, var(--surface)); }
+  .source-link-icon { font-weight: 800; margin-left: 4px; }
   .question-text { font-size: 18.5px; font-weight: 700; line-height: 1.6; margin: 0 0 18px; text-wrap: balance; }
   .options { display: grid; gap: 10px; }
   .opt {
@@ -1324,6 +1327,43 @@
 
   QUESTIONS.forEach(function(q, i){ q.id = q.category + "_" + i; });
 
+  /* ---------------- 出典の動画リンク対応表(nomad.love、sourceの文字列と完全一致でひも付け) ---------------- */
+  var SOURCE_URLS = {
+    "身体の仕組み/肝臓の機能と役割": "https://www.nomad.love/products/4/categories/2159219589/posts/2191327856",
+    "身体の仕組み/脂質の消化・吸収・代謝・機能": "https://www.nomad.love/products/4/categories/2159219589/posts/2191327933",
+    "身体の仕組み/消化酵素と消化管ホルモンの役割と働き": "https://www.nomad.love/products/4/categories/2159219589/posts/2191328104",
+    "身体の仕組み/解糖系のメカニズムとATP合成": "https://www.nomad.love/products/4/categories/2159219589/posts/2190586561",
+    "身体の仕組み/健康づくりの鍵 ミトコンドリアとは": "https://www.nomad.love/products/4/categories/2159219589/posts/2184029438",
+    "身体の仕組み/甲状腺ホルモンの作用機序": "https://www.nomad.love/products/4/categories/2159219589/posts/2199218530",
+    "身体の仕組み/副腎皮質ホルモン:コルチゾールの作用": "https://www.nomad.love/products/4/categories/2159219589/posts/2191738486",
+    "身体の仕組み/リーキガット症候群の原因と改善策": "https://www.nomad.love/products/4/categories/2159219589/posts/2186876617",
+    "身体の仕組み/血糖値をコントロールする鍵": "https://www.nomad.love/products/4/categories/2159219589/posts/2184029375",
+    "身体の仕組み/抗酸化のメカニズム": "https://www.nomad.love/products/4/categories/2159219592/posts/2189798968",
+    "栄養学の基礎/太陽のビタミン、D3の力": "https://www.nomad.love/products/4/categories/2159219592/posts/2184028557",
+    "栄養学の基礎/亜鉛が導く肌の健康革命": "https://www.nomad.love/products/4/categories/2159219592/posts/2184619682",
+    "栄養学の基礎/マグネシウムが人類を救う": "https://www.nomad.love/products/4/categories/2159219592/posts/2184028556",
+    "栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収": "https://www.nomad.love/products/4/categories/2159219592/posts/2184619684",
+    "栄養学の基礎/コレステロールの真実": "https://www.nomad.love/products/4/categories/2159219592/posts/2184619697",
+    "栄養学の基礎/ビタミンB12とは": "https://www.nomad.love/products/4/categories/2159219592/posts/2185528646",
+    "メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化": "https://www.nomad.love/products/4/categories/2159219605/posts/2184484640",
+    "メディカル・シンギュラリティ/GPUと精密医療の未来": "https://www.nomad.love/products/4/categories/2159219605/posts/2185941834",
+    "メディカル・シンギュラリティ/解き明かされるがんの正体": "https://www.nomad.love/products/4/categories/2159219605/posts/2194866589",
+    "メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)": "https://www.nomad.love/products/4/categories/2159219605/posts/2186876671",
+    "メディカル・シンギュラリティ/CBD CBN CBGの効果とは": "https://www.nomad.love/products/4/categories/2159219605/posts/2185941886",
+    "メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力": "https://www.nomad.love/products/4/categories/2159219605/posts/2188067097",
+    "メディカル・シンギュラリティ/THCは人間の未来を救えるのか": "https://www.nomad.love/products/4/categories/2159219605/posts/2188930736",
+    "メディカル・シンギュラリティ/Real Food Pyramidとは 前編": "https://www.nomad.love/products/4/categories/2159219605/posts/2196025839",
+    "メディカル・シンギュラリティ/Real Food Pyramidとは 後編": "https://www.nomad.love/products/4/categories/2159219605/posts/2196026103",
+    "メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1": "https://www.nomad.love/products/4/categories/2159219605/posts/2198061134",
+    "メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2": "https://www.nomad.love/products/4/categories/2159219605/posts/2198468573",
+    "メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3": "https://www.nomad.love/products/4/categories/2159219605/posts/2198808442",
+    "メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4": "https://www.nomad.love/products/4/categories/2159219605/posts/2199218586",
+    "メディカル・シンギュラリティ/サイケデリック医療の現在地": "https://www.nomad.love/products/4/categories/2159219605/posts/2188067403",
+    "メディカル・シンギュラリティ/サイケデリック医療の未来": "https://www.nomad.love/products/4/categories/2159219605/posts/2188496361",
+    "メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは": "https://www.nomad.love/products/4/categories/2159219605/posts/2187259352",
+    "メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類": "https://www.nomad.love/products/4/categories/2159219605/posts/2187666524"
+  };
+
   var CAT_META = {
     body: { name:"身体の仕組み", sub:"肝臓・脂質代謝・ホルモン・腸のしくみなど", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1.5 1-2.5 1-4 0Z"/></svg>' },
     nutrition: { name:"栄養学の基礎", sub:"ビタミン・ミネラル・コレステロールなど", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c4 0 7 3 7 7 0 6-4 9-7 11-3-2-7-5-7-11 0-4 3-7 7-7Z"/><path d="M12 8v6M9 11h6"/></svg>' },
@@ -1607,7 +1647,17 @@
     $("quiz-counter").textContent = (round.idx+1) + "/" + round.pool.length;
     $("quiz-progress-fill").style.width = (round.idx / round.pool.length * 100) + "%";
     $("round-streak-num").textContent = round.streak;
-    $("q-source").textContent = "出典:" + item.source;
+    var srcEl = $("q-source");
+    var srcUrl = SOURCE_URLS[item.source];
+    if (srcUrl) {
+      srcEl.innerHTML = '出典:' + item.source + ' <span class="source-link-icon">▶ 動画を見る</span>';
+      srcEl.onclick = function(){ window.open(srcUrl, "_blank", "noopener"); };
+      srcEl.classList.add("clickable");
+    } else {
+      srcEl.textContent = "出典:" + item.source;
+      srcEl.onclick = null;
+      srcEl.classList.remove("clickable");
+    }
     $("q-text").textContent = item.question;
     var tags = ["A","B","C","D"];
     var optWrap = $("q-options");
