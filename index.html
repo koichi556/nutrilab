@@ -1,0 +1,1817 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="精密栄養ラボ">
+<meta name="theme-color" content="#10171a">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>精密栄養ラボ</title>
+<style>
+  :root {
+    --bg: #eff3ed;
+    --surface: #ffffff;
+    --surface-2: #e4ece5;
+    --ink: #1b2a2e;
+    --ink-soft: #4b5d5a;
+    --line: rgba(27,42,46,0.13);
+    --accent: #c4467b;
+    --accent-ink: #ffffff;
+    --accent-2: #3a6b7a;
+    --gold: #b9862a;
+    --correct: #2f8f5b;
+    --incorrect: #c24b3d;
+    --shadow: 0 18px 40px -22px rgba(27,42,46,0.35);
+    --radius: 18px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10171a;
+      --surface: #182226;
+      --surface-2: #1f2b2f;
+      --ink: #eaf1ee;
+      --ink-soft: #9fb2ae;
+      --line: rgba(234,241,238,0.13);
+      --accent: #e8709e;
+      --accent-ink: #10171a;
+      --accent-2: #6fb6c4;
+      --gold: #e8c15a;
+      --correct: #4fbe85;
+      --incorrect: #e4776a;
+      --shadow: 0 18px 44px -20px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10171a; --surface: #182226; --surface-2: #1f2b2f; --ink: #eaf1ee;
+    --ink-soft: #9fb2ae; --line: rgba(234,241,238,0.13); --accent: #e8709e;
+    --accent-ink: #10171a; --accent-2: #6fb6c4; --gold: #e8c15a;
+    --correct: #4fbe85; --incorrect: #e4776a; --shadow: 0 18px 44px -20px rgba(0,0,0,0.6);
+  }
+  :root[data-theme="light"] {
+    --bg: #eff3ed; --surface: #ffffff; --surface-2: #e4ece5; --ink: #1b2a2e;
+    --ink-soft: #4b5d5a; --line: rgba(27,42,46,0.13); --accent: #c4467b;
+    --accent-ink: #ffffff; --accent-2: #3a6b7a; --gold: #b9862a;
+    --correct: #2f8f5b; --incorrect: #c24b3d; --shadow: 0 18px 40px -22px rgba(27,42,46,0.35);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  body { overflow-x: hidden; }
+  #bgcanvas { position: fixed; inset: 0; z-index: 0; opacity: .5; }
+  .wrap {
+    position: relative; z-index: 1; max-width: 640px; margin: 0 auto;
+    padding: calc(24px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left));
+    min-height: 100vh; display: flex; flex-direction: column; gap: 18px;
+  }
+  .topbar {
+    display: flex; align-items: center; gap: 14px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px;
+    box-shadow: var(--shadow);
+  }
+  .lv-ring { flex-shrink: 0; }
+  .lv-ring text { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 700; }
+  .topbar-mid { flex: 1; min-width: 0; }
+  .topbar-title { font-size: 13px; letter-spacing: .06em; color: var(--ink-soft); margin: 0 0 4px; }
+  .xpbar { height: 8px; border-radius: 5px; background: var(--surface-2); overflow: hidden; }
+  .xpbar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 5px; transition: width .5s cubic-bezier(.2,.8,.2,1); }
+  .streak-pill {
+    display: flex; align-items: center; gap: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-weight: 700; font-size: 13px; background: var(--surface-2); border-radius: 999px;
+    padding: 6px 10px; white-space: nowrap; color: var(--ink);
+  }
+
+  h1.brand {
+    font-size: 22px; margin: 4px 0 0; letter-spacing: .02em; font-weight: 800;
+  }
+  .brand small { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-soft); letter-spacing: .12em; margin-top: 3px; text-transform: uppercase; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 20px;
+  }
+
+  /* Home */
+  .daily-goal { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .daily-goal .label { font-size: 13.5px; color: var(--ink-soft); }
+  .daily-dots { display: flex; gap: 6px; }
+  .daily-dots i {
+    width: 12px; height: 12px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line); display: block;
+  }
+  .daily-dots i.on { background: var(--gold); border-color: var(--gold); }
+
+  .cat-grid { display: grid; gap: 14px; }
+  .cat-card {
+    display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 14px;
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+    cursor: pointer; text-align: left; font: inherit; color: inherit; width: 100%;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cat-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -14px rgba(0,0,0,.4); }
+  .cat-card:active { transform: translateY(0); }
+  .cat-icon {
+    width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    background: var(--surface); color: var(--accent-2);
+  }
+  .cat-icon svg { width: 26px; height: 26px; }
+  .cat-name { font-weight: 700; font-size: 15.5px; }
+  .cat-sub { font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; }
+  .cat-progress { height: 5px; border-radius: 4px; background: var(--surface); margin-top: 7px; overflow: hidden; width: 100%; }
+  .cat-progress > i { display: block; height: 100%; background: var(--accent-2); }
+  .cat-arrow { color: var(--ink-soft); font-size: 20px; }
+
+  .badges-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .badge-chip {
+    font-size: 11.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px;
+    background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line); letter-spacing: .02em;
+  }
+  .badge-chip.earned { background: color-mix(in srgb, var(--gold) 20%, var(--surface)); color: var(--gold); border-color: var(--gold); }
+
+  .section-label { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin: 2px 0 10px; }
+
+  /* Quiz */
+  .quiz-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .quiz-progress-track { flex: 1; height: 6px; border-radius: 4px; background: var(--surface-2); overflow: hidden; margin: 0 12px; }
+  .quiz-progress-track > i { display: block; height: 100%; background: var(--accent); transition: width .35s ease; }
+  .quiz-counter { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+  .source-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 14%, var(--surface)); border-radius: 999px; padding: 4px 10px; margin-bottom: 12px; }
+  .question-text { font-size: 18.5px; font-weight: 700; line-height: 1.6; margin: 0 0 18px; text-wrap: balance; }
+  .options { display: grid; gap: 10px; }
+  .opt {
+    display: flex; align-items: center; gap: 12px; text-align: left; width: 100%;
+    background: var(--surface-2); border: 1.5px solid var(--line); border-radius: 12px; padding: 13px 14px;
+    font: inherit; font-size: 14.5px; color: inherit; cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--accent-2); }
+  .opt-tag {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 12.5px; background: var(--surface); color: var(--ink-soft); font-family: ui-monospace, monospace;
+  }
+  .opt.correct { border-color: var(--correct); background: color-mix(in srgb, var(--correct) 16%, var(--surface)); }
+  .opt.correct .opt-tag { background: var(--correct); color: #fff; }
+  .opt.incorrect { border-color: var(--incorrect); background: color-mix(in srgb, var(--incorrect) 14%, var(--surface)); }
+  .opt.incorrect .opt-tag { background: var(--incorrect); color: #fff; }
+  .opt:disabled { cursor: default; }
+  .opt:disabled:not(.correct):not(.incorrect) { opacity: .55; }
+
+  .explain-box {
+    margin-top: 16px; padding: 14px 16px; border-radius: 12px; background: var(--surface-2);
+    border-left: 4px solid var(--accent-2); font-size: 13.5px; line-height: 1.7; color: var(--ink);
+    display: none;
+  }
+  .explain-box.show { display: block; animation: slidein .25s ease; }
+  @keyframes slidein { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .explain-src { display: block; margin-top: 8px; font-size: 11px; color: var(--ink-soft); font-family: ui-monospace, monospace; letter-spacing: .02em; }
+
+  .btn {
+    appearance: none; border: none; border-radius: 12px; padding: 13px 18px; font: inherit; font-weight: 700;
+    font-size: 14.5px; cursor: pointer; width: 100%; letter-spacing: .01em;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); }
+  .btn-row { display: flex; gap: 10px; margin-top: 18px; }
+  .btn-row .btn { margin-top: 0; }
+  .next-wrap { margin-top: 18px; display: none; }
+  .next-wrap.show { display: block; }
+
+  /* Result */
+  .result-hero { text-align: center; padding: 6px 0 4px; }
+  .gauge-wrap { position: relative; width: 190px; height: 190px; margin: 0 auto 8px; }
+  .gauge-wrap svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .gauge-track { fill: none; stroke: var(--surface-2); stroke-width: 14; }
+  .gauge-fill { fill: none; stroke: var(--accent); stroke-width: 14; stroke-linecap: round; transition: stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1); }
+  .gauge-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .gauge-num { font-size: 34px; font-weight: 800; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .gauge-sub { font-size: 12px; color: var(--ink-soft); letter-spacing: .06em; }
+  .result-msg { font-size: 15.5px; font-weight: 700; margin: 8px 0 2px; }
+  .result-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 18px 0 4px; }
+  .stat-box { background: var(--surface-2); border-radius: 12px; padding: 12px 8px; text-align: center; }
+  .stat-box .num { font-family: ui-monospace, monospace; font-weight: 800; font-size: 18px; color: var(--accent-2); }
+  .stat-box .cap { font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(10px); z-index: 5;
+    background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 999px; font-size: 13.5px; font-weight: 700;
+    opacity: 0; transition: opacity .3s ease, transform .3s ease; pointer-events: none; box-shadow: 0 12px 30px -10px rgba(0,0,0,.5);
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .screen { display: none; flex-direction: column; gap: 18px; }
+  .screen.active { display: flex; }
+
+  footer.note { text-align: center; font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.7; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<canvas id="bgcanvas"></canvas>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="lv-ring">
+      <svg width="52" height="52" viewBox="0 0 52 52">
+        <circle cx="26" cy="26" r="22" fill="none" stroke="var(--surface-2)" stroke-width="5"></circle>
+        <circle id="lvring-fill" cx="26" cy="26" r="22" fill="none" stroke="var(--accent)" stroke-width="5"
+          stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 26 26)"></circle>
+        <text id="lvring-num" x="26" y="31" text-anchor="middle" font-size="16" fill="var(--ink)">1</text>
+      </svg>
+    </div>
+    <div class="topbar-mid">
+      <p class="topbar-title" id="xp-label">Lv.1・次のレベルまで あと150 XP</p>
+      <div class="xpbar"><i id="xp-fill" style="width:0%"></i></div>
+    </div>
+    <div class="streak-pill">🔥<span id="best-streak-num">0</span></div>
+  </div>
+
+  <div>
+    <h1 class="brand">精密栄養ラボ<small>NOMAD.LOVE KNOWLEDGE QUIZ</small></h1>
+  </div>
+
+  <!-- HOME -->
+  <div class="screen active" id="screen-home">
+    <div class="card daily-goal">
+      <div>
+        <div class="label" id="daily-label">今日の目標:0/5問正解</div>
+      </div>
+      <div class="daily-dots" id="daily-dots"></div>
+    </div>
+
+    <div class="card" id="review-card">
+      <p class="section-label">今日の復習</p>
+      <div class="daily-goal">
+        <div class="label" id="review-label">復習対象の問題はありません</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="section-label">検体を選んでスタート</p>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+
+    <div class="card">
+      <p class="section-label">獲得バッジ</p>
+      <div class="badges-row" id="badges-row"></div>
+    </div>
+
+    <div class="card">
+      <p class="section-label">バックアップ</p>
+      <p style="font-size:13px; color:var(--ink-soft); margin:0 0 12px; line-height:1.7;">10問回答するごとに自動でバックアップの保存画面が出ます。保存したファイルはiCloud Drive(Filesアプリ)などに置いておくと安心です。</p>
+      <div class="btn-row" style="margin-top:0;">
+        <button class="btn btn-ghost" id="btn-backup-now">今すぐバックアップ</button>
+        <button class="btn btn-ghost" id="btn-restore">復元する</button>
+      </div>
+      <input type="file" id="restore-file-input" accept="application/json" style="display:none;">
+    </div>
+
+    <footer class="note">問題はすべて nomad.love「あたらしい健康知識」ナレッジ(身体の仕組み・栄養学の基礎)の内容に基づいています。各問題の解説に出典を明記しています。</footer>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="screen" id="screen-quiz">
+    <div class="card quiz-top">
+      <div class="quiz-counter" id="quiz-counter">1/10</div>
+      <div class="quiz-progress-track"><i id="quiz-progress-fill" style="width:0%"></i></div>
+      <div class="streak-pill">⚡<span id="round-streak-num">0</span></div>
+    </div>
+    <div class="card">
+      <span class="source-tag" id="q-source">出典</span>
+      <p class="question-text" id="q-text">問題文</p>
+      <div class="options" id="q-options"></div>
+      <div class="explain-box" id="q-explain"></div>
+      <div class="next-wrap" id="next-wrap">
+        <button class="btn btn-primary" id="btn-next">次の問題へ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="screen" id="screen-result">
+    <div class="card result-hero">
+      <div class="gauge-wrap">
+        <svg viewBox="0 0 190 190">
+          <circle class="gauge-track" cx="95" cy="95" r="80"></circle>
+          <circle class="gauge-fill" id="result-gauge" cx="95" cy="95" r="80" stroke-dasharray="502.4" stroke-dashoffset="502.4"></circle>
+        </svg>
+        <div class="gauge-label">
+          <div class="gauge-num" id="result-pct">0%</div>
+          <div class="gauge-sub" id="result-frac">0/10問</div>
+        </div>
+      </div>
+      <p class="result-msg" id="result-msg">お疲れさまでした!</p>
+      <div class="result-stats">
+        <div class="stat-box"><div class="num" id="result-xp">+0</div><div class="cap">獲得XP</div></div>
+        <div class="stat-box"><div class="num" id="result-streak">0</div><div class="cap">最大連続正解</div></div>
+        <div class="stat-box"><div class="num" id="result-lv">Lv.1</div><div class="cap">現在レベル</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="btn-home">ホームへ</button>
+        <button class="btn btn-primary" id="btn-retry">もう一度</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- 問題データ(全てnomad.loveナレッジ「身体の仕組み」「栄養学の基礎」に基づく) ---------------- */
+  var QUESTIONS = [
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"血糖値が高い時、肝臓は何を材料にグリコーゲンを合成する?", options:["グルコース","乳酸","アミノ酸","脂肪酸"], correct:0,
+      explain:"血糖値が高い時、インスリンの作用で肝臓はグルコースを取り込みグリコーゲンとして貯蔵します。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"肝臓で合成される血漿蛋白質のうち、出血時の血栓形成に必要な凝固因子は?", options:["アルブミン","フィブリノーゲン","グロブリン","ビリルビン"], correct:1,
+      explain:"フィブリノーゲンは出血時に血栓を形成するための凝固因子で、止血に寄与します。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"肝臓が産生し、中性脂肪やコレステロールを全身へ運搬するリポタンパク質は?", options:["LDL","HDL","VLDL","カイロミクロン"], correct:2,
+      explain:"肝臓が産生するVLDLは中性脂肪やコレステロールを含み、血液を介して各臓器へ届けられます。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"タンパク質代謝で生じる有害物質アンモニアは、肝臓で何に変換され尿として排泄される?", options:["尿酸","尿素","クレアチニン","ビリルビン"], correct:1,
+      explain:"肝臓はアンモニアを無害な尿素に変換し、尿として排泄します。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"アルコールは肝臓でまず何に代謝される?", options:["酢酸","アセトアルデヒド","グリコーゲン","乳酸"], correct:1,
+      explain:"肝臓はアルコールをまずアセトアルデヒドに変え、その後さらに酢酸へと代謝します。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"肝細胞が六角柱状に集合した構造「肝小葉」は、肝臓の中におよそ何個集まっている?", options:["約5万個","約50万個","約500万個","約5000個"], correct:1,
+      explain:"肝臓は肝小葉というおよそ50万個の構造が集まって構成されています。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"胆汁に含まれ、肝機能低下や胆管閉塞で血中に蓄積すると黄疸を引き起こす色素は?", options:["メラニン","ビリルビン","カロテン","ヘモグロビン"], correct:1,
+      explain:"ビリルビンはヘモグロビンが分解されて生じる色素で、排泄されず血中に蓄積すると黄疸を引き起こします。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"ビリルビンは何が分解されて生じる物質?", options:["アルブミン","ヘモグロビン","コレステロール","グリコーゲン"], correct:1,
+      explain:"ビリルビンはヘモグロビンが分解されて生じる物質です。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"肝臓が脂溶性ビタミンや鉄を貯蔵する際、鉄はどのタンパク質に結合して貯蔵される?", options:["アルブミン","フェリチン","トランスフェリン","ヘモグロビン"], correct:1,
+      explain:"鉄はフェリチンというタンパク質に結合して肝細胞内に安全に貯蔵されます。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"肝臓が貯蔵する脂溶性ビタミンとして本文で挙げられているのは、ビタミンAと何?", options:["ビタミンC","ビタミンD","ビタミンB12","ビタミンK"], correct:1,
+      explain:"肝臓はビタミンA、ビタミンDなどの脂溶性ビタミンを肝細胞内に貯蔵します。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"出生後、造血の役割は肝臓からどこに引き継がれる?", options:["脾臓","骨髄","リンパ節","腎臓"], correct:1,
+      explain:"胎児期には肝臓が造血の中心を担いますが、出生後は骨髄にその役割を譲ります。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"血糖値が低下した時、グリコーゲンをグルコースに分解する肝臓の働きを促すホルモンは?", options:["インスリン","グルカゴン","コルチゾール","アドレナリン"], correct:1,
+      explain:"血糖値が低下すると膵臓のアルファ細胞から分泌されるグルカゴンの働きでグリコーゲンがグルコースに分解されます。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"アルブミンが血管内の膠質浸透圧を保つことで防いでいる症状は?", options:["黄疸","浮腫","貧血","動脈硬化"], correct:1,
+      explain:"アルブミンは膠質浸透圧を保つことで水分を血管内に引き込み、組織の浮腫を防ぎます。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"胆汁は各肝小葉で作られた後、総肝管を経由してどこに運ばれ濃縮・貯蔵される?", options:["十二指腸","胆嚢","膵臓","小腸"], correct:1,
+      explain:"各肝小葉で作られた胆汁は総肝管を経由して胆嚢へ運ばれ、濃縮・貯蔵されます。" },
+    { category:"body", source:"身体の仕組み/肝臓の機能と役割", q:"食物が消化管に入ると胆嚢が収縮し、胆汁はどこへ放出される?", options:["胃","十二指腸","大腸","食道"], correct:1,
+      explain:"食物が消化管に入ると胆嚢が収縮し、胆汁を十二指腸へ放出します。" },
+
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"単純脂質の代表であるトリグリセリドは、体内でどのような形で存在しエネルギーを蓄える?", options:["細胞膜成分として","皮下脂肪・内臓脂肪として","ホルモンとして","血漿蛋白質として"], correct:1,
+      explain:"中性脂肪(トリグリセリド)は皮下脂肪や内臓脂肪としてエネルギーを蓄える役割を担います。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"細胞膜の主要成分である複合脂質の代表例は?", options:["中性脂肪","リン脂質","コレステロール","脂肪酸単体"], correct:1,
+      explain:"複合脂質として知られるリン脂質や糖脂質は、細胞膜の主要成分です。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"コレステロールが材料になるものとして本文で挙げられているのは次のうちどれ?", options:["副腎皮質ホルモン","インスリン","グルカゴン","甲状腺ホルモン"], correct:0,
+      explain:"コレステロールは胆汁酸やビタミンD、性ホルモン、副腎皮質ホルモンの材料にもなっています。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"胆嚢から分泌される胆汁酸が脂質に対して行う働きは?", options:["分解","乳化","酸化","中和"], correct:1,
+      explain:"胆汁酸は脂質を細かな粒子にして水と混ざりやすくする「乳化」を行います。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"乳化された脂質をさらに分解し、脂肪酸とモノグリセリドにする膵液中の酵素は?", options:["アミラーゼ","トリプシン","リパーゼ","ペプシン"], correct:2,
+      explain:"膵液中のリパーゼが乳化された脂質を脂肪酸とモノグリセリドに分解します。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"小腸の吸収上皮細胞で再合成されたトリグリセリドがタンパク質と結合して作る粒子は?", options:["VLDL","カイロミクロン","LDL","HDL"], correct:1,
+      explain:"再合成されたトリグリセリドはタンパク質と結合しカイロミクロンという粒子を形成します。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"カイロミクロンはリンパ管に放出された後、どこを通って静脈系に入る?", options:["門脈","胸管","肝動脈","腎静脈"], correct:1,
+      explain:"カイロミクロンはリンパ管へ放出され、胸管を通って静脈系へ入ります。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"血液中でカイロミクロンの中性脂肪を分解し脂肪酸を放出させる酵素は?", options:["膵リパーゼ","リポタンパクリパーゼ","ホスホリパーゼ","アミラーゼ"], correct:1,
+      explain:"血液中でカイロミクロンの中性脂肪はリポタンパクリパーゼによって分解され脂肪酸が放出されます。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"水に溶けない遊離脂肪酸は、血液中で何と結合して組織に運ばれる?", options:["グロブリン","アルブミン","フィブリノーゲン","ヘモグロビン"], correct:1,
+      explain:"遊離脂肪酸は水に溶けないため、アルブミンと結合した形で各組織に届けられます。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"中性脂肪が分解されて小さくなったカイロミクロンレムナントは、どこに回収され何の材料として再利用される?", options:["腎臓・尿素","肝臓・VLDL","脾臓・ヘモグロビン","膵臓・インスリン"], correct:1,
+      explain:"カイロミクロンレムナントは肝臓に回収され、VLDLの生成材料として再利用されます。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"肝臓から放出されたVLDLは血中で中性脂肪を放出しながら最終的に何に変化する?", options:["HDL","LDL","カイロミクロン","アルブミン"], correct:1,
+      explain:"VLDLは血中で中性脂肪を徐々に放出しながら最終的にLDLへ変化します。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"組織から余分なコレステロールを回収し肝臓へ運ぶため「善玉コレステロール」と呼ばれるのは?", options:["LDL","VLDL","HDL","カイロミクロン"], correct:2,
+      explain:"HDLは組織から余分なコレステロールを回収して肝臓へ運ぶため善玉コレステロールと呼ばれます。" },
+    { category:"body", source:"身体の仕組み/脂質の消化・吸収・代謝・機能", q:"中性脂肪の過剰摂取や運動不足が続くと、脂肪組織や肝臓への蓄積が何の原因となる?", options:["貧血","肥満や糖尿病","骨粗鬆症","甲状腺機能低下"], correct:1,
+      explain:"中性脂肪が過度に蓄積すると肥満や糖尿病などの生活習慣病の原因となります。" },
+
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"唾液腺や膵臓から分泌され、澱粉をマルトースなどの二糖類に変換する酵素は?", options:["リパーゼ","アミラーゼ","ペプシン","トリプシン"], correct:1,
+      explain:"アミラーゼは唾液腺や膵臓から分泌され、澱粉をマルトースなどの二糖類に変換します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"胃液中に含まれ、タンパク質をポリペプチドに分解する酵素は?", options:["トリプシン","ペプシン","アミラーゼ","リパーゼ"], correct:1,
+      explain:"胃液中のペプシンはタンパク質をポリペプチドという小さな分子に分解します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"膵液中に含まれ、ポリペプチドをさらに小さなアミノ酸に分解する酵素は?", options:["ペプシン","トリプシン","リパーゼ","アミラーゼ"], correct:1,
+      explain:"膵液に含まれるトリプシンがポリペプチドをさらに小さなアミノ酸にまで分解します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"膵臓から分泌され、脂肪を脂肪酸とグリセロールに分解する酵素は?", options:["アミラーゼ","ペプシン","リパーゼ","トリプシン"], correct:2,
+      explain:"リパーゼは膵臓から分泌され、脂肪を脂肪酸やグリセロールに分解します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"消化管ホルモンの特徴として本文が強調しているのは?", options:["消化管内で直接食物を分解する","血液を通じて離れた器官に作用する遠隔的な調節機能を持つ","唾液腺でのみ働く","酵素の一種である"], correct:1,
+      explain:"消化管ホルモンは消化管で産生された後、血液を通じて離れた標的器官に作用する遠隔的な調節機能が特徴です。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"胃の運動を促進し、胃酸やペプシノーゲンの分泌を刺激するホルモンは?", options:["セクレチン","ガストリン","コレシストキニン","GIP"], correct:1,
+      explain:"ガストリンは胃の運動を促進し、胃酸やペプシノーゲンの分泌を刺激します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"胃酸を中和するため膵臓から重炭酸イオンを多く含む膵液を分泌させるホルモンは?", options:["ガストリン","セクレチン","コレシストキニン","ソマトスタチン"], correct:1,
+      explain:"セクレチンは胃酸を中和するため、膵臓から重炭酸イオンを多く含む膵液を分泌させます。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"胆嚢を収縮させ胆汁を排出させると同時に、消化酵素を多く含む膵液の分泌も促すホルモンは?", options:["セクレチン","コレシストキニン","GIP","ガストリン"], correct:1,
+      explain:"コレシストキニンは胆嚢を収縮させ胆汁を排出させ、膵臓からの消化酵素分泌も促します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"小腸到達時に分泌され、胃酸分泌を抑えインスリン分泌を促進するホルモンは?", options:["ソマトスタチン","GIP","セクレチン","ガストリン"], correct:1,
+      explain:"GIPは食物が小腸に達すると分泌され、胃酸分泌を抑えインスリン分泌を促進します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"他の消化管ホルモンの働きを抑制し、消化速度を調節するホルモンは?", options:["ガストリン","ソマトスタチン","コレシストキニン","GIP"], correct:1,
+      explain:"ソマトスタチンは他の消化管ホルモンの働きを抑制し、消化速度を調節します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"消化の流れの中で、澱粉がマルトースに変換されるのはどこで起こる?", options:["胃","口腔内","十二指腸","大腸"], correct:1,
+      explain:"口腔内で咀嚼された食物に唾液中のアミラーゼが働き、澱粉がマルトースに変換されます。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"脂質の分解で、まず脂肪を乳化する働きをするのは?", options:["膵リパーゼ","胆汁","アミラーゼ","ペプシン"], correct:1,
+      explain:"脂質の分解ではまず胆汁が脂肪を乳化し、その後膵リパーゼが分解します。" },
+    { category:"body", source:"身体の仕組み/消化酵素と消化管ホルモンの役割と働き", q:"本文で「消化活動全体を調整する指令塔」に例えられているのは?", options:["消化酵素","消化管ホルモン","胃酸","胆汁"], correct:1,
+      explain:"消化酵素が食物を直接分解するのに対し、消化管ホルモンは消化活動全体を調整する指令塔に例えられています。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系の反応が行われる細胞内の場所は?", options:["ミトコンドリア内膜","細胞質基質(細胞質ゾル)","核内","小胞体"], correct:1,
+      explain:"解糖系は細胞質基質(細胞質ゾル)で行われ、ミトコンドリア内膜で行われる電子伝達系とは異なる場所で起こります。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系全体で、グルコース1分子から最終的に正味何分子のATPが生成される?", options:["1分子","2分子","4分子","6分子"], correct:1,
+      explain:"前半でATP2分子を消費し、後半で4分子のATPを産生するため、差し引き正味2分子のATPが得られます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系前半(投資期)で消費されるATPは合計何分子?", options:["1分子","2分子","3分子","4分子"], correct:1,
+      explain:"前半ではヘキソキナーゼとホスホフルクトキナーゼの反応でそれぞれ1分子ずつ、合計2分子のATPが消費されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系後半(回収期)で産生されるATPは合計何分子?", options:["2分子","4分子","6分子","8分子"], correct:1,
+      explain:"後半の基質レベルのリン酸化で2分子、ピルビン酸生成の反応で2分子、合計4分子のATPが産生されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"グルコースが細胞内に入り最初にリン酸化されグルコース6リン酸になる際に働く酵素は?", options:["ホスホフルクトキナーゼ","ヘキソキナーゼ","アルドラーゼ","ピルビン酸キナーゼ"], correct:1,
+      explain:"グルコースはまずヘキソキナーゼによりリン酸化され、グルコース6リン酸に変換されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"フルクトース6リン酸を再びリン酸化しフルクトース1,6ビスリン酸に変換する、解糖系の調節上重要な酵素は?", options:["ヘキソキナーゼ","ホスホフルクトキナーゼ","アルドラーゼ","ピルビン酸キナーゼ"], correct:1,
+      explain:"ホスホフルクトキナーゼがフルクトース6リン酸をフルクトース1,6ビスリン酸に変換し、解糖系の調節に重要な役割を果たします。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"フルクトース1,6ビスリン酸を2つに分解する酵素は?", options:["アルドラーゼ","イソメラーゼ","デヒドロゲナーゼ","キナーゼ"], correct:0,
+      explain:"フルクトース1,6ビスリン酸はアルドラーゼによって2つの三炭糖に分解されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"グリセルアルデヒド3リン酸がNADをNADHに変えながら変換される反応で生成されるのは?", options:["ピルビン酸","1,3ビスホスホグリセリン酸","グルコース6リン酸","フルクトース6リン酸"], correct:1,
+      explain:"グリセルアルデヒド3リン酸デヒドロゲナーゼによりNADをNADHに変えながら1,3ビスホスホグリセリン酸に変換されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"ATPがADPにリン酸基を直接渡して合成される仕組みを何と呼ぶ?", options:["酸化的リン酸化","基質レベルのリン酸化","電子伝達","異性化"], correct:1,
+      explain:"1,3ビスホスホグリセリン酸のリン酸基がADPに移りATPが合成される仕組みを基質レベルのリン酸化と呼びます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系の10段階反応のうち不可逆反応で代謝調整に大きな影響を与える酵素、ヘキソキナーゼ・ホスホフルクトキナーゼともう1つは?", options:["ピルビン酸キナーゼ","アルドラーゼ","イソメラーゼ","デヒドロゲナーゼ"], correct:0,
+      explain:"ヘキソキナーゼ・ホスホフルクトキナーゼ・ピルビン酸キナーゼが触媒する反応は不可逆反応です。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"ホスホフルクトキナーゼは細胞内の何の濃度によって活性が調整される?", options:["グルコース濃度","ATP濃度","酸素濃度","乳酸濃度"], correct:1,
+      explain:"ホスホフルクトキナーゼは細胞内のATP濃度によって活性が調整されます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"ホスホフルクトキナーゼは、ATPが十分にある時、反応速度をどうする?", options:["速める","遅くする","変えない","停止する"], correct:1,
+      explain:"ATPが十分にある時は反応速度を遅くし、ATPが不足している時は反応速度を速めます。" },
+    { category:"body", source:"身体の仕組み/解糖系のメカニズムとATP合成", q:"解糖系の最終産物は、二分子のATPと何?", options:["乳酸","ピルビン酸","アセチルCoA","クエン酸"], correct:1,
+      explain:"一分子のグルコースは解糖系全体で二分子のATPと二分子のピルビン酸を生成します。" },
+
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"ミトコンドリアの起源として本文が説明する学説は?", options:["突然変異説","細胞内共生説","進化収束説","ウイルス起源説"], correct:1,
+      explain:"酸素を使いエネルギーを作れる細菌が他の細胞に取り込まれ共生した名残とする細胞内共生説が説明されています。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"成人の体重のうちミトコンドリアが占める割合はおよそどのくらい?", options:["約1%","約10%","約30%","約50%"], correct:1,
+      explain:"体重の約10%はミトコンドリアだとされ、体重60kgの人なら約6kg分に相当します。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"体のエネルギー(ATP)のおよそ何%をミトコンドリアが生産する?", options:["50%","70%","95%","100%"], correct:2,
+      explain:"体のエネルギー(ATP)の約95%をミトコンドリアが生産します。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"ATPは主にミトコンドリア内の何と呼ばれる反応で作られる?", options:["解糖系","電子伝達系","尿素回路","クエン酸回路単独"], correct:1,
+      explain:"ATP合成は主に電子伝達系で行われます。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"電子伝達系でATPが作られる過程は何と呼ばれ、何が必須とされる?", options:["基質リン酸化・グルコース","酸化的リン酸化・酸素","異性化・水","脱リン酸化・窒素"], correct:1,
+      explain:"このプロセスは酸化的リン酸化と呼ばれ、酸素が必須なため有酸素運動が重要になります。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"不要になった細胞を処理し新しい細胞を作る、ミトコンドリアが関わる仕組みを何と呼ぶ?", options:["アポトーシス","オートファジー","ネクローシス","ホメオスタシス"], correct:1,
+      explain:"不要な細胞を処理する「オートファジー(自食作用)」がミトコンドリアの役割の一つです。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"ミトコンドリアが担うエネルギー産生以外の役割として本文で挙げられていないのは?", options:["カルシウム貯蔵","熱産生","ホルモン合成","血液凝固"], correct:3,
+      explain:"本文で挙げられているのはオートファジー・カルシウム貯蔵・熱産生・ホルモン合成で、血液凝固への関与は述べられていません。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"エネルギー消費が多い心臓の細胞に多く見られるミトコンドリアの形は?", options:["太い形","板状","細長い形","球状"], correct:1,
+      explain:"心臓はエネルギー消費が多い臓器なので、板状のミトコンドリアが多く含まれています。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"消化酵素を大量に分泌する膵臓の細胞に見られるミトコンドリアの形は?", options:["板状","太い形","細長い形","球状"], correct:1,
+      explain:"膵臓は消化酵素などを大量に分泌する臓器であり、効率よく働くために太いミトコンドリアが必要になります。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"筋繊維に沿って細長い形をしているミトコンドリアが多いのはどこの細胞?", options:["心臓","骨格筋","膵臓","卵子"], correct:1,
+      explain:"骨格筋にあるミトコンドリアは筋繊維に沿って細長い形をしています。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"卵子1個あたりに存在するミトコンドリアの数はおよそどのくらい?", options:["数十個","数千個","10万個前後","100万個以上"], correct:2,
+      explain:"卵子の細胞には1つあたり10万個前後のミトコンドリアが含まれています。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"精子1個あたりに存在するミトコンドリアの数は、卵子と比べてどうか?", options:["卵子よりずっと多い","数十個程度と少ない","卵子と同数","ゼロ"], correct:1,
+      explain:"精子には1つあたり数十個程度しかミトコンドリアが存在せず、卵子に比べて少ないのが特徴です。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"ミトコンドリアの名前の語源となったギリシャ語「ミトス」の意味は?", options:["軟骨","糸","粒","工場"], correct:1,
+      explain:"ミトコンドリアはギリシャ語で糸を意味する「ミトス」と軟骨を意味する「コンドロス」から作られた名前です。" },
+    { category:"body", source:"身体の仕組み/健康づくりの鍵 ミトコンドリアとは", q:"ミトコンドリアが持つ、くっついたり離れたりする性質は何に役立つとされる?", options:["数を正確に数えられるようにする","損傷部位の補修やエネルギー生成効率の向上","細胞分裂の停止","熱の遮断"], correct:1,
+      explain:"融合・分裂を繰り返す動的な性質により、損傷部位の補修やエネルギー生成効率の向上に役立ちます。" },
+
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺の重さはおよそどのくらい?", options:["約5g","約20g","約50g","約100g"], correct:1,
+      explain:"甲状腺の重さはおよそ20グラムで、蝶が羽根を広げたような形をしています。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺の後面に上下左右4つ付着し、パラトルモンを分泌する器官は?", options:["リンパ節","副甲状腺","唾液腺","扁桃腺"], correct:1,
+      explain:"甲状腺の後面には副甲状腺が上下左右に4つ付着しており、パラトルモンを分泌します。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"パラトルモンが調節するのは主に何?", options:["血糖値","カルシウム","水分","ナトリウム"], correct:1,
+      explain:"副甲状腺から分泌されるパラトルモンはカルシウム調節に重要な役割を持ちます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺組織に密集し、内部のコロイドという液体で甲状腺ホルモンを合成・貯蔵する構造は?", options:["濾胞","小葉","腺房","髄質"], correct:0,
+      explain:"甲状腺には無数の濾胞が密集しており、内部のコロイドで甲状腺ホルモンの合成・貯蔵が行われます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"視床下部が寒さなどの刺激を受けて分泌するホルモンは?", options:["TSH","TRH","ACTH","T4"], correct:1,
+      explain:"視床下部が寒さ等の刺激を受けるとTRH(甲状腺刺激ホルモン放出ホルモン)を分泌します。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"TRHが下垂体前葉に作用して放出されるホルモンは?", options:["TRH","TSH","ACTH","コルチゾール"], correct:1,
+      explain:"TRHが下垂体前葉に作用するとTSH(甲状腺刺激ホルモン)が放出されます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"TSHが甲状腺の受容体に結合すると、濾胞細胞は何というタンパク質を合成する?", options:["アルブミン","サイログロブリン","フィブリノーゲン","ヘモグロビン"], correct:1,
+      explain:"TSHが受容体に結合すると濾胞細胞はサイログロブリンというタンパク質を合成し濾胞内に分泌します。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺ホルモンの合成にはサイログロブリン中のチロシンに何が結合する?", options:["鉄","ヨウ素","亜鉛","セレン"], correct:1,
+      explain:"甲状腺は血中からヨウ素を取り込み活性化し、サイログロブリン中のチロシンに結合させます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"ヨウ素が4つ付いた甲状腺ホルモンは?", options:["T3","T4(サイロキシン)","TSH","TRH"], correct:1,
+      explain:"ヨウ素が4つ付いたサイロキシン(T4)が合成されます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"ヨウ素が3つ付いた甲状腺ホルモンは?", options:["T3(トリヨードサイロニン)","T4","TSH","TRH"], correct:0,
+      explain:"ヨウ素が3つ付いたトリヨードサイロニン(T3)が合成されます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺ホルモンが増加すると促進される、糖利用による血糖値への影響は?", options:["血糖値が低下する","血糖値が上昇する","変化しない","一時的に停止する"], correct:1,
+      explain:"糖利用が促進され肝臓のグリコーゲン分解・糖新生により血糖値が上昇します。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺ホルモンの生理作用としてよく例えられるのは何の役割?", options:["ブレーキ","車のアクセル","ハンドル","タイヤ"], correct:1,
+      explain:"甲状腺ホルモンによる基礎代謝の促進は「車のアクセル」に例えられます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺ホルモンが不足すると出生後の脳・骨・歯の発育障害を招くことがある、この病態を何と呼ぶ?", options:["橋本病","クレチン病","バセドウ病","副腎クリーゼ"], correct:1,
+      explain:"甲状腺ホルモン不足はクレチン病という成長障害・知能発達障害を招くことがあります。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"眼球突出・甲状腺腫・頻脈という「メルゼブルクの三徴」が特徴的な甲状腺機能亢進症の代表疾患は?", options:["橋本病","バセドウ病","クレチン病","アジソン病"], correct:1,
+      explain:"バセドウ病はメルゼブルクの三徴(眼球突出・甲状腺腫・頻脈)が特徴的な甲状腺機能亢進症の代表疾患です。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"バセドウ病は主にどの年代・性別に多い?", options:["60代以降の男性","20〜40代の女性","10代の男女","年代・性別を問わない"], correct:1,
+      explain:"バセドウ病は20代から40代の女性に多く見られます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺機能低下症の代表疾患、橋本病で見られる特徴的な浮腫は?", options:["粘液水腫","肺水腫","脳浮腫","リンパ浮腫"], correct:0,
+      explain:"橋本病では代謝低下に伴い粘液水腫という特徴的な浮腫が現れます。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"橋本病でみられる代謝低下に伴う症状として本文で挙げられていないのは?", options:["痩せにくい","寒がり","心拍数低下","頻脈"], correct:3,
+      explain:"橋本病では痩せにくい・寒がり・心拍数低下・粘液水腫が挙げられており、頻脈はバセドウ病(機能亢進症)の症状です。" },
+    { category:"body", source:"身体の仕組み/甲状腺ホルモンの作用機序", q:"甲状腺機能異常の病態は、視床下部・下垂体を含むどの仕組みの乱れによって生じる?", options:["交感神経系","ネガティブフィードバック機構","免疫グロブリン","概日リズム"], correct:1,
+      explain:"甲状腺機能異常は視床下部・下垂体を含むネガティブフィードバック機構の乱れによって生じます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールが肝臓で促進する、血糖値を上昇させる働きは?", options:["糖新生","解糖","グリコーゲン合成","脂肪分解"], correct:0,
+      explain:"コルチゾールは肝臓での糖新生を促進し、血糖値を上昇させます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールが持つ、炎症反応を鎮め過剰な免疫反応を抑制する作用は?", options:["許容作用","抗炎症作用・免疫抑制作用","骨代謝作用","電解質調整作用"], correct:1,
+      explain:"コルチゾールには強力な抗炎症作用と免疫抑制作用があり、この作用はステロイド薬として医療現場で使われます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールが適切に分泌されていないと、カテコールアミンなど他のホルモンの作用が十分発揮されない、この働きを何と呼ぶ?", options:["拮抗作用","許容作用","相乗作用","代償作用"], correct:1,
+      explain:"コルチゾールは他のホルモンが効果的に作用するための基盤を整える「許容作用」を持ちます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールが慢性的に高値になると引き起こされることがある精神的な問題は?", options:["幻覚","不安やうつ症状","記憶喪失","統合失調症"], correct:1,
+      explain:"コルチゾールが慢性的に高値になると、不安やうつ症状など精神的な問題が生じることがあります。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"慢性的なコルチゾール高値が骨に与える影響は?", options:["骨形成を促進する","骨形成を抑制し骨量減少を招く","骨に影響しない","骨を硬化させすぎる"], correct:1,
+      explain:"慢性的なコルチゾール高値は骨形成を抑制し、骨量減少や骨粗鬆症を引き起こす可能性があります。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールの分泌が一般的に最も高くなるのはいつ?", options:["正午頃","早朝","夕方","深夜"], correct:1,
+      explain:"コルチゾールには明確な日内変動があり、早朝に分泌が最も高まり夜間に向けて低下します。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールの分泌不足によって起こる病態は?", options:["バセドウ病","副腎皮質機能低下症(アジソン病)","橋本病","クレチン病"], correct:1,
+      explain:"コルチゾールの分泌が著しく低下する病態を副腎皮質機能低下症(アジソン病)と呼びます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"アジソン病で見られる代表的な電解質異常は?", options:["高ナトリウム血症","低ナトリウム血症や高カリウム血症","低カリウム血症","高カルシウム血症"], correct:1,
+      explain:"アジソン病の代表的な症状として、低ナトリウム血症や高カリウム血症などの電解質異常が挙げられます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"アジソン病で特徴的な色素沈着は、何というホルモンの分泌増加が原因?", options:["TSH","ACTH","コルチゾール自身","アルドステロン"], correct:1,
+      explain:"コルチゾール不足を補おうとして副腎皮質刺激ホルモン(ACTH)の分泌が増加することが色素沈着の原因です。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"ACTHが色素沈着を引き起こすのは、何と構造が類似しているため?", options:["メラニン細胞刺激ホルモン(MSH)","甲状腺刺激ホルモン","成長ホルモン","インスリン"], correct:0,
+      explain:"ACTHはメラニン細胞刺激ホルモン(MSH)と類似した構造を持つため、皮膚や粘膜に色素沈着を引き起こします。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"急激なストレス時にコルチゾールが十分分泌されず陥る、生命を脅かす危険な病態は?", options:["甲状腺クリーゼ","副腎クリーゼ","高血糖性昏睡","低血糖性昏睡"], correct:1,
+      explain:"副腎機能が低下した患者では急性ストレス時に副腎クリーゼという危険な病態に陥ることがあります。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"コルチゾールの日内変動リズムは何と呼ばれる?", options:["概日リズム(サーカディアンリズム)","月経周期","概月リズム","超日リズム"], correct:0,
+      explain:"コルチゾールの分泌リズムは概日リズム(サーカディアンリズム)と呼ばれます。" },
+    { category:"body", source:"身体の仕組み/副腎皮質ホルモン:コルチゾールの作用", q:"アジソン病の原因として本文で挙げられているのは、副腎皮質そのものの障害と何?", options:["感染症","自己免疫疾患","栄養失調","遺伝子変異のみ"], correct:1,
+      explain:"アジソン病は副腎皮質そのものの障害や、自己免疫疾患などが原因となって生じます。" },
+
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"順天堂大学とヤクルトの共同研究で、糖尿病患者50人中何人の血液から腸内細菌が発見された?", options:["5人","14人","25人","40人"], correct:1,
+      explain:"糖尿病患者50人のうち14人の血液から腸内細菌が発見されました。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"腸が持つ、栄養吸収と異物侵入防止を両立する性質を何と呼ぶ?", options:["選択的透過性","能動輸送","拡散平衡","恒常性"], correct:0,
+      explain:"栄養吸収と異物侵入防止という2機能を両立する性質を選択的透過性と呼びます。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"腸上皮細胞同士を繋ぎ合わせる結合構造で、これが緩むと透過性が異常に高まるのは?", options:["デスモソーム","タイトジャンクション","ギャップ結合","接着結合"], correct:1,
+      explain:"タイトジャンクションという結合が緩むと、腸の透過性が異常に高まります。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"腸のバリアを守る免疫物質として本文で挙げられているのは?", options:["IgG","IgA(免疫グロブリン)","IgM","IgE"], correct:1,
+      explain:"腸は腸上皮細胞・腸内細菌・免疫グロブリン(IgA)など複数のバリアで守られています。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"リーキーガットの原因の一つ、抗生物質の乱用が問題となるのはなぜ?", options:["善玉菌も減らしてしまうから","胃酸を増やすから","タイトジャンクションを直接壊すから","血糖値を上げるから"], correct:0,
+      explain:"抗生物質は病原菌を殺しますが、同時に善玉菌まで減らしてしまい腸のバリアを弱めます。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"加工食品や食品添加物のうち、腸粘膜を損傷させるとして挙げられているものは?", options:["食物繊維","人工甘味料・保存料・着色料","オリゴ糖","プロバイオティクス"], correct:1,
+      explain:"人工甘味料や保存料、着色料は腸の粘膜を損傷させ、バリア機能を弱めます。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"砂糖や果糖ぶどう糖液糖の過剰摂取が腸に与える影響は?", options:["善玉菌を増殖させる","悪玉菌を増殖させる","タイトジャンクションを強化する","影響しない"], correct:1,
+      explain:"砂糖や果糖ぶどう糖液糖は腸内の悪玉菌を増殖させ、腸壁に隙間を作り出します。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"ストレスが腸に与える影響として本文で説明されているのは?", options:["胃酸分泌が増加し消化が良くなる","胃酸分泌が低下し未消化タンパク質の負担が増える","腸内細菌が増える","影響しない"], correct:1,
+      explain:"ストレスは胃酸の分泌を低下させ、未消化のタンパク質が腸に流れ込み負担を増加させます。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"リーキーガットの原因として本文で挙げられていないのは?", options:["抗生物質の乱用","アルコールの過剰摂取","睡眠不足","ストレス"], correct:2,
+      explain:"6つの原因(腸内細菌バランスの乱れ・抗生物質乱用・加工食品や添加物・精製小麦や砂糖・ストレス・アルコール)に睡眠不足は含まれていません。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"避けるべき食品として挙げられている、小麦製品に含まれるタンパク質は?", options:["カゼイン","グルテン","ラクトース","フィチン酸"], correct:1,
+      explain:"避けるべき食品として、小麦製品に含まれるグルテンが挙げられています。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"避けるべき食品として挙げられている、乳製品に含まれるタンパク質は?", options:["グルテン","カゼイン","アルブミン","コラーゲン"], correct:1,
+      explain:"避けるべき食品として、乳製品に含まれるカゼインが挙げられています。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"改善に有効な栄養素、プロバイオティクスとは何を指す?", options:["善玉菌の餌","善玉菌そのもの","食物繊維","抗酸化物質"], correct:1,
+      explain:"プロバイオティクスは乳酸菌・ビフィズス菌・ロイテリ菌などの善玉菌そのものを指します。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"プレバイオティクス(善玉菌の餌)として挙げられている食品は?", options:["乳酸菌","オクラ・海藻・こんにゃく等の水溶性食物繊維","グルタミン","亜麻仁油"], correct:1,
+      explain:"プレバイオティクスとしてオクラ・海藻・こんにゃく等の水溶性食物繊維やオリゴ糖が挙げられています。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"改善に有効な必須栄養素のうち、特に「腸のバリア機能を高める重要な役割」を持つとされるのは?", options:["ビタミンA","ビタミンD","亜鉛","マグネシウム"], correct:1,
+      explain:"必須栄養素(ビタミンA・D、亜鉛、マグネシウム)のうち、特にビタミンDはバリア機能強化に重要とされています。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"腸粘膜細胞のエネルギー源であり、腸の修復を助けるアミノ酸は?", options:["グルタミン","グリシン","アルギニン","ロイシン"], correct:0,
+      explain:"グルタミンは腸粘膜細胞のエネルギー源であり、腸の修復を助ける働きがあります。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"改善に有効な良質な脂肪として挙げられている、青魚や亜麻仁油に含まれる脂肪酸は?", options:["オメガ6脂肪酸","オメガ3脂肪酸","トランス脂肪酸","飽和脂肪酸"], correct:1,
+      explain:"青魚や亜麻仁油のオメガ3脂肪酸は抗炎症作用を持ち、腸の健康をサポートします。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"リーキーガット改善においては、オメガ3脂肪酸に対しオメガ6脂肪酸やトランス脂肪酸の過剰摂取はどう扱うべき?", options:["積極的に摂るべき","控えるべき","影響しない","同量摂るべき"], correct:1,
+      explain:"トランス脂肪酸や過剰なオメガ6脂肪酸は炎症を悪化させるため控えることが大切です。" },
+    { category:"body", source:"身体の仕組み/リーキガット症候群の原因と改善策", q:"プレバイオティクスの一種として挙げられているオリゴ糖の役割は?", options:["悪玉菌を殺す","善玉菌の餌となり腸内フローラを保つ","タイトジャンクションを壊す","胃酸を中和する"], correct:1,
+      explain:"オリゴ糖は善玉菌の餌となり、腸内フローラを良好に保つのに役立ちます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"空腹時の正常な血糖値の目安は?", options:["60〜70mg/dL","80〜90mg/dL","110〜120mg/dL","140〜150mg/dL"], correct:1,
+      explain:"正常な血糖値の範囲は空腹時で80から90mg/dLが一つの目安となります。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"血糖値が低い時、膵臓のランゲルハンス島α細胞から分泌され肝グリコーゲンを分解するホルモンは?", options:["インスリン","グルカゴン","コルチゾール","甲状腺ホルモン"], correct:1,
+      explain:"グルカゴンは膵臓のランゲルハンス島α細胞から分泌され、肝グリコーゲンを分解して血糖値を上げます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"緊急時、交感神経を通じて副腎から分泌され血糖値を上昇させるホルモンは?", options:["インスリン","アドレナリン","グルカゴン単独","GLP-1"], correct:1,
+      explain:"アドレナリンは交感神経を通じて副腎から分泌され、肝グリコーゲン分解により血糖値を上昇させます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"高血糖時に膵臓から分泌され、グルコースを細胞内に取り込ませるホルモンは?", options:["グルカゴン","インスリン","アドレナリン","コルチゾール"], correct:1,
+      explain:"インスリンは高血糖時に膵臓から分泌され、血中のグルコースを細胞内に取り込ませます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"玉ねぎやゴボウなどの水溶性食物繊維が腸内細菌に発酵されて作られる物質は?", options:["ケトン体","短鎖脂肪酸","乳酸","アンモニア"], correct:1,
+      explain:"水溶性食物繊維が腸内細菌によって発酵されると、酢酸・プロピオン酸・酪酸といった短鎖脂肪酸が生成されます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"短鎖脂肪酸のうち、GLP-1やPYYの分泌を促しインスリン分泌をサポートする物質は?", options:["酢酸","プロピオン酸","酪酸","クエン酸"], correct:2,
+      explain:"酪酸は腸でGLP-1やPYYの分泌を促進し、インスリンの分泌をサポートします。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"酪酸が促す、食欲を抑制する作用に関わるホルモンは、GLP-1と何?", options:["インスリン","PYY","グルカゴン","コルチゾール"], correct:1,
+      explain:"酪酸はGLP-1とPYYの分泌を促進し、食欲を抑制する作用があります。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"腸粘膜層の維持とインスリン感受性の向上に寄与するとして注目されている腸内細菌は?", options:["ビフィズス菌","アッカーマンシア・ムシニフィラ","乳酸菌","酪酸菌"], correct:1,
+      explain:"アッカーマンシア・ムシニフィラという腸内細菌は、腸の粘膜層を維持しインスリン感受性を高める働きがあります。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"血糖値安定のための実践ポイントとして、運動が有効とされる理由は?", options:["血糖値を直接下げる薬理作用があるから","筋肉での血糖取り込みを促進しインスリン感受性を高めるから","胃酸分泌を促すから","体温を下げるから"], correct:1,
+      explain:"有酸素運動や筋力トレーニングは筋肉での血糖の取り込みを促進しインスリン感受性を向上させます。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"過度なストレスが血糖値を上げる原因となるのは、何というホルモンの分泌が増えるため?", options:["インスリン","アドレナリンやコルチゾール","甲状腺ホルモン","メラトニン"], correct:1,
+      explain:"過度なストレスはアドレナリンやコルチゾールの分泌を増やし血糖値を上昇させる原因となります。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"短鎖脂肪酸のうち、腸で糖新生を刺激し空腹時血糖の安定化にも関与するのは?", options:["酢酸","酪酸","プロピオン酸単独","乳酸"], correct:1,
+      explain:"酪酸は腸で糖新生を刺激し、空腹時の血糖値を安定させる効果も持っています。" },
+    { category:"body", source:"身体の仕組み/血糖値をコントロールする鍵", q:"血糖値安定のための実践ポイントとして本文が挙げていないものは?", options:["食物繊維豊富な食事","有酸素運動・筋トレ","十分な睡眠","空腹時間を極力作らないこと"], correct:3,
+      explain:"実践ポイントとして食生活の改善・運動習慣・ストレス管理・十分な睡眠が挙げられており、空腹時間を作らないことは述べられていません。" },
+
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"活性酸素が主に発生する細胞内の場所は?", options:["核","ミトコンドリア","小胞体","ゴルジ体"], correct:1,
+      explain:"活性酸素が発生する主な場所はミトコンドリアです。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"エネルギー生成過程で、酸素のおよそ何%が不完全に処理され活性酸素となる?", options:["2〜5%","10〜15%","20〜25%","30〜40%"], correct:0,
+      explain:"エネルギーを作る過程で、酸素の約2%から5%が不完全に処理され活性酸素として漏れ出します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"活性酸素の中で反応性は低いが他の活性酸素の元になるのは?", options:["過酸化水素","スーパーオキシド","ヒドロキシラジカル","一重項酸素"], correct:1,
+      explain:"スーパーオキシドは比較的反応性が低いものの、他の活性酸素を作り出すもとになります。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"細胞膜を通過し広範囲に影響を与える活性酸素は?", options:["スーパーオキシド","過酸化水素","ヒドロキシラジカル","一重項酸素"], correct:1,
+      explain:"過酸化水素は細胞膜を通り抜けることができるため、広い範囲に影響を与えます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"最も反応性が高くDNA・脂質・タンパク質を瞬時に損傷させる活性酸素は?", options:["スーパーオキシド","過酸化水素","ヒドロキシラジカル","一重項酸素"], correct:2,
+      explain:"最も反応性が高いヒドロキシラジカルは、DNAや脂質、タンパク質を瞬時に損傷させます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"紫外線によって生成され、細胞膜脂質を強く酸化させる活性酸素は?", options:["スーパーオキシド","過酸化水素","ヒドロキシラジカル","一重項酸素"], correct:3,
+      explain:"一重項酸素は紫外線によって生成され、細胞膜の脂質を強力に酸化させます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"脂質が酸化されることで起こる、細胞膜機能の低下につながる現象は?", options:["脂質過酸化","糖化","加水分解","異性化"], correct:0,
+      explain:"細胞膜の脂質が酸化されると脂質過酸化が起こり、細胞膜の機能が損なわれます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"DNAが酸化されることで高まるとされるリスクは?", options:["貧血","がんリスク","動脈硬化のみ","骨粗鬆症"], correct:1,
+      explain:"酸化で損傷したDNAの存在は、がんのリスクと関連することが研究で示されています。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"スーパーオキシドを過酸化水素に変換する抗酸化酵素は?", options:["カタラーゼ","SOD","グルタチオンペルオキシダーゼ","Nrf2"], correct:1,
+      explain:"SOD酵素はスーパーオキシドを過酸化水素に変換します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"過酸化水素を安全な水と酸素に分解する抗酸化酵素は?", options:["SOD","カタラーゼ","グルタチオンペルオキシダーゼ","Nrf2"], correct:1,
+      explain:"カタラーゼ酵素は過酸化水素を安全な水と酸素に分解します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"グルタチオンを利用して過酸化水素を分解する抗酸化酵素は?", options:["SOD","カタラーゼ","グルタチオンペルオキシダーゼ","Nrf2"], correct:2,
+      explain:"グルタチオンペルオキシダーゼ酵素はグルタチオンを利用して過酸化水素を分解します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"3つのアミノ酸から作られる、重要な細胞内抗酸化物質は?", options:["グルタチオン","コエンザイムQ10","ポリフェノール","カロテノイド"], correct:0,
+      explain:"グルタチオンは3つのアミノ酸から作られる重要な細胞内抗酸化物質です。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"水に溶ける抗酸化物質で、ビタミンEの働きを助けるのは?", options:["ビタミンC","ビタミンD","ビタミンK","ビタミンB12"], correct:0,
+      explain:"ビタミンCは水に溶ける抗酸化物質で、ビタミンEの働きを助けます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"脂肪に溶ける抗酸化物質で、細胞膜への脂質過酸化を防ぐのは?", options:["ビタミンC","ビタミンE","ビタミンB群","ビタミンK"], correct:1,
+      explain:"ビタミンEは脂肪に溶ける抗酸化物質で、細胞膜への脂質過酸化を防ぎます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"「抗酸化マスタースイッチ」と呼ばれ、普段Keap1に抑制されているタンパク質は?", options:["SOD","Nrf2","カタラーゼ","グルタチオン"], correct:1,
+      explain:"Nrf2は抗酸化マスタースイッチと呼ばれ、普段はKeap1というタンパク質に抑制されています。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"Nrf2が酸化ストレスを感知すると移動する場所は?", options:["細胞膜","核内","ミトコンドリア","細胞外"], correct:1,
+      explain:"Nrf2は酸化ストレスを感知すると細胞の核に移動します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"Nrf2が核内で結合し、解毒酵素等の生産を増加させるDNA領域を何と呼ぶ?", options:["プロモーター単独","抗酸化応答エレメント(ARE)","テロメア","エンハンサー単独"], correct:1,
+      explain:"Nrf2は核内で抗酸化応答エレメント(ARE)と呼ばれる領域に結合し、解毒酵素等の生産を増加させます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"ブロッコリースプラウトに含まれ、Nrf2を活性化する成分は?", options:["スルフォラファン","カテキン","アントシアニン","フラバノール"], correct:0,
+      explain:"ブロッコリースプラウトに含まれるスルフォラファンがNrf2を活性化します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"臨床研究でスルフォラファンを3〜5日間摂取すると、解毒酵素の活性はどうなった?", options:["変化なし","約2倍に増加","半減した","10倍に増加"], correct:1,
+      explain:"臨床研究では、スルフォラファンを3日から5日間摂取すると解毒酵素の活性が約2倍に増加しました。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"ベリー類に豊富に含まれ、脳機能を保護するポリフェノールは?", options:["カテキン","アントシアニン","フラバノール","リコピン"], correct:1,
+      explain:"ブルーベリーやラズベリーなどのベリー類には、アントシアニンなどのポリフェノールが豊富で脳機能を保護します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"トマトやニンジン、柑橘類に含まれる複合的な抗酸化作用を示す成分として挙げられていないのは?", options:["リコピン","βカロテン","ビタミンC","アントシアニン"], correct:3,
+      explain:"トマト・ニンジン・柑橘類にはリコピン、βカロテン、ビタミンCが含まれるとされ、アントシアニンはベリー類の成分として挙げられています。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"緑茶に含まれ、直接的な抗酸化作用とNrf2活性化作用を持つ成分は?", options:["スルフォラファン","カテキン類","フラバノール","アントシアニン"], correct:1,
+      explain:"緑茶のカテキン類は、直接的な抗酸化作用とNrf2活性化作用を持ちます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"カカオ70%以上のダークチョコレートに豊富で、血管内皮機能の改善に役立つ成分は?", options:["カテキン","フラバノール","アントシアニン","リコピン"], correct:1,
+      explain:"カカオ70%以上のダークチョコレートにはフラバノールが豊富で、血管内皮機能の改善に役立ちます。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"酸化に強く、一価不飽和脂肪酸が主体の油として推奨されているのは?", options:["サラダ油","エキストラバージンオリーブオイル","コーン油","大豆油"], correct:1,
+      explain:"エキストラバージンオリーブオイルは一価不飽和脂肪酸が主体で酸化に強いとされています。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"酸化しやすく、抗酸化対策として避けるべきとされる油の成分は?", options:["一価不飽和脂肪酸","リノール酸","中鎖脂肪酸","オメガ3脂肪酸"], correct:1,
+      explain:"リノール酸の多いサラダ油やコーン油、繰り返し加熱した油は避けるべきとされています。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"抗酸化のために推奨される中強度有酸素運動の目安は週何分?", options:["週50分","週150分","週300分","週500分"], correct:1,
+      explain:"週150分の中強度有酸素運動が推奨されており、長期的に抗酸化防御システムを強化します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"質の良い睡眠(7〜8時間)で活性化し、代謝産物の除去を促進する脳内の仕組みは?", options:["オートファジー","グリンパティックシステム","概日リズム","電子伝達系"], correct:1,
+      explain:"7〜8時間の質の良い睡眠では、脳内のグリンパティックシステムが活性化し老廃物除去を促進します。" },
+    { category:"body", source:"身体の仕組み/抗酸化のメカニズム", q:"16時間断食と8時間摂食を組み合わせる時間制限食が活性化するとされる、細胞の自己浄化の仕組みは?", options:["アポトーシス","オートファジー","ネクローシス","ミトファジー単独"], correct:1,
+      explain:"16時間断食と8時間摂食を組み合わせる時間制限食はオートファジー(細胞の自己浄化)を活性化します。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"皮膚が太陽光を浴びることで生成される動物由来のビタミンDは?", options:["ビタミンD2","ビタミンD3","ビタミンK2","ビタミンB2"], correct:1,
+      explain:"ビタミンD3は皮膚が太陽光を浴びることで生成される動物由来のビタミンです。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"干し椎茸などキノコ類に多く含まれる植物由来のビタミンDは?", options:["ビタミンD3","ビタミンD2","ビタミンK2","ビタミンA"], correct:1,
+      explain:"ビタミンD2は干し椎茸などのキノコ類や強化食品に多く含まれる植物由来のビタミンです。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンD3とD2を比べた場合、体内での吸収効率が高いのはどちらとされる?", options:["D2","D3","同程度","どちらも低い"], correct:1,
+      explain:"ビタミンD3はD2と比べて体内で効率的に吸収され血中に長く留まります。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"皮膚が紫外線B波を浴びると反応し、プレビタミンD3のもとになる物質は?", options:["7-デヒドロコレステロール","HDLコレステロール","胆汁酸","エルゴステロール単独"], correct:0,
+      explain:"皮膚内にあるコレステロールの一種である7-デヒドロコレステロールが紫外線B波に反応しプレビタミンD3を生成します。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンD3は血液中に放出された後、肝臓で何に変換される?", options:["活性型ビタミンD","25-ヒドロキシビタミンD","7-デヒドロコレステロール","プロビタミンD3"], correct:1,
+      explain:"ビタミンD3は肝臓に運ばれて25-ヒドロキシビタミンDに変換されます。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"25-ヒドロキシビタミンDは、どこで活性型ビタミンDに変換される?", options:["肝臓","腎臓","皮膚","小腸"], correct:1,
+      explain:"25-ヒドロキシビタミンDは腎臓で活性型ビタミンDへと変化します。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンD3が活性化させるとされる、「幸せホルモン」と呼ばれる神経伝達物質は?", options:["ドーパミン","セロトニン","オキシトシン","メラトニン"], correct:1,
+      explain:"ビタミンDは幸せホルモンと呼ばれるセロトニンを活性化させる役割を果たします。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"冬場、日照時間減少によるビタミンD不足が一因とされる気分の不調は?", options:["パニック障害","季節性うつ(季節性情動障害)","強迫性障害","適応障害"], correct:1,
+      explain:"冬になるとビタミンD不足により季節性うつ(季節性情動障害)になる人が増えると説明されています。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンDが影響を与えるとされる脳の部位として本文で挙げられているのは、視床下部とどこ?", options:["小脳","海馬","大脳皮質のみ","延髄"], correct:1,
+      explain:"ビタミンDは脳の海馬や視床下部といった記憶やホルモンの調整に関わる部分にも影響を与えています。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"フィンランドの研究で、幼少期に十分なビタミンDを摂取していた人は何の発症率が低いと確認された?", options:["うつ病","統合失調症","認知症","ADHD"], correct:1,
+      explain:"フィンランドの研究で、幼少期にビタミンDを十分摂取していた人は統合失調症の発症率が低いことが確認されました。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンD3と併用が推奨される、納豆などに多く含まれるビタミンは?", options:["ビタミンC","ビタミンK2","ビタミンB12","ビタミンE"], correct:1,
+      explain:"納豆などの発酵食品に多く含まれるビタミンK2はビタミンD3との併用が推奨されています。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンK2の役割は、カルシウムを骨や歯に届けることに加えて何を防ぐこと?", options:["カルシウムが血管に沈着すること","カルシウムが尿に排出されること","カルシウムが不足すること","カルシウムが皮膚に沈着すること"], correct:0,
+      explain:"ビタミンK2はカルシウムを骨や歯に届けつつ、カルシウムが血管に沈着するのを防ぐ役割を果たします。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"効果的なビタミンD生成のための日光浴の目安時間帯は、紫外線が強い何時から何時の間?", options:["午前6時〜9時","午前10時〜午後3時","午後3時〜6時","終日いつでも同じ"], correct:1,
+      explain:"紫外線が最も強い午前10時から午後3時の間に15〜30分程度の日光浴が推奨されています。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"サプリメントからのビタミンD摂取目安として本文で挙げられている量は?", options:["1000IU","4000IU","10000IU","400IU"], correct:1,
+      explain:"1日当たり4000IUのビタミンDをサプリメントから摂取するのも効果的とされています。" },
+    { category:"nutrition", source:"栄養学の基礎/太陽のビタミン、D3の力", q:"ビタミンDが体内で活性型に変換される際に必要とされ、不足するとビタミンDの効果が十分発揮されないミネラルは?", options:["カルシウム","マグネシウム","亜鉛","鉄"], correct:1,
+      explain:"ビタミンDが活性型に変換される際にはマグネシウムが必要とされます。" },
+
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"舌の表面にあり、味覚を感じるセンサーで、亜鉛が再生に関わる器官は?", options:["味蕾","舌乳頭","唾液腺","扁桃"], correct:0,
+      explain:"舌の表面には味覚を感じるセンサーである味蕾があり、亜鉛は味蕾の再生に関わっています。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"アトピー性皮膚炎の原因として本文が説明する、皮膚のバリア機能低下の要因は?", options:["ビタミン不足のみ","タンパク質やセラミド不足","亜鉛過剰","睡眠不足"], correct:1,
+      explain:"アトピー性皮膚炎は皮膚のタンパク質やセラミド不足によって皮膚のバリア機能が低下することで起こります。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"正常な皮膚でアレルゲンや異物を察知し免疫反応を引き起こす免疫細胞は?", options:["マクロファージ","ランゲルハンス細胞","好酸球","NK細胞"], correct:1,
+      explain:"正常な皮膚ではランゲルハンス細胞という免疫細胞がアレルゲンや異物を察知し免疫反応を引き起こします。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"アトピー性皮膚炎では、ランゲルハンス細胞がどこまで伸びてきて過剰な免疫反応を起こす?", options:["真皮の深部","角質層","皮下組織","血管内"], correct:1,
+      explain:"アトピー性皮膚炎ではランゲルハンス細胞が角質層まで伸びてきてしまい、過剰な免疫反応を引き起こします。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"皮膚のターンオーバー(新陳代謝)の周期はおよそ何日?", options:["7日","28日","60日","90日"], correct:1,
+      explain:"皮膚はおよそ28日で新しい細胞に入れ替わります。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"亜鉛が構成要素となっている、DNAの複製をサポートする酵素は?", options:["DNAポリメラーゼ","DNAリガーゼ","RNAポリメラーゼ","ヘリカーゼ"], correct:0,
+      explain:"亜鉛はDNAポリメラーゼという酵素の構成要素で、DNAの複製をサポートします。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"亜鉛を含み、DNAに結合して細胞分裂を調整するタンパク質は?", options:["ジンクフィンガー","フェリチン","アルブミン","コラーゲン"], correct:0,
+      explain:"亜鉛を含むジンクフィンガーというタンパク質がDNAに結合して細胞分裂を調整します。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"皮膚の免疫細胞が放出する活性酸素を消去する、亜鉛を補因子とする酵素は?", options:["カタラーゼ","SOD","グルタチオンペルオキシダーゼ","Nrf2"], correct:1,
+      explain:"SODは亜鉛を補因子として利用し、活性酸素を消去する働きがあります。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"亜鉛は上記の働きから何と呼ばれるミネラルとされる?", options:["造血ミネラル","抗炎症ミネラル","抗酸化ビタミン","必須脂肪酸"], correct:1,
+      explain:"亜鉛はSODの補因子となり炎症を抑える働きから抗炎症ミネラルと呼ばれます。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"「亜鉛の王様」と呼ばれるほど豊富に亜鉛を含む代表的な食材は?", options:["赤身肉","生ガキ","卵黄","ホタテ"], correct:1,
+      explain:"生ガキは1日に必要な摂取量をほとんど満たすほどの亜鉛を含み、亜鉛の王様と呼ばれます。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"豆類やナッツ類など植物性食品の亜鉛の吸収を妨げるとされる物質は?", options:["タンニン","フィチン酸","シュウ酸","サポニン"], correct:1,
+      explain:"植物に含まれるフィチン酸という物質が亜鉛の吸収を妨げるため、動物性食品からの摂取の方が効果的です。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"アトピー対策に最適とされる、高吸収の亜鉛サプリメントの種類は?", options:["酸化亜鉛","ピコリン酸亜鉛","硫酸亜鉛","グルコン酸亜鉛"], correct:1,
+      explain:"ピコリン酸亜鉛は亜鉛を腸で吸収しやすい形に変えるため、アトピー性皮膚炎対策に最も効果的とされています。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"長期にわたる高用量の亜鉛サプリメント摂取で懸念されるリスクは?", options:["鉄過剰症","銅欠乏症","カルシウム過剰症","ナトリウム欠乏症"], correct:1,
+      explain:"長期的な亜鉛サプリメントの高容量摂取は銅欠乏症を引き起こすリスクがあります。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"亜鉛の働きをサポートし炎症を抑える効果が期待できるとされるビタミンは?", options:["ビタミンA","ビタミンB6","ビタミンK","ビタミンB12"], correct:1,
+      explain:"ビタミンB6は亜鉛の働きをサポートし、炎症を抑える効果が期待できます。" },
+    { category:"nutrition", source:"栄養学の基礎/亜鉛が導く肌の健康革命", q:"亜鉛と併用が推奨される、抗炎症作用を持つ脂肪酸(EPAやDHA)は何と呼ばれる?", options:["オメガ6脂肪酸","オメガ3脂肪酸","トランス脂肪酸","飽和脂肪酸"], correct:1,
+      explain:"EPAやDHAなどのオメガ3脂肪酸は抗炎症作用を持ち、亜鉛の効果を高める栄養素として挙げられています。" },
+
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムは体内で何種類以上の酵素反応に関わる?", options:["100種類以上","300種類以上","600種類以上","1000種類以上"], correct:2,
+      explain:"マグネシウムは600種類以上の酵素反応に関わる必須ミネラルです。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムが関わる、異常な細胞を自然死させて排除する仕組みは?", options:["オートファジー","アポトーシス","ネクローシス","ミトーシス"], correct:1,
+      explain:"マグネシウムはアポトーシスを促進することで異常な細胞を適切に排除する働きがあります。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"スウェーデンの研究(女性6万人・14年追跡)で、マグネシウム摂取量が多いほどリスクが低下したがんは?", options:["乳がん","結腸がん・直腸がん","肺がん","膵臓がん"], correct:1,
+      explain:"スウェーデンの研究では、マグネシウムの摂取量が多いほど結腸がんや直腸がんのリスクが低下することが分かりました。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"日本での研究(約8.7万人・10年追跡)で、マグネシウム摂取量が多いほど大腸がんリスクが低くなる傾向が特に見られたのは?", options:["女性","男性","未成年","高齢者全般"], correct:1,
+      explain:"日本の研究では特に男性において、マグネシウムの摂取量が多いほど大腸がんのリスクが低くなることが確認されています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"予後が悪く5年生存率が低い難治性のがんとして本文で挙げられ、マグネシウム摂取量が推奨量の75%未満でリスクが著しく上昇するとされたのは?", options:["大腸がん","膵臓がん","乳がん","肺がん"], correct:1,
+      explain:"膵臓がんは摂取量が推奨量の75%に満たないとリスクが著しく高まることが示されています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"上記の研究で、1日の摂取量が推奨量より100mg少ないと発がんリスクは何%上昇するとされた?", options:["5%","24%","50%","75%"], correct:1,
+      explain:"1日当たりの摂取量が推奨量よりも100mg少ないと24%も発がんリスクが上昇するとされています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"乳がん患者1172人を対象にした研究で、マグネシウムをしっかり摂っているグループは何が低かった?", options:["再発率","死亡率","入院日数","治療費"], correct:1,
+      explain:"マグネシウムをしっかりとっているグループの方が乳がんによる死亡率が低いことが示されました。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムのがん予防メカニズムとして、DNAの安定化以外に本文で挙げられているのは、細胞分化のコントロールと何?", options:["血管新生の抑制","アポトーシスの促進","テロメアの伸長","免疫細胞の活性化"], correct:1,
+      explain:"マグネシウムは細胞分化と増殖のコントロールに加え、アポトーシスを促進することでがん予防に関わります。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"1日のマグネシウム推奨摂取量は?", options:["100〜200mg","350〜500mg","700〜900mg","1000mg以上"], correct:1,
+      explain:"1日の推奨摂取量は350から500mgとされています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"日本人の1日のマグネシウム平均摂取量はおよそどのくらい?", options:["約100mg","約250mg","約400mg","約600mg"], correct:1,
+      explain:"日本人の平均摂取量はわずか250mg程度にとどまっています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムを効率的に摂取できるとされる、葉緑素の中心にマグネシウムを含む藻の一種は?", options:["スピルリナ","クロレラ","昆布","わかめ"], correct:1,
+      explain:"藻の一種であるクロレラは葉緑素の中心にマグネシウムを含むため効率的な摂取源とされています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"加工食品がマグネシウム摂取の観点から問題とされる理由は?", options:["マグネシウムが多すぎるから","マグネシウムが少なくミネラルバランスを崩しやすいから","吸収を阻害する成分を含むから","特に問題はない"], correct:1,
+      explain:"加工食品はマグネシウムが少なく、摂取するとミネラルバランスが崩れる可能性があります。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウム不足の初期サインとして本文で挙げられていないのは?", options:["疲労感・倦怠感","筋肉のけいれん","不整脈・高血圧","視力低下"], correct:3,
+      explain:"初期サインとして疲労感・倦怠感、筋肉のけいれん、不安感・集中力低下、不整脈・高血圧が挙げられており、視力低下は述べられていません。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムのがん予防効果は、どのビタミンとの連携が鍵を握るとされている?", options:["ビタミンC","ビタミンD","ビタミンB12","ビタミンK"], correct:1,
+      explain:"ビタミンDとの連携ががん予防の鍵を握っていることが明らかになってきたと述べられています。" },
+    { category:"nutrition", source:"栄養学の基礎/マグネシウムが人類を救う", q:"マグネシウムが豊富とされる食品群として本文で挙げられていないのは?", options:["海藻類","豆類","種実類","乳製品"], correct:3,
+      explain:"食事からの摂取源として海藻類・豆類・種実類・緑黄色野菜が挙げられており、乳製品は述べられていません。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"厚生労働省の調査によると、20〜40代女性の約何%が貧血または潜在性貧血とされる?", options:["25%","45%","65%","85%"], correct:2,
+      explain:"厚生労働省の調査によると、20から40代の女性の約65%が貧血または潜在性の貧血状態にあるとされます。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"鉄が構成要素となる、酸素を全身に運ぶ赤血球中のタンパク質は?", options:["アルブミン","ヘモグロビン","フェリチン","ミオグロビン単独"], correct:1,
+      explain:"鉄は血液中の赤血球に含まれるヘモグロビンの一部として、体の隅々まで酸素を届けます。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"鉄がミトコンドリアで必要とされる、エネルギー産生に関わる酵素は?", options:["SOD","シトクロムcオキシダーゼ","カタラーゼ","DNAポリメラーゼ"], correct:1,
+      explain:"ミトコンドリアではシトクロムcオキシダーゼと呼ばれる酵素が鉄を必要としています。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"血液中の鉄の状態を反映する指標で、「日々使う現金」に例えられるのは?", options:["フェリチン値","ヘモグロビン値","ヘマトクリット値","トランスフェリン値"], correct:1,
+      explain:"ヘモグロビンは日々使う現金に例えられ、現在の血液中の鉄の状態を反映します。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"体内の鉄貯蔵量を反映し、「銀行の預金」に例えられる指標は?", options:["ヘモグロビン値","フェリチン値","血清鉄","総鉄結合能"], correct:1,
+      explain:"フェリチンは銀行の預金に例えられ、体内の鉄貯蔵量を反映します。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"成人女性のヘモグロビン値の基準は、本文によるとおよそ何g/dL以上?", options:["8g/dL以上","12g/dL以上","16g/dL以上","20g/dL以上"], correct:1,
+      explain:"成人女性で12g/dL以上が基準となっています。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"女性の場合、フェリチン値は何ng/mL以上が望ましいとされる?", options:["10〜20","50〜70","100〜120","150以上"], correct:1,
+      explain:"女性の場合フェリチン値は50〜70ng/mL以上が望ましいとされます。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"女性の鉄不足の最も多い原因として本文で挙げられているのは?", options:["運動不足","月経による出血","睡眠不足","カフェイン過剰摂取"], correct:1,
+      explain:"女性の鉄不足で最も多い原因は月経による出血です。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"月経による出血に関連して、鉄不足の背景として挙げられているホルモンは?", options:["プロゲステロン","エストロゲン","テストステロン","コルチゾール"], correct:1,
+      explain:"女性ホルモンの一つであるエストロゲンの過剰分泌が鉄不足の背景に関係しています。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"鉄不足の2つ目の原因、胃酸不足を補うために食前に摂ると良いとされるものは?", options:["牛乳","生姜・パセリ・酢等","コーヒー","精製された穀物"], correct:1,
+      explain:"生姜やパセリ、酢などを使った料理を食前に取ることで胃酸の分泌を促すことがポイントです。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"動物性食品に含まれ、吸収率が10〜25%と高い鉄の形態は?", options:["非ヘム鉄","ヘム鉄","キレート鉄","イオン鉄単独"], correct:1,
+      explain:"赤身肉や魚などの動物性食品に含まれるヘム鉄は吸収率が10から25%と高いです。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"植物性食品に含まれ、吸収率が2〜5%とやや低い鉄の形態は?", options:["ヘム鉄","非ヘム鉄","キレート鉄","フェリチン鉄"], correct:1,
+      explain:"豆類や野菜、海藻などに含まれる非ヘム鉄は吸収率が2から5%とやや控えめです。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"レモンなどの柑橘類と一緒に摂ることで、ヘム鉄の吸収率は最大何倍にアップするとされる?", options:["1.2倍","2.9倍","5倍","10倍"], correct:1,
+      explain:"柑橘類と一緒に食べることで、ヘム鉄の吸収率は最大2.9倍にもアップします。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"鉄の吸収を妨げる組み合わせとして本文で挙げられていないのは?", options:["乳製品のカルシウム","玄米・豆類のフィチン酸","コーヒー/紅茶のカフェイン","柑橘類のビタミンC"], correct:3,
+      explain:"鉄の吸収を妨げるのは乳製品のカルシウム・フィチン酸・カフェインで、柑橘類のビタミンCはむしろ吸収を高めます。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"重度の鉄不足改善に効果的で、胃腸への負担が少ないとされる鉄サプリメントの種類は?", options:["硫酸鉄","キレート化された鉄","酸化鉄","クエン酸鉄単独"], correct:1,
+      explain:"キレート化された鉄サプリメントは吸収率が高く胃腸への負担が少ないとされています。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"鉄分は主に消化管のどこで吸収される?", options:["胃","十二指腸や小腸上部","大腸","食道"], correct:1,
+      explain:"鉄分は主に十二指腸や小腸の上部で吸収されます。" },
+    { category:"nutrition", source:"栄養学の基礎/疲労感や貧血を防ぐ！鉄の吸収", q:"腸内環境の乱れによる鉄吸収低下を改善するために推奨されているのは、発酵食品と何のビタミン?", options:["ビタミンCとE","ビタミンAとB","ビタミンDとK","ビタミンB12のみ"], correct:1,
+      explain:"発酵食品から乳酸菌等を摂取し、緑黄色野菜や魚類からビタミンA・Bを取り入れることが推奨されています。" },
+
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"コレステロールが材料になるものとして本文で挙げられていないのは?", options:["胆汁酸","ビタミンD","ヘモグロビン","性ホルモン"], correct:2,
+      explain:"コレステロールは胆汁酸、ビタミンD、性ホルモンなどの材料になりますが、ヘモグロビンの材料としては述べられていません。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"コレステロールを肝臓から各細胞へ運搬する役割を持つのは?", options:["HDL","LDL","カイロミクロン","VLDL単独"], correct:1,
+      explain:"LDLは肝臓から体の各細胞にコレステロールを運びます。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"各細胞で余ったコレステロールを回収し肝臓へ運ぶ役割を持つのは?", options:["LDL","HDL","VLDL","カイロミクロン"], correct:1,
+      explain:"HDLは各細胞で余ったコレステロールを回収して肝臓へ運びます。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"血中コレステロールのうち、食事由来の割合はおよそどのくらいとされる?", options:["約80%","約50%","約20%","約5%"], correct:2,
+      explain:"食べ物から得るコレステロールは全体の20%程度に過ぎません。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"血中コレステロールの残り約80%は、どこで合成される?", options:["腸","肝臓","腎臓","筋肉"], correct:1,
+      explain:"残りの約80%は肝臓で合成されています。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"食事でのコレステロール摂取量が増えると肝臓での生成が減少する仕組みを何と呼ぶ?", options:["恒常性維持機構","フィードバック制御","代償性肥大","アロステリック制御単独"], correct:1,
+      explain:"体にはフィードバック制御という調節機構が備わっており、摂取量が増えると肝臓での生成が減少します。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"フィンランドの研究で、コレステロール摂取を減らしリノール酸(植物油)を増やしたグループに見られた結果は?", options:["心臓疾患による死亡率が低下した","心臓疾患による死亡率が上昇した","変化がなかった","対象外だった"], correct:1,
+      explain:"フィンランドの研究では、リノール酸を多く取るよう指導されたグループが心臓疾患による死亡率が高くなったという結果が示されています。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"LDLコレステロールが動脈硬化を引き起こす直接の原因となる、構造が変化した状態は?", options:["通常のLDL","酸化LDL","還元型LDL","遊離型LDL"], correct:1,
+      explain:"LDLコレステロールが血管内に蓄積・酸化ストレスで構造変化することで酸化LDLコレステロールが生成されます。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"酸化LDLコレステロールを取り込んだマクロファージが変化する細胞は?", options:["泡沫細胞","破骨細胞","形質細胞","樹状細胞"], correct:0,
+      explain:"マクロファージが酸化LDLコレステロールを取り込むと泡沫細胞に変化します。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"泡沫細胞が血管壁に蓄積して形成するものは?", options:["血栓","プラーク","嚢胞","肉芽腫"], correct:1,
+      explain:"泡沫細胞が血管壁に蓄積してプラークを形成すると血管内が狭まり動脈硬化の原因となります。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"酸化LDLコレステロールの生成を抑えるために有効とされる食品成分は?", options:["飽和脂肪酸","抗酸化物質(ビタミンC・E・ポリフェノール)","精製糖","トランス脂肪酸"], correct:1,
+      explain:"ビタミンCやビタミンE、ポリフェノールなど抗酸化物質を含む食品を摂取することが有効とされています。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"以前「卵は1日1個まで」とよく言われていたが、本文によると健康な人が卵を1個以上食べても血中コレステロール値はどうなるとされる?", options:["大きく上昇する","大きく上がることはない","急激に低下する","個人差なく上昇する"], correct:1,
+      explain:"健康な人が卵を1個以上食べたとしても血中コレステロール値が大きく上がることはないと説明されています。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"動脈硬化予防の鍵となるのは、LDLと何のバランスとされる?", options:["VLDL","HDL","カイロミクロン","中性脂肪"], correct:1,
+      explain:"LDLコレステロールとHDLコレステロールのバランスを保つことが健康の鍵とされています。" },
+    { category:"nutrition", source:"栄養学の基礎/コレステロールの真実", q:"酸化LDL対策として本文が挙げる生活習慣は、抗酸化物質の摂取に加え禁煙と何を避けること?", options:["運動","過度な飲酒","睡眠","日光浴"], correct:1,
+      explain:"喫煙や過度なアルコール摂取を避けることも大切だと述べられています。" },
+
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12を実際に作り出しているのは何?", options:["植物の葉緑体","動物の腸内に生息する微生物","肝臓の細胞","皮膚の細胞"], correct:1,
+      explain:"ビタミンB12を実際に作り出しているのは動物の腸内に生息する微生物です。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12は水溶性ビタミンで、構造に含まれるミネラルに由来し何と呼ばれる?", options:["コバラミン","フェリチン","チアミン","リボフラビン"], correct:0,
+      explain:"ビタミンB12はコバラミンと呼ばれる水溶性ビタミンです。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"コバラミンという名前の由来となったミネラルは?", options:["鉄","コバルト","亜鉛","マンガン"], correct:1,
+      explain:"ビタミンB12の構造にはコバルトというミネラルが含まれており、これに由来してコバラミンと呼ばれます。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12は、何と共に赤血球の生成やDNA合成に重要な役割を果たす?", options:["ビタミンC","葉酸","ビタミンE","ナイアシン"], correct:1,
+      explain:"ビタミンB12は特に葉酸と共に働き、赤血球の生成やDNAの合成に重要な役割を果たします。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"赤血球の分化を促す、腎臓から分泌されるホルモンは?", options:["エリスロポエチン","レニン","カルシトリオール","アンジオテンシン"], correct:0,
+      explain:"赤血球は腎臓から分泌されるエリスロポエチンというホルモンの働きによって分化します。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12が不足すると赤血球が大きくなりすぎて正常機能しなくなる貧血は?", options:["鉄欠乏性貧血","巨赤芽球性貧血","溶血性貧血","再生不良性貧血"], correct:1,
+      explain:"ビタミンB12が不足すると巨赤芽球性貧血を引き起こし、大きくなりすぎた赤血球が正常に機能しなくなります。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12不足による貧血が引き起こす直接の結果は?", options:["血圧の上昇","酸素運搬能力の低下","血液凝固の促進","白血球の増加"], correct:1,
+      explain:"巨赤芽球性貧血の結果、酸素の運搬能力が低下します。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12は「何のビタミン」とも呼ばれ、神経細胞の保護や修復に重要な役割を果たす?", options:["血液のビタミン","神経のビタミン","骨のビタミン","皮膚のビタミン"], correct:1,
+      explain:"ビタミンB12は神経のビタミンとも呼ばれ、神経細胞の保護や修復に重要な役割を果たします。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12が維持に関与する、神経を包む膜(鞘)は?", options:["シナプス小胞","髄鞘(ミエリン鞘)","軸索起始部","グリア細胞"], correct:1,
+      explain:"ビタミンB12は髄鞘という神経を包む膜の維持に関与していると考えられています。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12不足との関わりが注目されており、特に子供の発達に重要とされる症状・疾患は?", options:["統合失調症","ADHD・発達障害","てんかん","自閉症のみ"], correct:1,
+      explain:"ビタミンB12はADHD、発達障害などとの関わりが注目されており、子供の発達に重要な役割を果たすとされています。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12は、DNA合成に加えて何の代謝に関与し、高タンパク食の人に特に重要とされる?", options:["脂質代謝","アミノ酸代謝","糖代謝","ミネラル代謝"], correct:1,
+      explain:"ビタミンB12はDNAの合成やアミノ酸の代謝にも関与し、高タンパクな食事をとる人に特に重要です。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12を豊富に含む貝類として本文で挙げられているのは、シジミ・アサリと何?", options:["ホタテ","赤貝","カキ","ハマグリ"], correct:1,
+      explain:"貝類としてシジミ、赤貝、アサリなどが高濃度のビタミンB12を含むと挙げられています。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ビタミンB12の摂取源として「王様」と呼ばれるほど豊富に含む食品は?", options:["卵","レバー","煮干し","イクラ"], correct:1,
+      explain:"牛レバーや鶏レバーはビタミンB12の王様とも言える食品です。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"植物性食品(海苔・わかめ・クロレラ・スピルリナ等)に含まれるビタミンB12は、体内でどう扱われる?", options:["動物性食品と同様によく利用される","非活性型で体内で十分に利用されにくい","全く含まれていない","過剰摂取のリスクがある"], correct:1,
+      explain:"植物性食品に含まれるビタミンB12は非活性型であり、体内で十分に利用されず注意が必要です。" },
+    { category:"nutrition", source:"栄養学の基礎/ビタミンB12とは", q:"ヴィーガンの方がビタミンB12不足を予防するために推奨される方法は?", options:["海藻類を多く食べれば十分","活性型ビタミンB12のサプリメントを活用する","特に対策は不要","植物性食品の量を増やす"], correct:1,
+      explain:"ヴィーガンの方が健康を維持するためには、活性型のビタミンB12が含まれたサプリメントを活用することが重要です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"「オーソモレキュラー」の概念を1968年に初めて提唱し、現代の分子栄養学の始まりとなった人物は?", options:["ジェームズ・ワトソン","ライナス・ポーリング","フランシス・クリック","ルイ・パスツール"], correct:1,
+      explain:"1968年、ノーベル賞を二度受賞したライナス・ポーリングが「オーソモレキュラー精神医学」という論文を発表し、これが現代の分子栄養学の始まりとなりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"2022年、米国政府が精密栄養学の研究に投じると発表した金額は?", options:["1700万ドル","1億7000万ドル","17億ドル","7000万ドル"], correct:1,
+      explain:"2022年、米国政府は精密栄養学の研究に1億7000万ドルを投じることを発表しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"インターロイキン6(IL-6)の説明として正しいのは?", options:["骨密度を高めるホルモンである","免疫システムと炎症反応をコントロールするサイトカインである","消化酵素の一種で脂質分解を助ける","睡眠の質を直接調整する神経伝達物質である"], correct:1,
+      explain:"インターロイキン6は免疫システムと炎症反応をコントロールするサイトカイン(細胞間の情報伝達物質)です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"IL-6遺伝子に特定の変異があると起こりやすいこととして、本文で挙げられていないものは?", options:["炎症が慢性化しやすくなる","花粉やハウスダストへの過剰な免疫反応が起こりやすくなる","骨折が治りにくくなる","炎症性疾患・免疫関連の問題のリスクが高まる"], correct:2,
+      explain:"骨折治癒への言及は本文になく、挙げられているのは炎症の慢性化・過剰なアレルギー反応・炎症性疾患や免疫関連問題のリスク上昇です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"IL-6の過剰な炎症反応を抑制する栄養素・成分として、本文で明示的に挙げられていないものは?", options:["EPA・DHA(オメガ3脂肪酸)","クルクミン・カテキン・アントシアニン(ポリフェノール類)","ビタミンD","亜鉛"], correct:3,
+      explain:"亜鉛への言及は本文になく、挙げられているのはオメガ3脂肪酸・ポリフェノール類・ビタミンDと、血糖値安定化・有酸素運動です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"精密栄養学が栄養戦略を導き出す際に統合する4つの要素として、本文で挙げられていないものは?", options:["遺伝子データ","腸内環境の評価","血液型","代謝データ(血液検査・尿検査)"], correct:2,
+      explain:"本文の4要素は「遺伝子データ・腸内環境・ライフスタイル要因・代謝データ」で、血液型への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"日本で栄養士制度が誕生したのは何年?", options:["1926年","1968年","1990年代","2004年"], correct:0,
+      explain:"1926年に日本で初めて栄養士制度が誕生しました。当時は基本的な食事指導やカロリー計算が中心でした。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"遺伝子と栄養素の相互関係を研究する学術誌「Journal of Nutrigenetics and Nutrigenomics」が創刊された年は?", options:["1968年","1990年代","2004年","2022年"], correct:2,
+      explain:"2004年にスイスで「Journal of Nutrigenetics and Nutrigenomics」という学術雑誌が創刊されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"従来の栄養学が統計的な平均値に基づいていたのに対し、分子栄養学は何に基づいて栄養素を調整する?", options:["体重のみ","一人一人の異なるニーズ(遺伝子や代謝の違い)","年齢のみ","国籍"], correct:1,
+      explain:"分子栄養学では従来の平均値ベースとは異なり、一人一人の異なるニーズに応じて栄養素を調整します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/分子栄養学から精密栄養学への進化", q:"血糖値の急激な上昇が炎症の原因となるサイトカインを活性化させるため、精密栄養学のアプローチで推奨される食事の工夫は?", options:["高炭水化物食にする","低炭水化物食・食物繊維の摂取量を増やす","絶食を続ける","脂質を完全にカットする"], correct:1,
+      explain:"血糖値の安定化のため、低炭水化物の食事や食物繊維の摂取量を増やすことが推奨されています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"世界初のAIスーパーコンピューターとして2016年に発表され、医療画像解析や創薬研究に活用されたNVIDIAの技術は?", options:["AlphaFold","DGX-1","デジタルツイン","CUDA"], correct:1,
+      explain:"NVIDIA DGX-1は2016年に発表された世界初のAIスーパーコンピューターで、医療画像解析や創薬研究に活用されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"患者個人のデータから仮想モデルを作り病気の進行や治療効果を事前シミュレーションする技術は?", options:["AlphaFold","デジタルツイン","ゲノム編集","リキッドバイオプシー"], correct:1,
+      explain:"デジタルツイン技術は患者個人のデータから仮想モデルを作成し、病気の進行や治療効果を事前にシミュレーションします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"ディープマインド社が開発し、タンパク質の立体構造予測を数時間で実現したAIシステムは?", options:["DGX-1","AlphaFold","ChatGPT","CRISPR"], correct:1,
+      explain:"AlphaFoldは従来数年〜数十年かかったタンパク質立体構造の解明を数時間で実現しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"本文によると、技術発展は約何年周期で大きなブレークスルーを迎えるとされる?", options:["約2年周期","約6年周期","約10年周期","約20年周期"], correct:1,
+      explain:"ジェンセン・ファン氏は技術の発展が約6年周期で大きなブレークスルーを迎えると指摘しています(2012年深層学習→2018年AlphaFold→2024年細胞レベルのデジタルツイン)。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"本文の予測では、2030年までに何が完成しAIが医療を完全に変革する可能性があるとされる?", options:["細胞レベルのデジタルツイン","量子コンピューター医療","完全自動診断ロボット","遺伝子完全編集技術"], correct:0,
+      explain:"2030年までに細胞レベルのデジタルツインが完成し、AIが医療を完全に変革する可能性があるとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"従来、新薬の開発には10年以上の歳月とどのくらいの費用がかかると言われている?", options:["数百万ドル","数千万ドル","数十億ドル","数百億ドル"], correct:2,
+      explain:"従来、新薬の開発には10年以上の歳月と数十億ドルの費用がかかると言われています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"ジェンセン・ファン氏が語る、AIが医療にもたらす最大の価値とは?", options:["医療コストをゼロにすること","医師の負担を軽減し患者との対話に集中できる環境を作ること","医師を完全に代替すること","手術を完全に自動化すること"], correct:1,
+      explain:"AIが医師の負担を軽減し、より人間らしい医療を実現することで、医療従事者が患者との対話に集中できる未来が語られています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"AIを活用した手術支援ロボットによる手術は、何の精度を高めるとされる?", options:["開腹手術","低侵襲手術","全身麻酔","輸血"], correct:1,
+      explain:"AIを活用したロボティックサージェリーは低侵襲手術の精度を飛躍的に高めています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"がん治療の文脈でデジタルツインが活用される例として本文で挙げられているのは?", options:["患者の細胞データを基にがん細胞の挙動を再現し複数の治療法を仮想的に試す","がん細胞を直接培養して薬を試す","患者の家族の遺伝子を解析する","AIが手術を完全に代行する"], correct:0,
+      explain:"がん治療では患者の細胞データを基にがん細胞の挙動をデジタル上で再現し、様々な治療法を仮想的に試すことができます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"GPUはもともと何のために開発されたプロセッサ?", options:["医療画像解析専用","ゲーム向けの並列計算","気象予測専用","暗号解読専用"], correct:1,
+      explain:"GPUはもともとゲーム向けの並列計算プロセッサでしたが、現在は医療/生命科学分野でも不可欠なツールになっています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/GPUと精密医療の未来", q:"AIによる治療の個別化の例として本文で挙げられているのは?", options:["全患者に同じ治療法を適用すること","患者のゲノムを分析し最適な治療法を提案すること","治療費を一律にすること","診断をすべて人間が行うこと"], correct:1,
+      explain:"AIは患者のゲノムを分析し、最適な治療法を提案することで治療の個別化に貢献しています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"DNA複製を担う酵素が間違った塩基が入った際に瞬時に切り取る機能を何と呼ぶ?", options:["ミスマッチ修復","校正機能","塩基除去修復","逆転写"], correct:1,
+      explain:"複製を担う酵素には校正機能が備わっており、間違った塩基が入ると瞬時に切り取られます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"複製後に残った塩基の組み合わせミスを検出・除去する修復機構は?", options:["校正機能","ミスマッチ修復","塩基除去修復","逆転写"], correct:1,
+      explain:"ミスマッチ修復は複製後に残った塩基の組み合わせミスを検出・除去する仕組みです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"酸化などで損傷した塩基だけを取り除き正しいものに置き換える修復機構は?", options:["校正機能","ミスマッチ修復","塩基除去修復","逆転写"], correct:2,
+      explain:"塩基除去修復は酸化などで損傷した塩基だけを取り除き、正しいものに置き換える仕組みです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"がんの進行を積極的に推し進め、細胞に増殖の優位性を与える遺伝子変異を何と呼ぶ?", options:["パッセンジャー変異","ドライバー変異","サイレント変異","フレームシフト変異"], correct:1,
+      explain:"ドライバー変異はがんの進行を積極的に推し進める遺伝子変異で、細胞に増殖の優位性を与えます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"ドライバー変異に伴い偶然受け継がれるだけで直接的な影響を持たない遺伝子変異を何と呼ぶ?", options:["ドライバー変異","パッセンジャー変異","サイレント変異","ミスセンス変異"], correct:1,
+      explain:"パッセンジャー変異はドライバー変異に伴い偶然受け継がれるだけの遺伝子変異で、直接的な影響を持ちません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"細胞がDNAに傷がある時に分裂を一時停止させるブレーキ役を担う遺伝子として本文で挙げられているのは?", options:["APC・KRAS","TP53・RB","NF-κB・IL-6","BRCA1・BRCA2"], correct:1,
+      explain:"TP53やRBといった遺伝子が、DNAに傷がある時に細胞分裂を一時停止させるブレーキの役割を担います。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"酸素不足や慢性炎症が続くと活性化し、変異した細胞に増殖を促す信号を送り続ける炎症シグナル経路は?", options:["NF-κB","TP53","mTOR","JAK-STAT"], correct:0,
+      explain:"NF-κBと呼ばれる炎症シグナル経路が活性化すると、変異した細胞に増殖を促す信号が送られ続けます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"大腸がんで、増殖を抑えるAPC・増殖を促すKRASに続いて、DNA損傷に応答する遺伝子として壊れる順番で挙げられているのは?", options:["TP53","RB","NF-κB","IL-6"], correct:0,
+      explain:"大腸がんでは増殖を抑えるAPC・増殖を促すKRAS・DNA損傷に応答するTP53という順番で遺伝子が壊れ、がん化が進むことが知られています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"逆流性食道炎が長引いて起こり、細胞分裂を止める遺伝子が失われることでがん化が進行する病態は?", options:["バレット食道","潰瘍性大腸炎","慢性胃炎","SIBO"], correct:0,
+      explain:"逆流性食道炎が長引いて起こるバレット食道では、細胞分裂を止める働きを持つ遺伝子が失われることでがん化が進行します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"がんの予兆が現れる前に察知するため活用される、消化管・肝臓・前立腺など臓器ごとに目安が定められている検査は?", options:["内視鏡","血中腫瘍マーカー","全ゲノムシークエンス","リキッドバイオプシー"], correct:1,
+      explain:"血中腫瘍マーカーは臓器ごとに目安が定められており、がんの予兆が現れる前に察知するために活用されます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"陽性の裏付けや微小病変の確認に威力を発揮し、拡大内視鏡や特殊光による血管パターン観察が可能な検査は?", options:["血中腫瘍マーカー","内視鏡","全ゲノムシークエンス","リキッドバイオプシー"], correct:1,
+      explain:"内視鏡は陽性の裏付けや微小病変の確認に威力を発揮し、拡大内視鏡や特殊光の技術で正常とは異なる細胞の変化を直接確認できます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"日本の公的保険で、40歳以上の節目で推奨されている検査として本文で挙げられているのは?", options:["MRI検査","胃・大腸内視鏡","PET検査","遺伝子検査"], correct:1,
+      explain:"日本の公的保険では、ハイリスク群への便潜血検査や40歳以上の節目での胃・大腸内視鏡が推奨されています(自己負担3割上限)。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"DNA修復や細胞増殖の制御に関わる遺伝子など、がん発症リスクに関係する変異を幅広く調査できる検査は?", options:["血中腫瘍マーカー","内視鏡","全ゲノムシークエンス","便潜血検査"], correct:2,
+      explain:"全ゲノムシークエンスはがん発症リスクに関係する変異を幅広く調査でき、家族間で共有される遺伝的傾向の把握も可能にします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"血液からがん由来のDNA断片を探す検査で、微小腫瘍の兆候を早期に捉える試みが進む検査は?", options:["内視鏡","リキッドバイオプシー","便潜血検査","血中腫瘍マーカー"], correct:1,
+      explain:"リキッドバイオプシーは血液からがん由来のDNA断片を探す検査で、全ゲノムシークエンスとの組み合わせで早期発見の試みが進んでいます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"検査後、結果が陰性だった場合の考え方として本文が示しているのは?", options:["ゼロリスクと考えてよい","ゼロリスクではないためリスクに応じてスクリーニング間隔を調整する","二度と検査を受ける必要はない","検査自体が不要になる"], correct:1,
+      explain:"陰性でもゼロリスクではないため、生活習慣や家族歴を再評価しリスクに応じて1〜2年ごとにスクリーニング間隔を調整する個別化戦略が取られています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"人の細胞は1回の分裂で通常どの程度の複製ミスが生じるとされる?", options:["ゼロ","数個","数百個","数千個"], correct:1,
+      explain:"人の細胞は1回の分裂で数個の複製ミスが生じると言われていますが、修復機構が破綻するとその頻度は桁違いに跳ね上がります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"DNAの両方の鎖が切れる深刻な損傷が誤って修復されたり遺伝子の数に異常が生じたりして起こる状態を、本文は何と表現している?", options:["エラーの悪循環","遺伝的多様性","細胞の若返り","恒常性の維持"], correct:0,
+      explain:"不安定なゲノムは次の複製でも新たな傷を生み、「エラーの悪循環」へつながると説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/解き明かされるがんの正体", q:"発がんに至る外的要因として本文で挙げられていないものは?", options:["紫外線","喫煙","慢性的な炎症","過度な運動"], correct:3,
+      explain:"外的要因として紫外線・喫煙・慢性的な炎症が挙げられており、過度な運動への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"体内で作られる代表的な内因性カンナビノイドとして本文で挙げられているのは、アナンダミドと何?", options:["THC","CBD","2-AG","メスカリン"], correct:2,
+      explain:"内因性カンナビノイドの代表格はアナンダミドと2-AGです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"アナンダミドという名前は、サンスクリット語で何を意味する語に由来する?", options:["調和","至福","静寂","生命"], correct:1,
+      explain:"アナンダミドはサンスクリット語で「至福」を意味する語に由来しています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"主に脳・中枢神経系に分布し、記憶・感情・食欲・運動制御に関与する受容体は?", options:["CB1受容体","CB2受容体","5-HT2A受容体","NMDA受容体"], correct:0,
+      explain:"CB1受容体は主に脳・中枢神経系に分布し、記憶・感情・食欲・運動制御に関与します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"主に免疫系・末梢神経系に分布し、炎症反応・免疫バランスの調整に関わる受容体は?", options:["CB1受容体","CB2受容体","5-HT2A受容体","NMDA受容体"], correct:1,
+      explain:"CB2受容体は主に免疫系・末梢神経系に分布し、炎症反応・免疫バランスの調整に関わります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"1960年代、THCの構造解析を進めたイスラエルの科学者は?", options:["アルバート・ホフマン","ラファエル・メコーラム","アーサー・ヘフター","アレクサンダー・シュルギン"], correct:1,
+      explain:"1960年代、イスラエルの科学者ラファエル・メコーラム博士らがTHCの構造解析を進めました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"体内のアナンダミド・2-AGが発見され、内因性カンナビノイドの存在が判明したのは何年代?", options:["1940年代","1960年代","1990年代","2010年代"], correct:2,
+      explain:"1990年代にアナンダミド・2-AGが発見され、体内カンナビノイドの存在が判明しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"ECSの最大の特徴として本文が説明している役割は?", options:["筋肉量の増加","ホメオスタシス(恒常性)の維持","骨密度の向上","視力の調整"], correct:1,
+      explain:"ECSの最大の特徴は、身体の様々な機能のバランスを保つホメオスタシス(恒常性)の維持に深く関わっていることです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"ECSの機能低下との関連が示唆されている「エンドカンナビノイド欠乏症」の症状として本文で挙げられていないものは?", options:["頭痛・偏頭痛","線維筋痛症","過敏性腸症候群","糖尿病"], correct:3,
+      explain:"エンドカンナビノイド欠乏症との関連が示唆されているのは頭痛・偏頭痛・線維筋痛症・過敏性腸症候群等で、糖尿病への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"THCがCB1受容体に強く結合してもたらす作用として本文で挙げられているのは、陶酔感と何?", options:["鎮痛/抗炎症","記憶力向上","筋力増強","視力向上"], correct:0,
+      explain:"THCはCB1受容体に強く結合し、陶酔感をもたらす一方で鎮痛や抗炎症作用があります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"CBDがもたらすとされる作用として本文で挙げられていないものは?", options:["ECS全体の調整","リラックス効果・抗不安作用","抗痙攣作用","強い陶酔感"], correct:3,
+      explain:"CBDはECS全体の働きを調整し、リラックス効果・抗不安作用・抗痙攣作用を示すとされますが、強い陶酔感はTHCの作用です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"カンナビノイドを摂取しなくてもECSを整える方法として本文で挙げられていないものは?", options:["適度な運動","十分な睡眠","オメガ3脂肪酸を含む食事","断食を毎日行うこと"], correct:3,
+      explain:"ECSを整える方法として運動・睡眠・オメガ3脂肪酸を含む食事・ストレス管理(瞑想等)が挙げられており、毎日の断食への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"日本の法規制について本文の説明として正しいのは?", options:["CBD・CBG・CBNも含め大麻由来成分は全て禁止","CBDやCBG・CBN等は一定条件下で合法だがTHCは厳しく規制","THCも含め全て合法","大麻に関する規制は存在しない"], correct:1,
+      explain:"日本ではCBDやCBG・CBN等は一定条件下で合法ですが、THCは厳しく規制されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"ECSが消化器系で調整するとされる働きとして挙げられているのは、食欲と何?", options:["胃酸分泌","腸管の動き","唾液分泌","消化酵素の合成"], correct:1,
+      explain:"消化器系ではECSが食欲や腸管の動きを調整し、消化のリズムを維持します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/エンドカンナビノイド・システム(ECS)", q:"ECSは大麻やCBDを摂取していない時、どのような状態にあるとされる?", options:["完全に停止している","常に作動している","睡眠中のみ作動する","病気の時のみ作動する"], correct:1,
+      explain:"ECSは大麻やCBDオイルを摂取しなくても常に作動している体内システムだと説明されています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBDを1940年代に初めて発見したアメリカの科学者は?", options:["ロジャー・アダムス","ラファエル・メコーラム","アーサー・ヘフター","アレクサンダー・シュルギン"], correct:0,
+      explain:"CBDは1940年代にアメリカの科学者ロジャー・アダムスによって初めて発見されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"1980年代にCBDの抗てんかん作用を明らかにし、医療用途への注目を高めたイスラエルの教授は?", options:["ロジャー・アダムス","ラファエル・メコーラム","アーサー・ヘフター","アルバート・ホフマン"], correct:1,
+      explain:"1980年代にイスラエルのラファエル・メコーラム教授が抗てんかん作用を明らかにしたことで医療用途への注目が高まりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"「ハイ」な状態(酔ったような陶酔感)をもたらす主な成分は、CBDではなく何?", options:["CBN","CBG","THC(テトラヒドロカンナビノール)","CBC"], correct:2,
+      explain:"陶酔感をもたらすのは主にTHC(テトラヒドロカンナビノール)によるもので、CBD自体には精神作用や依存性はほとんどありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBDの効果として本文で挙げられていないものは?", options:["鎮痛作用","抗炎症作用","強い陶酔感","睡眠改善効果"], correct:2,
+      explain:"CBDの効果として鎮痛・抗炎症・抗不安・睡眠改善が挙げられていますが、強い陶酔感はTHCの作用です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBN(カンナビノール)は、大麻に含まれる何が酸化・分解されて生成される?", options:["CBD","THC","CBG","テルペン"], correct:1,
+      explain:"CBNは大麻に含まれるTHCが酸化・分解されて生成されるカンナビノイドの一種です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBNは新鮮な大麻と熟成した大麻、どちらに多く含まれる?", options:["新鮮な大麻","熟成した大麻","どちらも同程度","含有量に差はない"], correct:1,
+      explain:"CBNは大麻の花や葉を長く熟成保存させるほど含有量が増えます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBNの医療効果として本文で挙げられていないものは?", options:["沈静作用(自然な睡眠補助)","抗菌作用","抗痙攣作用","強力な抗がん作用"], correct:3,
+      explain:"CBNの効果として沈静作用・抗菌作用・抗痙攣作用が挙げられており、抗がん作用への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"他のカンナビノイドに変換される前駆体成分で、収穫タイミングにより含有量が変化する成分は?", options:["CBD","THC","CBG","CBN"], correct:2,
+      explain:"CBGは他のカンナビノイドに変換される前駆体成分で、収穫タイミングによって含有量が変化します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBGの研究段階の効果として本文で挙げられているのは、耐性菌への抗菌作用と何?", options:["筋力増強作用","腸の炎症抑制","視力回復作用","血圧上昇作用"], correct:1,
+      explain:"CBGは耐性菌への抗菌作用に加え、腸の炎症を抑える作用があり炎症性腸疾患の治療に役立つと考えられています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBD・CBN・CBGが肝臓のどの代謝酵素を抑制する可能性があるため服薬中の人は注意が必要とされる?", options:["シトクロムP450","アルコール脱水素酵素","アミラーゼ","リパーゼ"], correct:0,
+      explain:"肝臓の代謝酵素シトクロムP450を抑制する可能性があるため、服薬中の方は医師に相談することが推奨されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"本文冒頭で紹介されている、カンナビノイド成分が含まれているとされる身近なものは?", options:["牛乳","母乳","水道水","蜂蜜"], correct:1,
+      explain:"驚くべきことに、母乳にもカンナビノイド成分が含まれていると紹介されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBDの副作用として本文で挙げられていないものは?", options:["倦怠感","体重の変動","下痢","高血圧"], correct:3,
+      explain:"副作用として倦怠感・体重の変動・下痢などが報告されているとされ、高血圧への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBDが医療注目度を高めた効果として本文が挙げているのは何の作用?", options:["鎮痛作用のみ","抗てんかん作用","筋力増強作用","発毛作用"], correct:1,
+      explain:"1980年代にメコーラム教授が抗てんかん作用を明らかにしたことで医療分野での注目が高まりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/CBD CBN CBGの効果とは", q:"CBGが応用への期待を集めている神経変性疾患として本文で挙げられているのは、パーキンソン病と何?", options:["アルツハイマー病","統合失調症","てんかん","うつ病"], correct:0,
+      explain:"CBGはアルツハイマー病やパーキンソン病など、神経変性疾患の治療への応用も研究中とされています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"「カンナビノイドの母」と呼ばれ、大麻草の成長初期に多く含まれる成分は?", options:["CBD","THC","CBG","CBN"], correct:2,
+      explain:"CBGはCBDやTHCといった他のカンナビノイドの前駆体であることから「カンナビノイドの母」と呼ばれます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBGは成長初期にどのような形で存在し、成熟過程でCBDやTHCに変化する?", options:["CBGA(カンナビゲロール酸)","CBDA","THCA","CBNA"], correct:0,
+      explain:"CBGはカンナビゲロール酸(CBGA)という形で存在し、成熟するにつれてCBDやTHCへと変化します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBGが天然には希少とされる理由は?", options:["栽培が禁止されているから","成長過程で他の成分へ変化してしまうから","高価な設備が必要だから","毒性が強いから"], correct:1,
+      explain:"CBGは成長過程で他の成分へと変化してしまうため、自然界では非常に希少な成分とされてきました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBGの研究段階の効果として本文で挙げられている3つに含まれないのは?", options:["抗炎症作用・抗菌作用","神経保護作用・抗酸化作用","消化器系疾患への応用可能性","強力な鎮痛作用"], correct:3,
+      explain:"CBGの3つの効果は抗炎症/抗菌作用・神経保護/抗酸化作用・消化器系疾患への応用可能性で、強力な鎮痛作用への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBGを日中に摂取することで期待できるとされる報告は?", options:["強い眠気","炎症を抑えつつ集中力を保てる可能性","筋力の急激な増強","視覚の変容"], correct:1,
+      explain:"CBGを日中に摂取することで炎症を抑えつつリラックスしながら集中力を保てるかもしれないという報告があります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBNは大麻草の抽出物が長期間放置され、何が空気や光の影響で酸化することで生成される?", options:["CBD","THC","CBG","テルペン"], correct:1,
+      explain:"CBNは大麻草やその抽出物が長期間放置されTHCが酸化することで生成される成分です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBNが特に注目されている効果として本文で挙げられているのは、睡眠の質の向上と何?", options:["リラックス効果","筋力増強効果","視力改善効果","記憶力向上効果"], correct:0,
+      explain:"CBNは睡眠の質の向上やリラックス効果が特に注目されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"動物実験や初期研究で、CBNを投与した際に確認されたデータは?", options:["睡眠時間が短縮した","睡眠時間が伸びた","食欲が減退した","体温が上昇した"], correct:1,
+      explain:"動物実験や初期研究で、CBNを投与した際に睡眠時間が伸びたというデータがあります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBNをCBDやTHCと組み合わせることで得られるとされる相乗効果を何と呼ぶ?", options:["シナジー効果","アントラージュ効果","カスケード効果","バイアス効果"], correct:1,
+      explain:"CBNをCBDやTHCと組み合わせることで、アントラージュ効果と呼ばれる相乗効果が得られるのではないかと考えられています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"複数のカンナビノイドを含み、アントラージュ効果を狙った製品として本文で挙げられているのは、ブロードスペクトラムと何?", options:["フルスペクトラム","アイソレート","シングルオリジン","ナノエマルジョン"], correct:0,
+      explain:"複数のカンナビノイドを含むブロードスペクトラムやフルスペクトラム製品が注目されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBG・CBN製品を選ぶ際、本文が消費者に推奨している確認事項は?", options:["価格の安さのみ","第三者機関の検査証明書の確認","パッケージのデザイン","製造国のみ"], correct:1,
+      explain:"信頼できるメーカーや販売元を選び、第三者機関の検査証明書を確認することが重要だとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/「CBG」と「CBN」の未知なる力", q:"CBGの神経保護作用に関する研究が進められている目的として本文で挙げられているのは?", options:["筋力を増強すること","神経変性疾患の進行を遅らせること","記憶力を大幅に向上させること","睡眠時間を短縮すること"], correct:1,
+      explain:"CBGの神経保護作用や抗酸化作用を利用し、神経変性疾患の進行を遅らせる研究が進められています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THCは大麻草に含まれる何種類以上のカンナビノイドの中で最も象徴的な成分とされる?", options:["10種類以上","50種類以上","100種類以上","500種類以上"], correct:2,
+      explain:"THCは大麻草に含まれる100種類以上のカンナビノイドの中で最も象徴的な成分です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THCの最大の特徴として本文が説明しているのは?", options:["抗炎症作用","精神作用(ハイになる・陶酔感)","抗菌作用","強い苦味"], correct:1,
+      explain:"THCの最大の特徴は精神作用を持つことで、ハイになる・陶酔感を得るといった効果の主な要因です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"20世紀に大麻が違法薬物として厳しく取り締まられるようになった背景として本文が挙げているのは?", options:["医療効果が否定されたため","THCの精神作用が社会的な懸念を引き起こしたため","栽培が困難になったため","他の薬物が発見されたため"], correct:1,
+      explain:"THCの精神作用が社会的な懸念を引き起こしたことが、20世紀の規制強化の背景にあります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"1960年代にTHCの化学構造・作用メカニズムを解明したイスラエルの科学者は?", options:["ラファエル・メシュラム博士","アルバート・ホフマン博士","アーサー・ヘフター","アレクサンダー・シュルギン博士"], correct:0,
+      explain:"1960年代にイスラエルの科学者ラファエル・メシュラム博士らの研究チームがTHCの作用メカニズムを解明しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"エンドカンナビノイドシステムという生体機構が発見されたのは何年代?", options:["1940年代","1960年代","1990年代","2010年代"], correct:2,
+      explain:"1990年代にエンドカンナビノイドシステムという生体機構が発見されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THCの医療応用として本文で挙げられていないものは?", options:["慢性的な痛みの緩和","抗がん剤治療による吐き気の予防","多発性硬化症など神経難病への応用研究","視力の完全回復"], correct:3,
+      explain:"医療応用として痛みの緩和・吐き気予防・食欲不振改善・神経難病への応用が挙げられており、視力の完全回復への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THC単体ではなくCBD等他のカンナビノイドと組み合わせることで狙う相乗効果を何と呼ぶ?", options:["アントラージュ効果","シナジー効果","カスケード効果","プラシーボ効果"], correct:0,
+      explain:"THC単体ではなくCBDや他のカンナビノイドと組み合わせるアントラージュ効果が注目されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THCの長期使用による懸念として本文で挙げられているのは、依存性と何?", options:["視力低下","認知機能への影響","筋力低下","骨密度低下"], correct:1,
+      explain:"長期間の使用により認知力や記憶力、学習能力に悪影響を及ぼす可能性が指摘されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"THCの精神作用の強さによって高まるとされるリスクとして本文で挙げられているのは?", options:["不安感の増加やパニック発作","視力の急激な低下","骨折リスクの上昇","感染症リスクの上昇"], correct:0,
+      explain:"精神作用が強いため、不安感の増加やパニック発作を引き起こすリスクがあるとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"特にどの年代層で、過剰摂取が精神疾患のリスクを高めるとされる?", options:["若年層","中年層","高齢層","年代を問わず一律"], correct:0,
+      explain:"特に若年層においては過剰摂取が精神疾患のリスクを高めるとされ、慎重な対応が求められています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"日本において大麻取締法で原則禁止されているのは何の所持・使用?", options:["THCを含む大麻製品","CBD製品全般","大麻草の種子のみ","茎由来の製品のみ"], correct:0,
+      explain:"日本では大麻取締法により、THCを含む大麻製品の所持や使用が原則的に禁止されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"日本で一定の条件下で合法とされているのは、茎や種から抽出された何の製品?", options:["THC製品","CBD製品","CBN製品のみ","大麻全般"], correct:1,
+      explain:"茎や種から抽出されたCBD製品は一定の条件下で合法とされていますが、個人輸入時は微量THC混入に注意が必要です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"アメリカでの大麻規制について本文の説明として正しいのは?", options:["全州で一律に合法化されている","州ごとに規制が異なり一部州は嗜好用も合法化","全州で厳しく禁止されている","医療用のみ全州で合法"], correct:1,
+      explain:"アメリカでは州ごとに規制が異なり、一部の州では嗜好用まで合法化されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"医療大麻の普及が進んでいる国として本文で挙げられていないのは?", options:["カナダ","オランダ","ドイツ","中国"], correct:3,
+      explain:"医療大麻の普及が進む国としてカナダ・オランダ・ドイツが挙げられており、中国への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"CBDと比較したTHCの精神作用の違いとして本文が説明しているのは?", options:["CBDにも強い精神作用がある","CBDには精神作用や依存性がほとんどない","THCには精神作用がない","両者とも精神作用がない"], correct:1,
+      explain:"CBDは精神作用がほとんどなくリラックス効果をもたらす成分として知られ、THCとは対照的です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/THCは人間の未来を救えるのか", q:"大麻の利用の歴史について本文が説明しているのは?", options:["20世紀に始まった","数千年以上にわたる歴史がある","19世紀に初めて発見された","歴史的記録はほとんど残っていない"], correct:1,
+      explain:"大麻の利用は数千年以上にわたる歴史があり、古代中国やインドの文献に薬用・宗教儀式での使用記録が残っています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"2026年1月にアメリカ保健福祉省とUSDAが公表した新しい食事ガイドラインの通称は?", options:["フードトライアングル","リアルフードピラミッド","ニュートリションマップ","ヘルシーサークル"], correct:1,
+      explain:"「Dietary Guidelines for Americans 2025-2030」に登場した通称「リアルフードピラミッド」が本文のテーマです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"低脂肪ヨーグルトなど「ヘルシー」ラベルの食品で、脂肪を抜いた分の味の低下を補うために入っているものとして本文が指摘しているのは?", options:["食物繊維","砂糖・加糖ブドウ糖液・人工甘味料","ビタミン","タンパク質"], correct:1,
+      explain:"脂肪を抜いた分の味の低下を補うために、砂糖・加糖ブドウ糖液・人工甘味料が入っていると指摘されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"新ピラミッドで最上段(最も多く食べるべきもの)に置かれたのは、肉・魚・卵・野菜・果物と何?", options:["低脂肪の乳製品","全脂肪の乳製品","精製穀物","植物油"], correct:1,
+      explain:"最上段には肉・魚・卵・全脂肪の乳製品・野菜・果物が置かれました(低脂肪ではなく全脂肪)。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"新ピラミッドで最下段(最も減らすべきもの)に置かれたものとして本文で挙げられていないのは?", options:["添加物・超加工食品","精製穀物","植物油","バター"], correct:3,
+      explain:"最下段は添加物・超加工食品・精製穀物・植物油で、バターは中段(積極的に摂ってよいもの)に分類されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"低脂肪・高炭水化物を国が推進した30年間で、アメリカの成人の何%以上が過体重や肥満になったとされる?", options:["30%以上","50%以上","70%以上","90%以上"], correct:2,
+      explain:"低脂肪・高炭水化物を推進した30年間で、アメリカの成人の70%以上が過体重や肥満になりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"新ガイドラインによると、アメリカの青少年のどのくらいが糖尿病予備群とされる?", options:["10人に1人","5人に1人","3人に1人","2人に1人"], correct:2,
+      explain:"新ガイドラインでは、青少年の3人に1人が糖尿病予備群とされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"新ガイドラインによると、アメリカの医療費の何%が慢性疾患に費やされているとされる?", options:["50%","70%","90%","99%"], correct:2,
+      explain:"医療費の90%が慢性疾患に費やされているとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"「本物の食べ物を食べよう」という原則を、およそ何年も前から説いてきた伝統医学として本文で紹介されているのは?", options:["中医学(約2000年前)","アーユルヴェーダ(約5000年前)","ホメオパシー(約200年前)","漢方(約1000年前)"], correct:1,
+      explain:"インドの伝統医学アーユルヴェーダが、5000年も前からこの原則を説き続けてきたと紹介されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"アーユルヴェーダが最も優れた油脂として毎日摂ることを勧めている食材は?", options:["オリーブオイル","ギー","ココナッツオイル","ごま油"], correct:1,
+      explain:"アーユルヴェーダはギーを最も優れた油脂として毎日摂ることを勧めてきました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"アーユルヴェーダの教えの核にある言葉として本文で紹介されているのは?", options:["「消化できないものは毒になる」","「足るを知る」","「陰陽のバランスを保て」","「自然に還れ」"], correct:0,
+      explain:"アーユルヴェーダの教えの核にある言葉は「消化できないものは毒になる」です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"食材の鮮度や加工度が細胞レベルの代謝に大きく影響することを確認し始めている近年の研究分野は?", options:["ニュートリゲノミクス","エピジェネティクス単独","プロテオミクス","メタボロミクス単独"], correct:0,
+      explain:"近年のニュートリゲノミクス研究でも、食材の鮮度や加工度が細胞レベルの代謝に大きく影響することが確認され始めています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 前編", q:"本文が勧める、原材料欄を見る際のチェックポイントは?", options:["成分数が多いほど良い","読めない成分が5つ以上並んでいたら疑ってみる","価格の安さを優先する","カロリー表示のみ確認する"], correct:1,
+      explain:"裏側の原材料欄に読めない成分が5つ以上並んでいたら、それは「食べ物」ではなく「食品」かもしれないと述べられています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"新ガイドラインが明記した、全脂肪の乳製品の1日の摂取目安は?", options:["1サービング","2サービング","3サービング","5サービング"], correct:2,
+      explain:"新ガイドラインは全脂肪の乳製品を1日3サービングと明記しました(低脂肪ではなく全脂肪)。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"新ピラミッドで優先順位を決めている最も重要な基準は?", options:["カロリー","栄養素の比率","加工度","価格"], correct:2,
+      explain:"優先順位はカロリーや栄養素の比率ではなく「加工度」で決められている点が新ピラミッドの根幹です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"鶏胸肉のグリルとチキンナゲットが新ピラミッドで別物として扱われる理由は?", options:["カロリーが違うから","加工度(原型をどれだけ留めているか)が違うから","価格が違うから","産地が違うから"], correct:1,
+      explain:"どちらも鶏肉ですが、素材が何かではなくどれだけ原型を留めているかという加工度の視点で別物として扱われます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"新ガイドラインが問題視している植物油として本文で挙げられていないものは?", options:["大豆油","紅花油","キャノーラ油","オリーブオイル"], correct:3,
+      explain:"問題視されているのは大豆油・紅花油・キャノーラ油等の高温高圧で工業的に抽出される油で、オリーブオイルは積極的に摂って良いとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"何を食べるかに加え「いつ食べるか」にも目を向ける、新ガイドラインが打ち出した概念は?", options:["カロリック・サイクル","メタボリックフレキシビリティ(代謝の柔軟性)","インターミッテント・イーティング","デジェスティブ・タイミング"], correct:1,
+      explain:"メタボリックフレキシビリティ(代謝の柔軟性)は、朝は軽く・日中にしっかり・夜は控えめにという時間帯に応じた食事の考え方です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"チーズや赤ワイン、発酵食品に多く含まれ、分解する酵素の働きに遺伝的な個人差がある物質は?", options:["グルテン","ヒスタミン","カゼイン","フィチン酸"], correct:1,
+      explain:"チーズ・赤ワイン・発酵食品に多く含まれるヒスタミンを分解する酵素の働きには遺伝的な個人差があります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"ヒスタミンを分解する酵素で、活性が生まれつき低い体質の人がいるとされる酵素は?", options:["DAO","MAO","COMT","MTHFR"], correct:0,
+      explain:"DAOという酵素の働きには遺伝的な個人差があり、活性が低い体質の人はヒスタミンをうまく処理できません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"DAO活性が生まれつき低い体質の人に出やすい症状として本文で挙げられていないものは?", options:["頭痛","蕁麻疹","倦怠感","高血圧"], correct:3,
+      explain:"DAO活性が低いと頭痛・蕁麻疹・倦怠感が出やすいとされ、高血圧への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"DAO活性の個人差による不調が見つかりにくい理由として本文が挙げているのは?", options:["症状が全く出ないから","従来のアレルギー検査には出ないから","遺伝子検査でしか判定できないため一般的でないから","医師が診断を拒否するから"], correct:1,
+      explain:"DAO活性による不調は従来のアレルギー検査には出ないため、本人も原因がわからないまま食べ続けてしまうことが厄介な点です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"カフェインの代謝速度、乳糖の分解能力と並んで、遺伝子の個人差が関わる例として本文で挙げられているのは?", options:["葉酸の活性化効率","身長の伸び","視力の良さ","声の高さ"], correct:0,
+      explain:"カフェインの代謝速度、乳糖の分解能力、葉酸の活性化効率など、あらゆる食材で遺伝子による個人差が起きています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"本文の結論として、「本物の食べ物であること」と「あなたの体に合う食べ物であること」の関係は?", options:["完全にイコールである","イコールではない","全く無関係である","本物の食べ物の方が常に体に合う"], correct:1,
+      explain:"「本物の食べ物であること」と「あなたの体に合う食べ物であること」はイコールではないというのが本文の結論です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"本文が新しいピラミッドを「地図」に例え、それと対になるものとして紹介しているのは?", options:["定規","コンパス","電卓","時計"], correct:1,
+      explain:"新しいピラミッドは「地図」であり、遺伝子検査や血液検査を通じて持つ自分だけの「コンパス」と組み合わせることが勧められています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/Real Food Pyramidとは 後編", q:"新ピラミッドの中段に置かれているものとして本文で挙げられていないのは?", options:["バター・ギー","オリーブオイル","アボカド・ナッツ","精製穀物"], correct:3,
+      explain:"中段はバター・ギー・オリーブオイル・アボカド・ナッツで、精製穀物は最下段に分類されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"2023年1月1日、アメリカのどの州でシロシビンの成人合法摂取が全米で初めて施行された?", options:["カリフォルニア州","オレゴン州","コロラド州","ワシントン州"], correct:1,
+      explain:"2023年1月1日、米オレゴン州でシロシビンを成人が合法的に摂取できる法律が全米で初めて施行されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"日本でマジックマッシュルームが合法だったのは何年まで?", options:["1990年まで","2002年まで","2010年まで","2020年まで"], correct:1,
+      explain:"日本でも2002年まではマジックマッシュルームが合法で、渋谷センター街でも販売されていました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"アステカ等メソアメリカ先住民は、シロシビンを含むキノコを何と呼んで儀式に使用してきた?", options:["テオナナカトル(神の肉)","ソーマ","アムリタ","プシロシベ"], correct:0,
+      explain:"アステカ等メソアメリカ先住民はシロシビンを含むキノコを「テオナナカトル(神の肉)」と呼び儀式で使用してきました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"1957年にLife誌へ寄稿し「マジックマッシュルーム」の呼称を世界に広めるきっかけを作った銀行家は?", options:["R・ゴードン・ワッソン","テレンス・マッケナ","アルバート・ホフマン","ロビン・カーハート＝ハリス"], correct:0,
+      explain:"1957年、銀行家R・ゴードン・ワッソンがLife誌に寄稿した記事が「マジックマッシュルーム」の呼称を広めるきっかけとなりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"ワッソンの記事で紹介されたメキシコの治療士で、記事掲載後に地域から非難を受け晩年貧困の中で亡くなった人物は?", options:["マリア・サビナ","ガストン・グスマン","ロビン・カーハート＝ハリス","ローランド・グリフィス"], correct:0,
+      explain:"治療士マリア・サビナは、記事掲載後に聖なる儀式を外部に売ったとして地域社会から非難を受け、晩年は貧困の中で亡くなりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"1971年、国連で採択された条約によりシロシビンはどう分類された?", options:["医療的価値が高いと評価された","濫用の可能性が高く医療的価値なしとして最も厳しい規制対象に分類された","規制対象から除外された","研究目的での使用のみ推奨された"], correct:1,
+      explain:"1971年の国連条約でシロシビンは濫用の可能性が高く医療的価値なしとして最も厳しい規制対象に分類されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"1971年の国連条約以降、シロシビンの本格的な研究は約何年間事実上凍結された?", options:["約10年間","約20年間","約40年間","約60年間"], correct:2,
+      explain:"1971年の国連条約採択以降、約40年間本格的な研究は事実上凍結されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"体内に入ったシロシビンはシロシンに変換され、脳内の主にどの受容体に結合する?", options:["CB1受容体","5-HT2A受容体","NMDA受容体","ドーパミン受容体"], correct:1,
+      explain:"体内でシロシンに変換されたシロシビンは、脳内のセロトニン受容体、特に5-HT2A受容体に結合します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"何もしていない時に活性化し、思考の反芻や将来への不安と関わる脳の回路は?", options:["報酬系","デフォルトモードネットワーク","辺縁系","小脳"], correct:1,
+      explain:"デフォルトモードネットワークは何もしていない時に活性化し、思考の反芻・将来への不安と関わる回路で、うつ病患者では過剰活動の傾向があります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"2018年、米FDAはシロシビンを何に指定した?", options:["危険薬物","画期的治療薬","一般用医薬品","研究禁止物質"], correct:1,
+      explain:"2018年、米FDAはシロシビンを画期的治療薬に指定しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"2010年代に厳密な臨床試験を再開した大学として本文で挙げられているのは、ジョンズ・ホプキンス大学と何?", options:["インペリアルカレッジロンドン","ハーバード大学","東京大学","スタンフォード大学"], correct:0,
+      explain:"2010年代、ジョンズ・ホプキンス大学やインペリアルカレッジロンドン等が厳密な臨床試験を再開しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"2025年春までにオレゴン州のシロシビンセッションを受けた人数はどのくらいとされる?", options:["1000人以上","1万人以上","10万人以上","100万人以上"], correct:1,
+      explain:"高額な費用にもかかわらず、2025年の春までに1万人以上がこのセッションを受けました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"オレゴン州のシロシビンセッションを訪れるのは、好奇心旺盛な人だけでなく誰も含まれる?", options:["医師のみ","既存治療で改善しなかったうつ病・PTSD患者","政府職員のみ","研究者のみ"], correct:1,
+      explain:"訪れるのは好奇心旺盛な人だけでなく、既存治療で改善しなかったうつ病やPTSD患者も含まれます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"1960年代、この記事を火付け役にメキシコを目指したアーティストとして本文で挙げられているのは、ボブ・ディランと誰?", options:["ビートルズ","ローリング・ストーンズ","エルヴィス・プレスリー","マイケル・ジャクソン"], correct:0,
+      explain:"1960年代にビートルズやボブ・ディラン等がメキシコを目指し、サイケデリックはカウンターカルチャーの象徴となりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.1", q:"シロシビンがデフォルトモードネットワークの活動を一時的に沈めることで、脳にもたらす可能性が報告されているのは何?", options:["記憶の完全消去","新しいつながりを作る可塑性を高める可能性","視力の向上","筋力の増強"], correct:1,
+      explain:"デフォルトモードネットワークの活動を一時的に沈め、脳が新しいつながりを作る可塑性を高める可能性が報告されています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"約9000年前のタッシリ・ナジェールの壁画があるのは、現在のどこの地域?", options:["アルジェリア東部","メキシコ","スペイン","ペルー"], correct:0,
+      explain:"約9000年前、現在のアルジェリア東部タッシリ・ナジェールの壁画に、体からキノコが生えた人物像が残されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"約6000年前のスペイン・セルバ・パスクアラの壁画には、キノコ状の図形が何本描かれている?", options:["5本","13本","20本","30本"], correct:1,
+      explain:"スペイン・クエンカ県セルバ・パスクアラの壁画には、13本のキノコ状図形と牛の絵が描かれています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"2011年、セルバ・パスクアラの壁画のキノコが現地自生種と形状が一致すると学術誌『エコノミック・ボタニー』に発表した研究チームを主導したのは?", options:["ロビン・カーハート＝ハリス","ガストン・グスマン(菌類学者)","ローランド・グリフィス","R・ゴードン・ワッソン"], correct:1,
+      explain:"2011年、菌類学者ガストン・グスマンが主導するチームが壁画のキノコと現地自生種の一致を報告しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"壁画のキノコと形状が一致すると報告された、現地自生のシロシベ属の種は?", options:["プシロシベ・キュベンシス","プシロシベ・ヒスパニカ","プシロシベ・メキシカーナ","プシロシベ・アズレセンス"], correct:1,
+      explain:"壁画のキノコは現地自生のシロシベ属の一種プシロシベ・ヒスパニカと形状が一致すると報告されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"1992年の著書『神々の糧』で「ストーンドエイプ理論」を提唱した思想家は?", options:["テレンス・マッケナ","ローランド・グリフィス","ロビン・カーハート＝ハリス","アルバート・ホフマン"], correct:0,
+      explain:"思想家テレンス・マッケナが1992年の著書『神々の糧』で「ストーンドエイプ理論」を提唱しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"「ストーンドエイプ理論」の内容として正しいのは?", options:["キノコが人類の脳の進化を加速させたという仮説","キノコが人類を石に変えたという神話","キノコが人類の寿命を縮めたという説","キノコが言語の起源だという説"], correct:0,
+      explain:"ストーンドエイプ理論は、サイケデリックマッシュルームが人類の脳の進化を加速させたという仮説です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"マッケナ自身は後年、ストーンドエイプ理論についてどう述べた?", options:["完全に科学的に証明された理論だと主張した","意図的なプロパガンダだったと認めた","一切コメントしなかった","理論を撤回し研究をやめた"], correct:1,
+      explain:"マッケナ自身も後年「意図的なプロパガンダだった」と認めています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"2010年代、fMRIでデフォルトモードネットワークの活動がシロシビン投与下で沈むことを確認したインペリアル・カレッジ・ロンドンの神経科学者は?", options:["ロビン・カーハート＝ハリス","ガストン・グスマン","テレンス・マッケナ","リック・ドブリン"], correct:0,
+      explain:"インペリアル・カレッジ・ロンドンの神経科学者ロビン・カーハート＝ハリスらがfMRIでこの現象を確認しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"シロシビン投与下でのデフォルトモードネットワークの沈静化を、ある患者はどのように表現した?", options:["「花火が上がったような感覚」","「コンピュータのハードディスクをデフラグしたような感覚」","「深い眠りに落ちたような感覚」","「重力から解放されたような感覚」"], correct:1,
+      explain:"ある患者はその体験を「コンピュータのハードディスクをデフラグしたような感覚」と表現しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"2022年ジョンズ・ホプキンス大学の追跡調査で、シロシビン投与によるうつ症状改善が12ヶ月後に「治療反応」として持続していた被験者の割合は?", options:["25%","58%","75%","95%"], correct:2,
+      explain:"1〜2回のシロシビン投与によるうつ症状改善が、12ヶ月後時点で被験者の75%に治療反応として持続していたと報告されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"同じ2022年の追跡調査で、うつ症状改善が「寛解」として持続していた被験者の割合は?", options:["25%","42%","58%","75%"], correct:2,
+      explain:"12ヶ月後時点で被験者の58%に「寛解」として持続していたと報告されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.2", q:"約9000年前のサハラの壁画に描かれた人物像について、本文はどのような立場を取っている?", options:["シャーマン的図像だと断定している","解釈は未確定であり議論が続いていると述べている","何も描かれていないとしている","現代の偽造だと述べている"], correct:1,
+      explain:"シャーマン的図像の一つと考える研究者もいるが、この解釈は確定したものではなく議論が続いていると説明されています。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"2016年、ジョンズ・ホプキンス大学のローランド・グリフィスが報告した、がん患者へのシロシビン療法の知見は?", options:["体験中の神秘体験が深いほどその後の鬱・不安が和らいでいた","薬の量が多いほど効果が高かった","体験の記憶がある方が副作用が多かった","年齢が若いほど効果が高かった"], correct:0,
+      explain:"体験中の神秘体験が深いほど、その後の鬱・不安が和らいでいたことが報告されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"シロシンがセロトニンの「鍵穴」に滑り込む様子は、本文で何に例えられている?", options:["合鍵","ハンマー","消しゴム","フィルター"], correct:0,
+      explain:"セロトニンそっくりのシロシンは、その鍵穴に「合鍵」のように滑り込むと表現されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"シロシンが特に深くはまる受容体は?", options:["CB1受容体","5-HT2A受容体","NMDA受容体","ドーパミンD2受容体"], correct:1,
+      explain:"シロシンはとりわけ5-HT2Aという鍵穴に深くはまり、本来と違う開け方をしてしまいます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"5-HT2A受容体が多く集まっている脳の部位として本文が説明しているのは?", options:["脳の一番内側の原始的な部分","脳の一番外側、世界の像を描き自分という物語を編んでいる層","小脳のみ","脳幹のみ"], correct:1,
+      explain:"5-HT2A受容体は脳の一番外側、世界の像を描き自分という物語を編んでいる層に多く集まっています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"脳画像研究で、鍵穴を先に塞ぐ薬を与えるとどうなることが確認されている?", options:["神秘体験がより強くなる","神秘体験がスッと消える","身体的な痛みが増す","記憶力が向上する"], correct:1,
+      explain:"鍵穴を先に塞ぐ薬を与えると、あれほどの神秘体験がスッと消えることが確認されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"シロシビン体験の効果を決める、薬そのもの以外の重要な要素として本文が挙げているのは?", options:["体験する部屋の温度","心の構えと場のしつらえ(セット・アンド・セッティング)","服の色","食事のタイミング"], correct:1,
+      explain:"効果を決めるのは薬そのものだけでなく、体験を取り囲む「心の構えと場のしつらえ」だと説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"体験前後の「統合」の時間とは何を指す?", options:["複数人でのグループセッション","体験後に見えてきたものを暮らしに結び直す時間","薬の量を調整する作業","会場を準備する時間"], correct:1,
+      explain:"「統合」の時間とは、体験後に見えてきたものを暮らしに結び直す時間を指します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"2008年に定められた臨床研究の安全指針が治療の柱に据えているのは?", options:["投与量の最大化","体験前後の伴走(準備・案内人・統合)","被験者数の最大化","即効性の追求"], correct:1,
+      explain:"2008年に定められた臨床研究の安全指針は、体験前後の伴走を治療の柱に据えています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"臨床試験で対象から除外される人として本文で挙げられていないのは?", options:["本人・家族に統合失調症や双極性障害がある人","重い心臓病やコントロール不良の高血圧がある人","気分安定薬リチウムを服用中の人","定期的に運動している人"], correct:3,
+      explain:"除外対象として統合失調症・双極性障害の既往、重い心臓病・高血圧、リチウム併用が挙げられており、運動習慣への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"気分安定薬リチウムとシロシビンの併用で報告されているリスクは?", options:["発作","脱毛","視力低下","味覚障害"], correct:0,
+      explain:"気分安定薬リチウムとの併用では発作の報告もあるとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"シロシビンの効き目について本文が示す見方は?", options:["既存の抗うつ薬より圧倒的に強い","既存の抗うつ薬と同程度という見方もある","効果はほとんどないという結論に達した","効果は個人差が全くない"], correct:1,
+      explain:"効き目については既存の抗うつ薬と同程度という見方もあると述べられています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.3", q:"2016年、ジョンズ・ホプキンス大学と同様の結果を独立に報告したのはどこの大学?", options:["ハーバード大学","ニューヨーク大学","スタンフォード大学","東京大学"], correct:1,
+      explain:"同年ニューヨーク大学の別チームも同様の結果を独立に報告しました。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"1965年春、ロンドンのディナーパーティーで本人の同意なくLSDを飲まされたビートルズのメンバーは、ジョージ・ハリソンと誰?", options:["ポール・マッカートニー","ジョン・レノン","リンゴ・スター","ブライアン・エプスタイン"], correct:1,
+      explain:"1965年春、ジョン・レノンとジョージ・ハリソンが本人の同意なく角砂糖に仕込まれたLSDを飲まされました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"1967年のアルバム『サージェント・ペパーズ』収録曲でタイトルの頭文字がLSDになると噂になった曲は?", options:["Here Comes the Sun","ルーシー・イン・ザ・スカイ・ウィズ・ダイヤモンズ","Let It Be","Yesterday"], correct:1,
+      explain:"「ルーシー・イン・ザ・スカイ・ウィズ・ダイヤモンズ」はタイトルの頭文字がLSDになると噂になりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"レノン自身は「ルーシー」の曲名の由来を何だと説明した?", options:["LSDを意図的に暗示した","3歳の息子ジュリアンが描いた同級生ルーシーの絵","架空の女性の名前","ギリシャ神話の登場人物"], correct:1,
+      explain:"レノン自身は、3歳の息子ジュリアンが描いた保育園の同級生ルーシーの絵がきっかけだと説明し、LSDの暗示を否定しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"マサテク族の治療師マリア・サビナが行っていた夜通しの治療儀式の名称は?", options:["ベラーダ","テオナナカトル","アヤワスカ","パンチャカルマ"], correct:0,
+      explain:"マリア・サビナが行っていた夜通しの治療儀式は「ベラーダ」と呼ばれます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"ベラーダの儀式でマリア・サビナが「聖なる子供たち」と呼んでいたのは?", options:["参加者の子どもたち","マジックマッシュルーム","儀式で使う楽器","儀式の精霊"], correct:1,
+      explain:"マリア・サビナはマジックマッシュルームを「聖なる子供たち」と呼んでいました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"1955年にこの儀式に立ち会い、サビナの歌を録音したアメリカ人は?", options:["R・ゴードン・ワッソン","テレンス・マッケナ","ロビン・カーハート＝ハリス","ビル・リチャーズ"], correct:0,
+      explain:"1955年、R・ゴードン・ワッソンがこの儀式に立ち会い、サビナの歌を録音しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"ジョンズ・ホプキンス大学のシロシビン研究で心理学者ビル・リチャーズが組んだプレイリストは、およそ何時間分?", options:["約2時間半","約5時間","約7時間半","約12時間"], correct:2,
+      explain:"ビル・リチャーズが組んだプレイリストはおよそ7時間半に及びます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"このプレイリストの終盤に流れる曲として本文で挙げられているのは、ルイ・アームストロングの曲と何?", options:["ビートルズ「Here Comes the Sun」","エルヴィス・プレスリーの曲","モーツァルトの交響曲","バッハの無伴奏曲"], correct:0,
+      explain:"終盤にはビートルズ「Here Comes the Sun」やルイ・アームストロング「この素晴らしき世界」が流れます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"2018年イギリスの研究チームが治療抵抗性うつ病患者を分析した結果、その後の回復を強く予測したのは薬の効き目の強さより何だった?", options:["投与量の多さ","音楽体験の豊かさ","セッションの回数","部屋の広さ"], correct:1,
+      explain:"薬の効き目の強さより「音楽体験の豊かさ」の方が、その後の回復を強く予測していました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"上記の研究者たちは、音楽を何と呼んだ?", options:["隠れた治療者","背景の飾り","副作用の原因","無関係な要素"], correct:0,
+      explain:"研究者は音楽を「隠れた治療者」と呼びました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"ある被験者は音楽体験について「私は音楽の一部になっていた」と語り、続けて何と表現した?", options:["「ただ聴いていたのではない」","「音楽が邪魔だった」","「音楽は聞こえなかった」","「音楽を止めてほしかった」"], correct:0,
+      explain:"被験者は「私は音楽の一部になっていた、ただ聴いていたのではない」と語りました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック・ラッシュ Vol.4", q:"本文が音楽の役割として繰り返し使っている、内的宇宙という海を渡るための例えは?", options:["羅針盤","絵図(道しるべ)","錨","帆"], correct:1,
+      explain:"音楽は内的宇宙という時に荒れる海を渡るための「絵図」の役割を果たすと表現されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"1986年にMAPSを設立した人物は?", options:["ローランド・グリフィス","リック・ドブリン博士","ロビン・カーハート＝ハリス","アレクサンダー・シュルギン"], correct:1,
+      explain:"MAPSは1986年、リック・ドブリン博士によって設立されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"MAPSが30年以上主導してきた臨床試験は、何によるどの疾患の治療?", options:["シロシビンによるうつ病治療","MDMAによるPTSD治療","LSDによる依存症治療","ケタミンによる慢性痛治療"], correct:1,
+      explain:"MAPSはMDMAによるPTSD治療の臨床試験を30年以上にわたって主導してきました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"MAPSが商業部門を分離して設立した企業体の名称は?", options:["Lykos(ライコス)","MindMed","Compass Pathways","Usona"], correct:0,
+      explain:"MAPSは商業部門を分離し、Lykos(ライコス)という企業体を設立しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"2006年、シロシビンによる宗教的体験の研究を発表し、長期的なポジティブな人格変容を示したのはどこの大学?", options:["インペリアルカレッジロンドン","ジョンズホプキンス大学","ハーバード大学","スタンフォード大学"], correct:1,
+      explain:"ジョンズホプキンス大学は2006年に発表した研究で、シロシビン体験が長期的にポジティブな人格変容をもたらすことを示しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"脳画像研究でシロシビンがデフォルトモードネットワークの活動を変化させることを明らかにしたのはどこの大学?", options:["ジョンズホプキンス大学","インペリアルカレッジロンドン","東京大学","カリフォルニア大学"], correct:1,
+      explain:"インペリアルカレッジロンドンは脳画像研究によって、シロシビンがデフォルトモードネットワークの活動を変化させることを明らかにしました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"MAPS主導のMDMAによるPTSD治療は、どの段階の臨床試験を終了した?", options:["フェーズ1","フェーズ2","フェーズ3","フェーズ4"], correct:2,
+      explain:"MAPS主導のMDMAによるPTSD治療はフェーズ3試験を終了し、FDA正式承認申請へと進んでいます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"シロシビンのうつ病治療が有望とされている分野として本文で挙げられていないのは?", options:["治療抵抗性うつ病","終末期患者の不安軽減","アルコール依存症治療","花粉症の根治"], correct:3,
+      explain:"シロシビンのうつ病治療は治療抵抗性うつ病・終末期患者の不安軽減・アルコール依存症治療で有望とされ、花粉症への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"2023年に医師監督下でMDMA・シロシビンの処方を正式合法化した国は?", options:["オーストラリア","アメリカ","日本","イギリス"], correct:0,
+      explain:"オーストラリアでは2023年、医師監督下でMDMA・シロシビンの処方が正式に合法化されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"カナダで末期患者へのシロシビン処方に使われている制度は?", options:["特別許可制度","国民皆保険制度","緊急承認制度","研究者限定制度"], correct:0,
+      explain:"カナダでは特別許可制度を通じて末期患者に対するシロシビン療法が進められています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"サイケデリック医療の残る課題として本文で挙げられていないものは?", options:["法規制の不統一","セラピスト育成システムの未整備","治療費高額化による経済格差","有効成分の特定が全くできていないこと"], correct:3,
+      explain:"課題として法規制の不統一・セラピスト育成の未整備・治療費の高額化・ビジネス化に伴う倫理的懸念が挙げられており、有効成分が特定できていないという指摘はありません(むしろ作用機序は解明が進んでいます)。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"サイケデリック医療再注目の背景として本文が挙げているのは?", options:["既存治療で改善しないメンタルヘルス課題の急増","製薬会社の売上減少","医療費の全面的な削減方針","娯楽目的の需要増加"], correct:0,
+      explain:"既存治療で改善しないメンタルヘルス課題の急増が再注目の背景として挙げられています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"MAPSのアプローチとして本文が説明しているのは、研究だけでなく何を含む多面的なものか?", options:["科学・教育・政策・倫理・文化変革","広告・販売・流通のみ","軍事・外交","娯楽産業のみ"], correct:0,
+      explain:"MAPSは科学、教育、政策、倫理、文化変革という多面的なアプローチでサイケデリック医療を推進してきました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の現在地", q:"スイスでのサイケデリック医療の状況として本文が説明しているのは?", options:["全面禁止されている","臨床研究と厳格な管理体制のもとでの個別治療が認められている","娯楽目的でも自由に使用できる","研究自体が存在しない"], correct:1,
+      explain:"スイスではシロシビンに関する臨床研究や厳格な管理体制のもとでの個別治療が認められています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"本文冒頭が強調する、サイケデリック医療の現在の位置づけは?", options:["まだ実験段階の治療である","もはや実験的治療ではなく最終段階の臨床試験に到達している","研究が停止している","まだ何のエビデンスもない"], correct:1,
+      explain:"サイケデリック医療はもはや実験的治療ではなく、主要な臨床試験はすでに最終段階に到達しエビデンスも蓄積しています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"PTSD患者がMDMAと心理療法を組み合わせることで得られたとされる力は?", options:["トラウマの記憶を完全に消す力","トラウマの記憶に飲み込まれず対処できる力","痛みを一切感じなくなる力","睡眠を全く必要としなくなる力"], correct:1,
+      explain:"PTSD患者は過去のトラウマに触れながらもその記憶に飲み込まれず対処できる力を育んだ例が紹介されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"セッション中に過去の記憶や抑え込んでいた感情が現れることを、心理療法的には何と呼ぶ?", options:["感情と記憶の再処理","記憶の完全消去","感情の凍結","トラウマの再生産"], correct:0,
+      explain:"心理療法的には「感情と記憶の再処理」と呼ばれ、体験が整理・意味付けされることで症状に変化が生まれます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"最新研究で、サイケデリック体験が一時的に高めることが示されているものは?", options:["血糖値","神経可塑性","体温","心拍数のみ"], correct:1,
+      explain:"最新研究では、サイケデリック体験が脳の神経可塑性を一時的に高めることが示されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"合法的なサイケデリックリトリートが運営されている国として本文で挙げられていないのは?", options:["オランダ","ジャマイカ","コスタリカ","日本"], correct:3,
+      explain:"合法的なサイケデリックリトリートの例としてオランダ・ジャマイカ・コスタリカが挙げられており、日本への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"サイケデリックリトリートを訪れる人々の目的として本文が説明しているのは?", options:["苦しみを癒すことのみが目的","自分をより深く理解するプロセスとして", "娯楽としての利用のみ","医療目的以外は禁止されている"], correct:1,
+      explain:"苦しみを癒すというよりも、自分をより深く理解するプロセスとして訪れる人が多いと説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"サイケデリック医療がもたらす変化として本文が強調しているのは何への問い直しか?", options:["薬の値段", "症状を抑えるのではなくなぜ苦しんでいるのかという根本的な問い","保険制度のあり方","医師の資格制度"], correct:1,
+      explain:"単に症状を抑えるのではなく「なぜ苦しんでいるのか」という根本的な問いに脳と心の両面から向き合う試みだと説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"サイケデリック医療の活用が医療の枠組みを超えて広がっている分野として本文で挙げられているのは?", options:["自己探求・精神成長","製造業の効率化","スポーツの記録更新","農業技術"], correct:0,
+      explain:"欧米を中心に、医療の枠組みを超えて自己探求や精神成長のための活用が拡大しています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"サイケデリックが脳のどの活動を抑制することで新しい思考が開かれると説明されている?", options:["感覚野の活動","デフォルトモードネットワークの活動","運動野の活動","小脳の活動"], correct:1,
+      explain:"サイケデリックが脳の特定の受容体に作用しデフォルトモードネットワークの活動を抑制することで新しい思考が開かれると説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"意識研究やメンタルスキル教育の領域で関心が広がりつつあるテーマとして本文で挙げられていないのは?", options:["感情との向き合い方","自己認識の柔軟性","共感力","計算能力"], correct:3,
+      explain:"感情との向き合い方・自己認識の柔軟性・共感力が挙げられており、計算能力への言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"セッション中に蘇る感情や記憶の例として本文で挙げられていないのは?", options:["幼少期の不安","言葉にできなかった怒り","傷ついた体験","将来の経済的成功のイメージ"], correct:3,
+      explain:"幼少期の不安・言葉にできなかった怒り・傷ついた体験が例として挙げられており、将来の経済的成功のイメージへの言及はありません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/サイケデリック医療の未来", q:"シロシビンを1〜2回使用するだけで数ヶ月症状が軽減した例として本文で紹介されているのは、どんな患者?", options:["何年もうつ病と向き合ってきた人","急性の風邪症状がある人","骨折治療中の人","花粉症の人"], correct:0,
+      explain:"何年もうつ病と向き合ってきた人が、シロシビンを1〜2回使用するだけで数ヶ月症状が軽減した例が紹介されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"「サイケデリック」という言葉が本来持つ意味は?", options:["「幻を見せるもの」","「精神を明らかにするもの」","「眠りを誘うもの」","「痛みを消すもの」"], correct:1,
+      explain:"サイケデリック物質は「精神を明らかにするもの」という意味を持ちます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"アヤワスカの主成分として本文で挙げられているのは?", options:["シロシビン","メスカリン","DMT","THC"], correct:2,
+      explain:"アヤワスカの主成分はDMTです。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"ペヨーテサボテンに含まれる代表的なサイケデリック物質は?", options:["シロシビン","メスカリン","DMT","MDMA"], correct:1,
+      explain:"ペヨーテサボテンにはメスカリンが含まれています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック物質の多くが作用する脳内の受容体は?", options:["CB1受容体","5-HT2A受容体","NMDA受容体","GABA受容体"], correct:1,
+      explain:"これらは脳内の5-HT2A受容体に作用し、視覚変容や意識状態の変化を引き起こします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"西洋医学界でのサイケデリック研究は何年代に始まった?", options:["1920年代後半","1940年代後半","1980年代後半","2000年代後半"], correct:1,
+      explain:"西洋医学界での研究は1940年代後半に始まりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック物質がデフォルトモードネットワークの活動を抑制することでもたらされる現象を本文は何と呼んでいる?", options:["自我の溶解","記憶の完全消去","感覚の完全遮断","時間感覚の停止のみ"], correct:0,
+      explain:"デフォルトモードネットワークの活動を一時的に抑制することが「自我の溶解」をもたらすと説明されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"普段は接続していない脳領域間で情報交換が活発になる現象を本文は何と呼んでいる?", options:["脳のエントロピー増加","脳の萎縮","脳のシナプス消失","脳の酸欠状態"], correct:0,
+      explain:"普段は接続していない脳領域間の情報交換の活発化を「脳のエントロピー増加」と呼んでいます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"一部の研究では、治療抵抗性うつ病患者がわずか2回のシロシビンセッションで何%が寛解したと報告されている?", options:["27%","47%","67%","87%"], correct:2,
+      explain:"一部の研究ではわずか2回のセッションで67%が寛解し、数ヶ月持続したと報告されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"末期がん患者へのシロシビン療法で、何%以上の患者が精神的苦痛の軽減を経験したとされる?", options:["40%以上","60%以上","80%以上","100%"], correct:2,
+      explain:"末期がん患者の80%以上で精神的苦痛が軽減し、死への恐怖が生への感謝に変容したとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"シロシビン療法を受けた喫煙者のうち、6ヶ月後も禁煙を継続していた割合は?", options:["40%","60%","80%","100%"], correct:2,
+      explain:"シロシビン療法を受けた喫煙者の80%が6ヶ月後も禁煙を継続したと報告されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"MDMA併用療法を受けた慢性PTSD患者のうち、約何%が2〜3回のセッション後に大幅改善したとされる?", options:["30%","50%","70%","90%"], correct:2,
+      explain:"MDMA併用療法で慢性PTSD患者の約70%が2〜3回のセッション後に大幅改善したとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック療法の3段階のプロセスとして正しい順番は?", options:["体験→準備→統合","準備→体験→統合","統合→準備→体験","体験→統合→準備"], correct:1,
+      explain:"治療プロセスは準備セッション→体験セッション→統合セッションの3段階からなります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"体験セッションは通常どのくらいの時間続く?", options:["30分〜1時間","1〜2時間","4〜8時間","24時間以上"], correct:2,
+      explain:"体験セッションは投与する物質によって異なりますが4〜8時間続きます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック療法で禁忌とされる既往症として本文で挙げられているのは、統合失調症と何?", options:["糖尿病","双極性障害","花粉症","高血圧単独"], correct:1,
+      explain:"統合失調症や双極性障害の既往がある場合は禁忌とされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"体験セッション中、患者が着用し内的探査に集中するために使われる道具は?", options:["ヘッドフォンのみ","アイマスク","酸素マスク","心拍計のみ"], correct:1,
+      explain:"患者はアイマスクを着用し、慎重に選ばれた音楽を聴きながら内的探査に集中します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック療法におけるセラピストに求められる能力として本文が挙げているのは?", options:["常に強く指示を出す能力のみ","非指示的アプローチと適切な介入の両立","薬の処方権のみ","事務処理能力のみ"], correct:1,
+      explain:"セラピストには非指示的アプローチをとりつつも適切な介入ができる能力が求められます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"本文が科学的根拠不足を指摘している、少量を継続的に摂取する手法は?", options:["マイクロドージング","フルドージング","ダブルドージング","ゼロドージング"], correct:0,
+      explain:"マイクロドージングの科学的根拠不足も注意点として指摘されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"世界中で進行中とされる、うつ病・依存症・PTSD等への効果を検証する臨床試験の数は?", options:["10以上","30以上","60以上","150以上"], correct:2,
+      explain:"世界中で60以上の臨床試験がうつ病・依存症・PTSD等への効果を検証中です。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック医療の将来展望として本文が挙げているのは、症状管理から何を目指すパラダイムシフトか?", options:["対症療法の強化","根本的治癒","薬の種類を減らすこと","入院期間の延長"], correct:1,
+      explain:"従来の症状管理から根本的治癒を目指す精神医療のパラダイムシフトの可能性があるとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"準備セッションで行われる内容として本文で挙げられていないのは?", options:["信頼関係の構築","生活史や心理教育","意図の設定","投与量の即時決定変更"], correct:3,
+      explain:"準備セッションでは信頼関係構築・生活史や心理教育・意図の設定・困難な体験への対処法が話し合われ、投与量の即時変更については述べられていません。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック物質が神経栄養因子の増加や何をもたらす可能性が示されている?", options:["神経新生","筋肉量の増加","骨密度の増加","視力の向上"], correct:0,
+      explain:"神経可塑性の増大が神経栄養因子の増加や神経新生など長期的な脳の変化をもたらす可能性が示されています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/精神医療の新たな可能性、サイケデリック医療とは", q:"サイケデリック研究が1970年代以降長く停滞した理由として本文が挙げているのは?", options:["研究資金が潤沢すぎたため","社会的・政治的要因から規制が強化されたため","効果が全くないと証明されたため","代替薬が十分開発されたため"], correct:1,
+      explain:"1970年代以降は社会的・政治的要因から規制が強化され、研究は長く停滞しました。" },
+
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"1938年にスイスの科学者アルバート・ホフマン博士がLSDを半合成した原料は?", options:["麦角菌","キノコ","サボテン","樹皮"], correct:0,
+      explain:"LSDは1938年、スイスの科学者アルバート・ホフマン博士が麦角菌から半合成しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"1943年、ホフマン博士が微量のLSDを誤って摂取し自転車で帰宅中に強烈な体験をした出来事は何と呼ばれる?", options:["マジックデー","バイシクルデー","LSDデー","覚醒の日"], correct:1,
+      explain:"この出来事は「バイシクルデー」としてサイケデリック史の記念日になりました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"LSDは、わずか約何マイクログラムで6〜12時間の強力な体験をもたらす?", options:["約10マイクログラム","約100マイクログラム","約1000マイクログラム","約10000マイクログラム"], correct:1,
+      explain:"LSDはわずか約100マイクログラム(塩粒ほどの量)で6〜12時間の強力な体験をもたらします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"LSDは何年に規制された?", options:["1950年","1966年","1980年","2000年"], correct:1,
+      explain:"1950〜60年代にうつ病・依存症治療等で注目されたLSDは1966年に規制されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"シロシビンの持続時間はLSDと比べてどうか?", options:["LSDより長い(4〜6時間)","LSDよりやや短い(4〜6時間)","LSDと全く同じ長さ","LSDの半分以下(1時間未満)"], correct:1,
+      explain:"シロシビンの持続時間は4〜6時間とLSD(6〜12時間)よりやや短いとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"メスカリンを1897年に単離したドイツの科学者は?", options:["アルバート・ホフマン","アーサー・ヘフター","ラファエル・メコーラム","アレクサンダー・シュルギン"], correct:1,
+      explain:"メスカリンは1897年にドイツの科学者アーサー・ヘフターによって単離されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"メスカリン体験を基に書かれ、サイケデリックへの文化的認識に大きな影響を与えたオルダス・ハクスリーの著書は?", options:["『すばらしい新世界』","『知覚の扉』","『1984年』","『神々の糧』"], correct:1,
+      explain:"オルダス・ハクスリーの著書『知覚の扉』はメスカリン体験を基に書かれ文化的影響が大きかったとされています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"メスカリンの効果の持続時間はどのくらい?", options:["15〜30分","4〜6時間","6〜12時間","8〜12時間"], correct:3,
+      explain:"メスカリンの効果は8〜12時間と長く持続します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"メスカリンが他のサイケデリックと異なり作用するとされる神経伝達物質系は?", options:["セロトニン系のみ","ドーパミン・ノルアドレナリン系","GABA系のみ","アセチルコリン系のみ"], correct:1,
+      explain:"メスカリンはフェネチルアミン構造で、ドーパミン・ノルアドレナリン系にも作用する点が他と異なります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"DMTは多くの植物だけでなく、人間を含む哺乳類の体内にも存在することから何と呼ばれる?", options:["外来性サイケデリック","内在性サイケデリック","合成サイケデリック","古典的サイケデリック"], correct:1,
+      explain:"DMTは哺乳類の体内にも微量存在することから「内在性サイケデリック」とも呼ばれます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"純粋なDMTの作用時間はどのくらい?", options:["15〜30分","4〜6時間","6〜12時間","24時間以上"], correct:0,
+      explain:"純粋なDMTは15〜30分と短時間で強烈な体験をもたらします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"アヤワスカに含まれるDMTの分解を防ぎ、4〜6時間持続させる成分は?", options:["カフェイン","モノアミン酸化酵素阻害成分","ビタミンC","アルカロイド単独"], correct:1,
+      explain:"アヤワスカに含まれるDMTはモノアミン酸化酵素阻害成分と組み合わさることで分解が防がれ、4〜6時間持続します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"アヤワスカはアマゾン流域で何と呼ばれることがある?", options:["神の水","プラントティーチャー(植物の教師)","聖なる涙","天の雫"], correct:1,
+      explain:"アヤワスカは治療的可能性が注目され、「プラントティーチャー(植物の教師)」とも呼ばれています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"MDMAは厳密にはサイケデリックではなく、何に分類される?", options:["麻酔薬","エンパトジェン/エンタクトジェン","解熱鎮痛薬","抗生物質"], correct:1,
+      explain:"MDMAは「共感を生み出すもの」を意味するエンパトジェン/エンタクトジェンに分類されます。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"MDMAを1912年に合成したドイツの製薬会社は?", options:["バイエル","メルク","ロシュ","ファイザー"], correct:1,
+      explain:"MDMAは1912年に独メルク社が合成しました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"1970年代にMDMAを再発見し、心理療法での可能性を認識した化学者は?", options:["アルバート・ホフマン","アーサー・ヘフター","アレクサンダー・シュルギン博士","ラファエル・メコーラム"], correct:2,
+      explain:"1970年代に化学者アレクサンダー・シュルギン博士がMDMAを再発見し、心理療法での可能性が認識されました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"MDMAが促進するとされるホルモンとして本文で挙げられているのは?", options:["コルチゾール","オキシトシン","アドレナリン単独","インスリン"], correct:1,
+      explain:"MDMAはセロトニン・ドーパミン・ノルアドレナリンの放出とオキシトシンレベルの上昇を促します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"MDMAは何年に濫用拡大を理由に規制された?", options:["1966年","1971年","1985年","2000年"], correct:2,
+      explain:"1985年に濫用拡大でMDMAは規制されましたが、現在はPTSD治療のブレークスルーセラピーとしてFDA指定を受けています。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"ケタミンは元々何として開発された?", options:["抗生物質","麻酔薬","抗うつ薬","鎮痛剤のみ"], correct:1,
+      explain:"ケタミンは元々麻酔薬として開発され、通常の麻酔量より少ない量で解離状態をもたらします。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"ケタミンが作用する受容体は?", options:["5-HT2A受容体","NMDA受容体","CB1受容体","ドーパミンD2受容体"], correct:1,
+      explain:"ケタミンはNMDA受容体拮抗薬として作用し、「Kホール」と呼ばれる強い解離体験を引き起こすことがあります。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"2019年、エスケタミンが「スプラバート」としてサイケデリック関連薬で初めて何を受けた?", options:["ノーベル賞","FDA承認","国連表彰","特許失効"], correct:1,
+      explain:"2019年にエスケタミンが「スプラバート」としてサイケデリック関連薬として初めてFDA承認を受けました。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"これらのサイケデリック物質に共通する脳への作用として本文が説明しているのは?", options:["脳全体の活動を完全に停止させる","デフォルトモードネットワークの活動を一時的に抑制する","記憶を完全に消去する","痛覚を完全に麻痺させる"], correct:1,
+      explain:"共通してデフォルトモードネットワークの活動を一時的に抑制し、脳領域間に新たな接続パターンを形成します。" },
+    { category:"medsg", source:"メディカル・シンギュラリティ/脳と意識を変容させるサイケデリック物質の種類", q:"北米先住民族の宗教的自由として、現在も合法的にペヨーテを使用している団体は?", options:["ネイティブアメリカンチャーチ","MAPS","ジョンズホプキンス大学","国連"], correct:0,
+      explain:"現代アメリカではネイティブアメリカンチャーチが宗教的自由として今でも合法的にペヨーテを使用しています。" },
+  ];
+
+  QUESTIONS.forEach(function(q, i){ q.id = q.category + "_" + i; });
+
+  var CAT_META = {
+    body: { name:"身体の仕組み", sub:"肝臓・脂質代謝・ホルモン・腸のしくみなど", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1.5 1-2.5 1-4 0Z"/></svg>' },
+    nutrition: { name:"栄養学の基礎", sub:"ビタミン・ミネラル・コレステロールなど", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c4 0 7 3 7 7 0 6-4 9-7 11-3-2-7-5-7-11 0-4 3-7 7-7Z"/><path d="M12 8v6M9 11h6"/></svg>' },
+    medsg: { name:"メディカル・シンギュラリティ", sub:"精密医療・カンナビノイド・サイケデリック医療など", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/><circle cx="12" cy="12" r="3"/></svg>' },
+    mix: { name:"ミックス", sub:"全カテゴリからランダム出題", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/></svg>' }
+  };
+
+  var BADGE_META = {
+    first_play: { name:"はじめの一歩", hint:"最初のクイズを完了" },
+    perfect: { name:"パーフェクト", hint:"1ラウンド全問正解" },
+    streak10: { name:"連続10正解", hint:"連続正解ストリーク10達成" },
+    lv5: { name:"Lv.5到達", hint:"レベル5に到達" },
+    all_cat: { name:"全カテゴリ制覇", hint:"すべてのカテゴリを1回以上プレイ" }
+  };
+
+  var ROUND_SIZE = 10;
+  var XP_PER_CORRECT = 10;
+
+  /* ---------------- 間隔反復(簡易ライトナーシステム、エビングハウス曲線に近似) ----------------
+     box0(新規/直後に間違えた)→正解で box1(+1日)→box2(+3日)→box3(+7日)→box4(+16日)→box5(+35日、以降は35日周期で維持)
+     不正解の場合は box0 に戻り、即日(今日)再度「復習対象」になる。 */
+  var SRS_INTERVALS = [1, 3, 7, 16, 35]; // box1〜box5に到達した時の次回復習までの日数
+  function todayDateOnly(){
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  }
+  function addDaysStr(dateStr, days){
+    var d = new Date(dateStr + "T00:00:00");
+    d.setDate(d.getDate() + days);
+    return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  }
+  function getSrs(qid){
+    return state.srs[qid] || null;
+  }
+  function isDueToday(qid){
+    var rec = state.srs[qid];
+    if (!rec) return false;
+    return rec.due <= todayDateOnly();
+  }
+  function updateSrsAfterAnswer(qid, isCorrect){
+    var today = todayDateOnly();
+    var rec = state.srs[qid] || { box:0, correct:0, wrong:0, due: today, lastSeen: null };
+    if (isCorrect){
+      rec.box = Math.min(rec.box + 1, SRS_INTERVALS.length);
+      rec.due = addDaysStr(today, SRS_INTERVALS[rec.box - 1]);
+      rec.correct++;
+    } else {
+      rec.box = 0;
+      rec.due = today; // 即、今日の復習対象に戻す
+      rec.wrong++;
+    }
+    rec.lastSeen = today;
+    state.srs[qid] = rec;
+  }
+  function dueCountFor(pool){
+    var today = todayDateOnly();
+    return pool.filter(function(q){
+      var rec = state.srs[q.id];
+      return rec && rec.due <= today;
+    }).length;
+  }
+  function buildRoundPool(pool, n){
+    var today = todayDateOnly();
+    var due = [], fresh = [], upcoming = [];
+    pool.forEach(function(q){
+      var rec = state.srs[q.id];
+      if (!rec) fresh.push(q);
+      else if (rec.due <= today) due.push(q);
+      else upcoming.push(q);
+    });
+    // 復習期限が過ぎているものほど優先(dueの中でも古い期限順)
+    due.sort(function(a,b){ return state.srs[a.id].due < state.srs[b.id].due ? -1 : 1; });
+    upcoming.sort(function(a,b){ return state.srs[a.id].due < state.srs[b.id].due ? -1 : 1; });
+    var ordered = shuffle(due).concat(shuffle(fresh)).concat(upcoming);
+    return ordered.slice(0, n);
+  }
+
+  /* ---------------- 状態管理 ---------------- */
+  var STORAGE_KEY = "nutriLabState_v1";
+  function defaultState(){
+    return {
+      totalXP: 0,
+      bestStreak: 0,
+      badges: {},
+      playedCategories: {},
+      dailyDate: "",
+      dailyCorrect: 0,
+      catStats: {}, // { body: {played:n, best:n}, nutrition:..., mix:... }
+      srs: {}, // { [questionId]: {box, due, correct, wrong, lastSeen} }
+      totalAnswered: 0
+    };
+  }
+
+  /* ---------------- バックアップ(書き出し・復元) ---------------- */
+  function buildBackupPayload(){
+    return { app:"nutriLab", version:1, exportedAt:new Date().toISOString(), state:state };
+  }
+  function triggerBackupDownload(reason){
+    try {
+      var json = JSON.stringify(buildBackupPayload(), null, 2);
+      var blob = new Blob([json], {type:"application/json"});
+      var url = URL.createObjectURL(blob);
+      var d = new Date();
+      var stamp = d.getFullYear() + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0")
+        + "_" + String(d.getHours()).padStart(2,"0") + String(d.getMinutes()).padStart(2,"0");
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "精密栄養ラボ_バックアップ_" + stamp + ".json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+      toast(reason === "auto" ? "💾 10問到達:バックアップを保存しました" : "💾 バックアップを保存しました");
+    } catch(e){
+      toast("⚠️ バックアップの保存に失敗しました");
+    }
+  }
+  function importBackupFile(file){
+    var reader = new FileReader();
+    reader.onload = function(e){
+      try {
+        var payload = JSON.parse(e.target.result);
+        var incoming = (payload && payload.state) ? payload.state : payload;
+        if (!incoming || typeof incoming.totalXP !== "number") throw new Error("invalid backup file");
+        var d = defaultState();
+        for (var k in d) if (!(k in incoming)) incoming[k] = d[k];
+        state = incoming;
+        saveState();
+        renderHome();
+        showScreen("home");
+        toast("✅ バックアップから復元しました");
+      } catch(err){
+        toast("⚠️ 復元に失敗しました(ファイルを確認してください)");
+      }
+    };
+    reader.readAsText(file, "utf-8");
+  }
+  var state = loadState();
+  function loadState(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return defaultState();
+      var parsed = JSON.parse(raw);
+      var d = defaultState();
+      for (var k in d) if (!(k in parsed)) parsed[k] = d[k];
+      return parsed;
+    } catch(e){ return defaultState(); }
+  }
+  function saveState(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+  }
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+  }
+  function ensureDaily(){
+    var t = todayStr();
+    if (state.dailyDate !== t) { state.dailyDate = t; state.dailyCorrect = 0; }
+  }
+  ensureDaily();
+
+  function levelFromXP(xp){ return 1 + Math.floor(xp / 150); }
+  function xpIntoLevel(xp){ return xp % 150; }
+
+  /* ---------------- ラウンド内の一時状態 ---------------- */
+  var round = null; // { category, pool:[], idx, correctCount, streak, maxStreak, answered }
+
+  /* ---------------- DOM refs ---------------- */
+  var $ = function(id){ return document.getElementById(id); };
+  var screens = { home:$("screen-home"), quiz:$("screen-quiz"), result:$("screen-result") };
+  function showScreen(name){
+    Object.keys(screens).forEach(function(k){ screens[k].classList.toggle("active", k===name); });
+    window.scrollTo({top:0, behavior:"instant"});
+  }
+
+  function toast(msg){
+    var t = $("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toast._tm);
+    toast._tm = setTimeout(function(){ t.classList.remove("show"); }, 2400);
+  }
+
+  /* ---------------- 上部バー描画 ---------------- */
+  function renderTopbar(){
+    var lv = levelFromXP(state.totalXP);
+    var into = xpIntoLevel(state.totalXP);
+    var pct = into / 150;
+    $("xp-label").textContent = "Lv." + lv + "・次のレベルまで あと" + (150-into) + " XP";
+    $("xp-fill").style.width = (pct*100) + "%";
+    $("best-streak-num").textContent = state.bestStreak;
+    var circumference = 138.2;
+    $("lvring-fill").setAttribute("stroke-dashoffset", (circumference*(1-pct)).toFixed(1));
+    $("lvring-num").textContent = lv;
+  }
+
+  /* ---------------- ホーム描画 ---------------- */
+  function renderHome(){
+    ensureDaily();
+    var dots = $("daily-dots");
+    dots.innerHTML = "";
+    var goal = 5;
+    for (var i=0;i<goal;i++){
+      var el = document.createElement("i");
+      if (i < state.dailyCorrect) el.className = "on";
+      dots.appendChild(el);
+    }
+    $("daily-label").textContent = "今日の目標:" + Math.min(state.dailyCorrect,goal) + "/" + goal + "問正解" + (state.dailyCorrect>=goal ? "・達成!🎉" : "");
+
+    var totalDue = dueCountFor(QUESTIONS);
+    var reviewLabel = $("review-label");
+    if (totalDue > 0){
+      reviewLabel.textContent = "復習タイミングが来た問題が " + totalDue + "問 あります。どのカテゴリを選んでも自動的に優先出題されます。";
+    } else {
+      reviewLabel.textContent = "今日復習すべき問題はありません。新しい問題に挑戦しましょう。";
+    }
+
+    var grid = $("cat-grid");
+    grid.innerHTML = "";
+    ["body","nutrition","medsg","mix"].forEach(function(cat){
+      var meta = CAT_META[cat];
+      var pool = cat === "mix" ? QUESTIONS : QUESTIONS.filter(function(q){ return q.category === cat; });
+      var stat = state.catStats[cat] || { played:0, best:0 };
+      var due = dueCountFor(pool);
+      var btn = document.createElement("button");
+      btn.className = "cat-card";
+      btn.innerHTML =
+        '<div class="cat-icon">'+meta.icon+'</div>' +
+        '<div>' +
+          '<div class="cat-name">'+meta.name+(due>0 ? ' <span class="badge-chip earned" style="margin-left:6px;">復習'+due+'</span>' : '')+'</div>' +
+          '<div class="cat-sub">'+meta.sub+' ・ 全'+pool.length+'問</div>' +
+          '<div class="cat-progress"><i style="width:'+(stat.played? Math.round(stat.best/Math.min(ROUND_SIZE,pool.length)*100):0)+'%"></i></div>' +
+        '</div>' +
+        '<div class="cat-arrow">→</div>';
+      btn.addEventListener("click", function(c){ return function(){ startQuiz(c); }; }(cat));
+      grid.appendChild(btn);
+    });
+
+    var badgesRow = $("badges-row");
+    badgesRow.innerHTML = "";
+    Object.keys(BADGE_META).forEach(function(id){
+      var meta = BADGE_META[id];
+      var earned = !!state.badges[id];
+      var chip = document.createElement("span");
+      chip.className = "badge-chip" + (earned ? " earned" : "");
+      chip.textContent = (earned ? "✓ " : "") + meta.name;
+      chip.title = meta.hint;
+      badgesRow.appendChild(chip);
+    });
+
+    renderTopbar();
+  }
+
+  /* ---------------- クイズ開始 ---------------- */
+  function shuffle(arr){
+    var a = arr.slice();
+    for (var i=a.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+    }
+    return a;
+  }
+
+  function startQuiz(cat){
+    var pool = cat === "mix" ? QUESTIONS : QUESTIONS.filter(function(q){ return q.category === cat; });
+    var n = Math.min(ROUND_SIZE, pool.length);
+    var picked = buildRoundPool(pool, n).map(function(q){
+      var opts = q.options.map(function(text, i){ return {text:text, isCorrect:i===q.correct}; });
+      opts = shuffle(opts);
+      return { id:q.id, source:q.source, question:q.q, explain:q.explain, options:opts };
+    });
+    round = { category:cat, pool:picked, idx:0, correctCount:0, streak:0, maxStreak:0, answered:false };
+    state.playedCategories[cat] = true;
+    showScreen("quiz");
+    renderQuestion();
+  }
+
+  function renderQuestion(){
+    var item = round.pool[round.idx];
+    round.answered = false;
+    $("quiz-counter").textContent = (round.idx+1) + "/" + round.pool.length;
+    $("quiz-progress-fill").style.width = (round.idx / round.pool.length * 100) + "%";
+    $("round-streak-num").textContent = round.streak;
+    $("q-source").textContent = "出典:" + item.source;
+    $("q-text").textContent = item.question;
+    var tags = ["A","B","C","D"];
+    var optWrap = $("q-options");
+    optWrap.innerHTML = "";
+    item.options.forEach(function(opt, i){
+      var b = document.createElement("button");
+      b.className = "opt";
+      b.innerHTML = '<span class="opt-tag">'+tags[i]+'</span><span>'+opt.text+'</span>';
+      b.addEventListener("click", function(){ selectAnswer(i); });
+      optWrap.appendChild(b);
+    });
+    $("q-explain").className = "explain-box";
+    $("q-explain").innerHTML = "";
+    $("next-wrap").className = "next-wrap";
+  }
+
+  function selectAnswer(i){
+    if (round.answered) return;
+    round.answered = true;
+    var item = round.pool[round.idx];
+    var buttons = $("q-options").querySelectorAll(".opt");
+    var picked = item.options[i];
+    buttons.forEach(function(b, idx){
+      b.disabled = true;
+      if (item.options[idx].isCorrect) b.classList.add("correct");
+      else if (idx === i) b.classList.add("incorrect");
+    });
+
+    if (picked.isCorrect){
+      round.correctCount++;
+      round.streak++;
+      round.maxStreak = Math.max(round.maxStreak, round.streak);
+      state.bestStreak = Math.max(state.bestStreak, round.streak);
+      ensureDaily();
+      state.dailyCorrect++;
+      if (round.streak === 10) unlockBadge("streak10");
+      if (round.streak === 3) toast("🔥 3連続正解!");
+      else if (round.streak === 5) toast("⚡ 5連続正解、絶好調!");
+      else if (round.streak >= 8 && round.streak % 4 === 0) toast("🌟 " + round.streak + "連続正解!");
+    } else {
+      round.streak = 0;
+    }
+    updateSrsAfterAnswer(item.id, picked.isCorrect);
+    state.totalAnswered = (state.totalAnswered || 0) + 1;
+    saveState();
+    if (state.totalAnswered % 10 === 0){
+      triggerBackupDownload("auto");
+    }
+
+    var box = $("q-explain");
+    box.classList.add("show");
+    box.innerHTML = (picked.isCorrect ? "✅ 正解。" : "❌ 不正解。") + item.explain +
+      '<span class="explain-src">出典:'+item.source+'</span>';
+    $("next-wrap").classList.add("show");
+    renderTopbar();
+  }
+
+  $("btn-next").addEventListener("click", function(){
+    round.idx++;
+    if (round.idx >= round.pool.length){ finishQuiz(); }
+    else { renderQuestion(); }
+  });
+
+  function unlockBadge(id){
+    if (state.badges[id]) return;
+    state.badges[id] = true;
+    saveState();
+    toast("🏅 バッジ獲得:" + BADGE_META[id].name);
+  }
+
+  function finishQuiz(){
+    var total = round.pool.length;
+    var correct = round.correctCount;
+    var pct = Math.round(correct/total*100);
+    var streakBonus = round.maxStreak >= 8 ? 15 : round.maxStreak >= 5 ? 10 : round.maxStreak >= 3 ? 5 : 0;
+    var xpGained = correct * XP_PER_CORRECT + streakBonus * (correct>0?1:0);
+    var prevLevel = levelFromXP(state.totalXP);
+    state.totalXP += xpGained;
+    var newLevel = levelFromXP(state.totalXP);
+
+    var stat = state.catStats[round.category] || {played:0, best:0};
+    stat.played++;
+    stat.best = Math.max(stat.best, correct);
+    state.catStats[round.category] = stat;
+
+    unlockBadge("first_play");
+    if (correct === total) unlockBadge("perfect");
+    if (newLevel >= 5) unlockBadge("lv5");
+    if (state.playedCategories.body && state.playedCategories.nutrition) unlockBadge("all_cat");
+
+    saveState();
+
+    $("result-pct").textContent = pct + "%";
+    $("result-frac").textContent = correct + "/" + total + "問";
+    $("result-xp").textContent = "+" + xpGained;
+    $("result-streak").textContent = round.maxStreak;
+    $("result-lv").textContent = "Lv." + newLevel;
+
+    var msg;
+    if (pct === 100) msg = "パーフェクト!完璧な理解です 🎉";
+    else if (pct >= 80) msg = "素晴らしい!よく身についています ✨";
+    else if (pct >= 50) msg = "いい調子!復習すればもっと伸びます 💪";
+    else msg = "ここからが伸びしろ。もう一度挑戦してみましょう 🌱";
+    if (newLevel > prevLevel) msg = "🎊 レベルアップ!Lv." + newLevel + "になりました";
+    $("result-msg").textContent = msg;
+
+    var circumference = 502.4;
+    var fillEl = $("result-gauge");
+    fillEl.style.strokeDashoffset = circumference;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        fillEl.style.strokeDashoffset = (circumference * (1 - pct/100)).toFixed(1);
+      });
+    });
+
+    showScreen("result");
+    renderTopbar();
+  }
+
+  $("btn-home").addEventListener("click", function(){ renderHome(); showScreen("home"); });
+  $("btn-retry").addEventListener("click", function(){ startQuiz(round.category); });
+
+  $("btn-backup-now").addEventListener("click", function(){ triggerBackupDownload("manual"); });
+  $("btn-restore").addEventListener("click", function(){ $("restore-file-input").click(); });
+  $("restore-file-input").addEventListener("change", function(e){
+    var f = e.target.files && e.target.files[0];
+    if (f) importBackupFile(f);
+    e.target.value = "";
+  });
+
+  /* ---------------- 背景キャンバス:細胞ネットワーク風の控えめなアニメーション ---------------- */
+  (function bg(){
+    var canvas = $("bgcanvas");
+    var ctx = canvas.getContext("2d");
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pts = [];
+    function resize(){
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      var count = Math.round((window.innerWidth * window.innerHeight) / 26000);
+      pts = [];
+      for (var i=0;i<count;i++){
+        pts.push({
+          x: Math.random()*window.innerWidth,
+          y: Math.random()*window.innerHeight,
+          vx: (Math.random()-0.5) * 0.15,
+          vy: (Math.random()-0.5) * 0.15,
+          r: 1 + Math.random()*1.6
+        });
+      }
+    }
+    function isDark(){
+      var t = document.documentElement.getAttribute("data-theme");
+      if (t === "dark") return true;
+      if (t === "light") return false;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    function step(){
+      var w = window.innerWidth, h = window.innerHeight;
+      ctx.clearRect(0,0,w,h);
+      var dark = isDark();
+      var dotColor = dark ? "rgba(111,182,196,0.55)" : "rgba(58,107,122,0.4)";
+      var lineColor = dark ? "rgba(111,182,196,0.14)" : "rgba(58,107,122,0.12)";
+      pts.forEach(function(p){
+        if (!reduceMotion){
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+      });
+      for (var i=0;i<pts.length;i++){
+        for (var j=i+1;j<pts.length;j++){
+          var dx = pts[i].x-pts[j].x, dy = pts[i].y-pts[j].y;
+          var d = Math.sqrt(dx*dx+dy*dy);
+          if (d < 120){
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      pts.forEach(function(p){
+        ctx.fillStyle = dotColor;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fill();
+      });
+      if (!reduceMotion) requestAnimationFrame(step);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+    step();
+  })();
+
+  /* ---------------- 初期化 ---------------- */
+  renderHome();
+  showScreen("home");
+
+})();
+</script>
