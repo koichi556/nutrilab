@@ -255,8 +255,11 @@
     </div>
 
     <div class="card">
-      <p class="section-label">獲得バッジ</p>
-      <div class="badges-row" id="badges-row"></div>
+      <div style="display:flex; align-items:baseline; justify-content:space-between;">
+        <p class="section-label" style="margin-bottom:2px;">獲得バッジ</p>
+        <span id="badges-summary" style="font-size:12px; color:var(--ink-soft); font-family:ui-monospace,monospace;"></span>
+      </div>
+      <div id="badges-groups"></div>
     </div>
 
     <div class="card">
@@ -1371,13 +1374,34 @@
     mix: { name:"ミックス", sub:"全カテゴリからランダム出題", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/></svg>' }
   };
 
+  /* ---------------- バッジ:段階的に集められるよう各指標をティア化 ---------------- */
+  var LEVEL_TIERS = [3, 5, 10, 20];
+  var STREAK_TIERS = [3, 5, 10, 20, 30];
+  var CORRECT_TIERS = [50, 100, 250, 500, 1000];
+  var PERFECT_TIERS = [1, 5, 20];
+
+  var BADGE_GROUPS = [
+    { key:"start", label:"はじめの一歩" },
+    { key:"level", label:"レベル到達" },
+    { key:"streak", label:"連続正解" },
+    { key:"correct", label:"累計正解数" },
+    { key:"perfect", label:"パーフェクト回数" },
+    { key:"category", label:"カテゴリ制覇" }
+  ];
+
   var BADGE_META = {
-    first_play: { name:"はじめの一歩", hint:"最初のクイズを完了" },
-    perfect: { name:"パーフェクト", hint:"1ラウンド全問正解" },
-    streak10: { name:"連続10正解", hint:"連続正解ストリーク10達成" },
-    lv5: { name:"Lv.5到達", hint:"レベル5に到達" },
-    all_cat: { name:"全カテゴリ制覇", hint:"すべてのカテゴリを1回以上プレイ" }
+    first_play: { group:"start", name:"はじめの一歩", hint:"最初のクイズを完了" }
   };
+  LEVEL_TIERS.forEach(function(n){ BADGE_META["lv_"+n] = { group:"level", name:"Lv."+n, hint:"レベル"+n+"に到達" }; });
+  STREAK_TIERS.forEach(function(n){ BADGE_META["streak_"+n] = { group:"streak", name:n+"連続", hint:"連続正解ストリーク"+n+"達成" }; });
+  CORRECT_TIERS.forEach(function(n){ BADGE_META["correct_"+n] = { group:"correct", name:n+"問", hint:"累計"+n+"問正解" }; });
+  PERFECT_TIERS.forEach(function(n){ BADGE_META["perfect_"+n] = { group:"perfect", name:n+"回", hint:"1ラウンド全問正解を"+n+"回達成" }; });
+  // カテゴリ制覇バッジはCAT_METAのキーから動的に生成(mixは除く。将来カテゴリが増えても自動対応)
+  var REAL_CATS = Object.keys(CAT_META).filter(function(k){ return k !== "mix"; });
+  REAL_CATS.forEach(function(cat){
+    BADGE_META["cat_"+cat] = { group:"category", name:CAT_META[cat].name, hint:CAT_META[cat].name+"の全問題に一度は挑戦" };
+  });
+  BADGE_META["cat_all"] = { group:"category", name:"全カテゴリ制覇", hint:"すべてのカテゴリを制覇" };
 
   var ROUND_SIZE = 10;
   var XP_PER_CORRECT = 10;
@@ -1453,7 +1477,9 @@
       dailyCorrect: 0,
       catStats: {}, // { body: {played:n, best:n}, nutrition:..., mix:... }
       srs: {}, // { [questionId]: {box, due, correct, wrong, lastSeen} }
-      totalAnswered: 0
+      totalAnswered: 0,
+      totalCorrect: 0,
+      perfectRounds: 0
     };
   }
 
@@ -1563,6 +1589,7 @@
   /* ---------------- ホーム描画 ---------------- */
   function renderHome(){
     ensureDaily();
+    recomputeBadges();
     var dots = $("daily-dots");
     dots.innerHTML = "";
     var goal = 5;
@@ -1602,16 +1629,35 @@
       grid.appendChild(btn);
     });
 
-    var badgesRow = $("badges-row");
-    badgesRow.innerHTML = "";
-    Object.keys(BADGE_META).forEach(function(id){
-      var meta = BADGE_META[id];
-      var earned = !!state.badges[id];
-      var chip = document.createElement("span");
-      chip.className = "badge-chip" + (earned ? " earned" : "");
-      chip.textContent = (earned ? "✓ " : "") + meta.name;
-      chip.title = meta.hint;
-      badgesRow.appendChild(chip);
+    var allBadgeIds = Object.keys(BADGE_META);
+    var earnedCount = allBadgeIds.filter(function(id){ return !!state.badges[id]; }).length;
+    $("badges-summary").textContent = earnedCount + " / " + allBadgeIds.length;
+
+    var groupsWrap = $("badges-groups");
+    groupsWrap.innerHTML = "";
+    BADGE_GROUPS.forEach(function(group){
+      var idsInGroup = allBadgeIds.filter(function(id){ return BADGE_META[id].group === group.key; });
+      if (!idsInGroup.length) return;
+      var earnedInGroup = idsInGroup.filter(function(id){ return !!state.badges[id]; }).length;
+      var sec = document.createElement("div");
+      sec.style.marginTop = "10px";
+      var label = document.createElement("p");
+      label.style.cssText = "font-size:11px; color:var(--ink-soft); margin:0 0 6px; letter-spacing:.04em;";
+      label.textContent = group.label + "(" + earnedInGroup + "/" + idsInGroup.length + ")";
+      sec.appendChild(label);
+      var row = document.createElement("div");
+      row.className = "badges-row";
+      idsInGroup.forEach(function(id){
+        var meta = BADGE_META[id];
+        var earned = !!state.badges[id];
+        var chip = document.createElement("span");
+        chip.className = "badge-chip" + (earned ? " earned" : "");
+        chip.textContent = (earned ? "✓ " : "") + meta.name;
+        chip.title = meta.hint;
+        row.appendChild(chip);
+      });
+      sec.appendChild(row);
+      groupsWrap.appendChild(sec);
     });
 
     renderTopbar();
@@ -1691,9 +1737,11 @@
       round.streak++;
       round.maxStreak = Math.max(round.maxStreak, round.streak);
       state.bestStreak = Math.max(state.bestStreak, round.streak);
+      state.totalCorrect = (state.totalCorrect || 0) + 1;
       ensureDaily();
       state.dailyCorrect++;
-      if (round.streak === 10) unlockBadge("streak10");
+      STREAK_TIERS.forEach(function(n){ if (round.streak === n) unlockBadge("streak_"+n); });
+      CORRECT_TIERS.forEach(function(n){ if (state.totalCorrect === n) unlockBadge("correct_"+n); });
       if (round.streak === 3) toast("🔥 3連続正解!");
       else if (round.streak === 5) toast("⚡ 5連続正解、絶好調!");
       else if (round.streak >= 8 && round.streak % 4 === 0) toast("🌟 " + round.streak + "連続正解!");
@@ -1701,6 +1749,7 @@
       round.streak = 0;
     }
     updateSrsAfterAnswer(item.id, picked.isCorrect);
+    checkCategoryMastery(item.id.split("_")[0]);
     state.totalAnswered = (state.totalAnswered || 0) + 1;
     saveState();
     if (state.totalAnswered % 10 === 0){
@@ -1723,9 +1772,33 @@
 
   function unlockBadge(id){
     if (state.badges[id]) return;
+    if (!BADGE_META[id]) return;
     state.badges[id] = true;
     saveState();
     toast("🏅 バッジ獲得:" + BADGE_META[id].name);
+  }
+
+  /* 現在の累計スタッツから、まだ未解禁のバッジがないか毎回チェックする(取りこぼし防止の保険。ホーム画面表示のたびに呼ぶ) */
+  function recomputeBadges(){
+    if ((state.totalAnswered || 0) > 0) unlockBadge("first_play");
+    var lvl = levelFromXP(state.totalXP);
+    LEVEL_TIERS.forEach(function(n){ if (lvl >= n) unlockBadge("lv_" + n); });
+    STREAK_TIERS.forEach(function(n){ if ((state.bestStreak||0) >= n) unlockBadge("streak_" + n); });
+    CORRECT_TIERS.forEach(function(n){ if ((state.totalCorrect||0) >= n) unlockBadge("correct_" + n); });
+    PERFECT_TIERS.forEach(function(n){ if ((state.perfectRounds||0) >= n) unlockBadge("perfect_" + n); });
+    REAL_CATS.forEach(function(cat){ checkCategoryMastery(cat); });
+  }
+
+  /* そのカテゴリの全問題に一度でも解答済みか(SRS記録の有無)をチェックし、達成していればカテゴリ制覇バッジを解禁する */
+  function checkCategoryMastery(cat){
+    if (!cat || REAL_CATS.indexOf(cat) === -1) return;
+    var poolSize = QUESTIONS.filter(function(q){ return q.category === cat; }).length;
+    var attempted = Object.keys(state.srs).filter(function(id){ return id.indexOf(cat + "_") === 0; }).length;
+    if (poolSize > 0 && attempted >= poolSize){
+      unlockBadge("cat_" + cat);
+    }
+    var allCleared = REAL_CATS.every(function(c){ return !!state.badges["cat_" + c]; });
+    if (allCleared) unlockBadge("cat_all");
   }
 
   function finishQuiz(){
@@ -1744,9 +1817,12 @@
     state.catStats[round.category] = stat;
 
     unlockBadge("first_play");
-    if (correct === total) unlockBadge("perfect");
-    if (newLevel >= 5) unlockBadge("lv5");
-    if (state.playedCategories.body && state.playedCategories.nutrition) unlockBadge("all_cat");
+    if (correct === total && total > 0){
+      state.perfectRounds = (state.perfectRounds || 0) + 1;
+      PERFECT_TIERS.forEach(function(n){ if (state.perfectRounds === n) unlockBadge("perfect_" + n); });
+    }
+    LEVEL_TIERS.forEach(function(n){ if (newLevel >= n) unlockBadge("lv_" + n); });
+    checkCategoryMastery(round.category === "mix" ? null : round.category);
 
     saveState();
 
