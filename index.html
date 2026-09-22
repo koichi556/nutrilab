@@ -264,7 +264,7 @@
 
     <div class="card">
       <p class="section-label">バックアップ</p>
-      <p style="font-size:13px; color:var(--ink-soft); margin:0 0 12px; line-height:1.7;">10問回答するごとに自動でバックアップの保存画面が出ます。保存したファイルはiCloud Drive(Filesアプリ)などに置いておくと安心です。</p>
+      <p style="font-size:13px; color:var(--ink-soft); margin:0 0 12px; line-height:1.7;">「今すぐバックアップ」でいつでも保存できます。保存したファイルはiCloud Drive(Filesアプリ)などに置いておくと安心です。</p>
       <div class="btn-row" style="margin-top:0;">
         <button class="btn btn-ghost" id="btn-backup-now">今すぐバックアップ</button>
         <button class="btn btn-ghost" id="btn-restore">復元する</button>
@@ -5407,9 +5407,7 @@
     checkCategoryMastery(item.id.split("_")[0]);
     state.totalAnswered = (state.totalAnswered || 0) + 1;
     saveState();
-    if (state.totalAnswered % 10 === 0){
-      triggerBackupDownload("auto");
-    }
+    /* 10問ごとの自動バックアップは停止済み(2026-09-22)。手動バックアップは「今すぐバックアップ」ボタンから引き続き可能。 */
 
     var box = $("q-explain");
     box.classList.add("show");
