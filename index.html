@@ -122,6 +122,19 @@
   .cat-progress > i { display: block; height: 100%; background: var(--accent-2); }
   .cat-arrow { color: var(--ink-soft); font-size: 20px; }
 
+  .src-list { display: grid; gap: 10px; }
+  .src-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+  }
+  .src-row-main { font-size: 13.5px; line-height: 1.5; }
+  .src-row-name { font-weight: 700; }
+  .src-row-count { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  .src-row-link { flex-shrink: 0; font-size: 12.5px; font-weight: 700; color: var(--accent-2); white-space: nowrap; }
+  .src-row.clickable { cursor: pointer; transition: background .15s ease; }
+  .src-row.clickable:hover { background: color-mix(in srgb, var(--accent-2) 12%, var(--surface-2)); }
+  .src-empty { font-size: 13.5px; color: var(--ink-soft); padding: 6px 2px; line-height: 1.7; }
+
   .badges-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .badge-chip {
     font-size: 11.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px;
@@ -247,6 +260,9 @@
       <div class="daily-goal">
         <div class="label" id="review-label">復習対象の問題はありません</div>
       </div>
+      <div class="btn-row" style="margin-top:10px;">
+        <button class="btn btn-ghost" id="btn-wrong-sources">間違えた問題の参照動画</button>
+      </div>
     </div>
 
     <div class="card">
@@ -315,6 +331,18 @@
       <div class="btn-row">
         <button class="btn btn-ghost" id="btn-home">ホームへ</button>
         <button class="btn btn-primary" id="btn-retry">もう一度</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WRONG-SOURCES -->
+  <div class="screen" id="screen-wrong">
+    <div class="card">
+      <p class="section-label">間違えた問題の参照動画</p>
+      <p style="font-size:13px; color:var(--ink-soft); margin:0 0 14px; line-height:1.7;">一度でも不正解になった問題を、元になったnomad.love動画ごとにまとめています。間違えた回数が多い順です。タップで動画を開けます。</p>
+      <div id="wrong-source-list"></div>
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn btn-ghost" id="btn-wrong-back">ホームへ</button>
       </div>
     </div>
   </div>
@@ -5214,7 +5242,7 @@
 
   /* ---------------- DOM refs ---------------- */
   var $ = function(id){ return document.getElementById(id); };
-  var screens = { home:$("screen-home"), quiz:$("screen-quiz"), result:$("screen-result") };
+  var screens = { home:$("screen-home"), quiz:$("screen-quiz"), result:$("screen-result"), wrong:$("screen-wrong") };
   function showScreen(name){
     Object.keys(screens).forEach(function(k){ screens[k].classList.toggle("active", k===name); });
     window.scrollTo({top:0, behavior:"instant"});
@@ -5265,7 +5293,7 @@
 
     var grid = $("cat-grid");
     grid.innerHTML = "";
-    ["body","nutrition","medsg","holistic","gene","mix"].forEach(function(cat){
+    ["mix","body","nutrition","medsg","holistic","gene"].forEach(function(cat){
       var meta = CAT_META[cat];
       var pool = cat === "mix" ? QUESTIONS : QUESTIONS.filter(function(q){ return q.category === cat; });
       var stat = state.catStats[cat] || { played:0, best:0 };
@@ -5316,6 +5344,52 @@
     });
 
     renderTopbar();
+  }
+
+  /* ---------------- 間違えた問題の参照動画一覧 ---------------- */
+  function renderWrongSources(){
+    var bySource = {}; // { source: { wrongTotal, questionCount, url } }
+    QUESTIONS.forEach(function(q){
+      var rec = state.srs[q.id];
+      if (!rec || !rec.wrong) return;
+      var entry = bySource[q.source];
+      if (!entry){
+        entry = { wrongTotal:0, questionCount:0, url: SOURCE_URLS[q.source] || null };
+        bySource[q.source] = entry;
+      }
+      entry.wrongTotal += rec.wrong;
+      entry.questionCount += 1;
+    });
+    var sources = Object.keys(bySource).sort(function(a,b){
+      return bySource[b].wrongTotal - bySource[a].wrongTotal;
+    });
+    var wrap = $("wrong-source-list");
+    wrap.innerHTML = "";
+    if (!sources.length){
+      var empty = document.createElement("p");
+      empty.className = "src-empty";
+      empty.textContent = "まだ間違えた問題がありません。クイズに挑戦してみましょう。";
+      wrap.appendChild(empty);
+      return;
+    }
+    var list = document.createElement("div");
+    list.className = "src-list";
+    sources.forEach(function(source){
+      var entry = bySource[source];
+      var row = document.createElement("div");
+      row.className = "src-row" + (entry.url ? " clickable" : "");
+      row.innerHTML =
+        '<div class="src-row-main">' +
+          '<div class="src-row-name">' + source + '</div>' +
+          '<div class="src-row-count">' + entry.questionCount + '問で間違い・計' + entry.wrongTotal + '回</div>' +
+        '</div>' +
+        (entry.url ? '<div class="src-row-link">▶ 動画を見る</div>' : '');
+      if (entry.url){
+        row.addEventListener("click", function(){ window.open(entry.url, "_blank", "noopener"); });
+      }
+      list.appendChild(row);
+    });
+    wrap.appendChild(list);
   }
 
   /* ---------------- クイズ開始 ---------------- */
@@ -5508,6 +5582,8 @@
 
   $("btn-home").addEventListener("click", function(){ renderHome(); showScreen("home"); });
   $("btn-retry").addEventListener("click", function(){ startQuiz(round.category); });
+  $("btn-wrong-sources").addEventListener("click", function(){ renderWrongSources(); showScreen("wrong"); });
+  $("btn-wrong-back").addEventListener("click", function(){ renderHome(); showScreen("home"); });
 
   $("btn-backup-now").addEventListener("click", function(){ triggerBackupDownload("manual"); });
   $("btn-restore").addEventListener("click", function(){ $("restore-file-input").click(); });
